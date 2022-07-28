@@ -52,7 +52,8 @@ DJANGO_INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 MY_APPS = [
-    
+    'dot',
+    'account',
 ]
 INSTALLED_APPS  = MY_APPS + DJANGO_INSTALLED_APPS
 
