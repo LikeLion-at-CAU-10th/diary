@@ -50,13 +50,21 @@ DJANGO_INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.naver',
+    'allauth.socialaccount.providers.kakao',
+    
 ]
 MY_APPS = [
     'dot',
-    'account',
+    'accounts',
 ]
 INSTALLED_APPS  = MY_APPS + DJANGO_INSTALLED_APPS
 
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
