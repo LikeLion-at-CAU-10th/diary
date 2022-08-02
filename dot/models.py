@@ -13,11 +13,13 @@ class Picture(models.Model):
     picture_info=models.ImageField( verbose_name='일기그림')
     order=models.IntegerField(verbose_name='점순서')
 
+
 # class Dot(models.model):
 #     dot_id=models.AutoField(primary_key=True)
 #     picture_id=models.ForeignKey(to=Picture, on_delete=models.CASCADE, blank=False)
 #     x=models.IntegerField(verbose_name='점의x좌표')
 #     y=models.IntegerField(verbose_name='점의y좌표')
+
 
 class MemberPicture(models.Model):
     member_picture_id=models.AutoField(primary_key=True)
@@ -36,6 +38,7 @@ class Diary(models.Model):
     title= models.CharField(verbose_name='일기제목', max_length=200)
     content=models.TextField(verbose_name='일기내용')
     create_date=models.DateTimeField(verbose_name="작성일시", auto_now_add=True)
+
     updated_date = models.DateTimeField(verbose_name="수정일시", auto_now=True)
-    weather=models.ImageField(verbose_name='날씨이모지')
-    feeling=models.ImageField(verbose_name='감정이모지')
+    weather = models.ImageField(verbose_name='날씨이모지')
+    feeling = models.ImageField(verbose_name='감정이모지')
