@@ -1,0 +1,287 @@
+body{
+    background-color: #ECE7E1;
+    
+    font-family:'Malgun Gothic';
+    font-size:12pt;
+    margin: 0px;
+    padding: 0px;
+
+}
+p{
+    margin: 0px;
+    padding: 0px;
+
+}
+canvas{
+    position: relative; 
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
+.canvases{
+    position: absolute;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    margin-left: -20px;
+    margin-top: 138px;
+
+    width: 80px;
+    /* margin-top: 118px;
+    width: 50px;
+    height: 50px; */
+}
+
+.c12{
+    width: 10px;
+    height: 40px;
+    /* margin-left: 40px; */
+    margin-top: 20px;
+}
+.c23{
+    width: 25px;
+    height: 30px;
+    /* margin-left: -50px;
+    margin-top: 20px; */
+
+}
+.c34{
+    width: 35px;
+    height: 20px;
+
+}
+.c45{
+    width: 15px;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.dot{
+    background-color: rgb(160, 160, 160);
+    border-radius: 100%;
+    /* width:1vh;
+    height: 1vh; */
+    width:12px;
+    height: 12px;
+
+    position: relative; 
+    z-index: 2;
+    /* margin: 0.1vh; */
+    cursor: pointer;
+}
+.img{
+    content: url(img/cherry.png);
+    position: absolute; 
+    z-index: 1;
+    /* width: 50vh; */
+    width: 385px;
+    border-radius: 2vh;
+    border: solid 1px black;
+    align-items: center;
+
+}
+.input{
+    display: none;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* margin-top:10vh; */
+    /* margin-left:60vh; */
+    /* flex-wrap: nowrap;
+    flex-direction: row; */
+}
+.dots{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -20px;
+    /* margin-top: 16vh; */
+    margin-top: 118px;
+
+    flex-direction: column;
+    /* width:15vh; */
+    /* position: absolute;
+    z-index: 1; */
+    position: relative;
+    z-index: 3;
+}
+.num{ 
+    position: relative; 
+    z-index: 2;
+}
+.column{
+    display: flex;
+}
+/* #dot1{
+    margin-right:2vh;
+    margin-left: 0.5vh;
+}
+#dot5{
+    margin-left:7.5vh;
+    margin-top: -1vh;
+}
+#dot2{
+    margin-right: 3.3vh;
+}
+#dot4{
+    margin-left: 3.5vh;
+    margin-top: -1vh;
+}
+#dot3{
+    margin: 0vh 3.5vh;
+}
+#num1{
+    margin-right: 6vh;
+}
+#num5{
+    margin-left: 6vh;
+    margin-top: -1vh;
+}
+#num4{
+    margin-top: -1vh;
+} */
+#dot1{
+    /* margin-right:17px;
+    margin-left: 5px; */
+
+
+    margin-right:17px;
+    margin-left: 5px;
+
+}
+#dot5{
+    /* margin-left:56px;
+    margin-top: -7px; */
+
+
+    margin-left:50px;
+    margin-top: -7px;
+}
+#dot2{
+    margin-right: 25px;
+}
+#dot4{
+    margin-left: 25px;
+    margin-top: -7px;
+}
+#dot3{
+    margin: 0px 30px 0px 20px;
+}
+#num3{
+    margin-right: 15px;
+}
+
+#num1{
+    /* margin-right: 45px; */
+
+    margin-right: 12px;
+    margin-top: 10px;
+
+}
+#num5{
+    /* margin-left: 45px;
+    margin-top: -7px; */
+
+    margin-left: 12px;
+
+}
+#num4{
+    margin-top: -7px;
+}
+/* .grid{
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+} */
+
+/* 1440px */
+@media (min-width:1520px) {
+    #dot1{
+        margin-left: 10px;
+    }
+    .dots{
+        margin-top: 115px;
+        margin-right: 5px;
+    }
+    body{
+        background-color: #ECE7E1;
+        
+        font-family:'Malgun Gothic';
+        /* font-size:11pt; */
+    }
+    .canvases{
+        position: absolute;
+        z-index: 1;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        margin-left: -22px;
+        margin-top: 136px;
+        width: 80px;
+    }
+    
+}
+
+/* 1600px */
+@media (min-width:1590px) {
+    #dot1{
+        margin-left: 10px;
+    }
+    .dots{
+        margin-top: 118px;
+        margin-right: 5px;
+    }
+    body{
+        background-color: #ECE7E1;
+        
+        font-family:'Malgun Gothic';
+    }
+    .canvases{
+        position: absolute;
+        z-index: 1;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        margin-left: -20px;
+        margin-top: 138px;
+
+        width: 80px;
+    }
+    
+    
+}
+
+/* 1200px */
+@media (max-width:1250px) {
+    #dot1{
+        margin-left: 10px;
+    }
+    .dots{
+        margin-top: 115px;
+        margin-right: 5px;
+    }
+    body{
+        background-color: #ECE7E1;
+        
+        font-family:'Malgun Gothic';
+    }
+    .canvases{
+        position: absolute;
+        z-index: 1;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        margin-left: -20px;
+        margin-top: 135px;
+
+        width: 80px;
+    }
+    
+    
+}
