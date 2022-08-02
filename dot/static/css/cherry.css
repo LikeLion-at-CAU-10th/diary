@@ -72,7 +72,7 @@ canvas{
     cursor: pointer;
 }
 .img{
-    content: url(img/cherry.png);
+    /* content: url(../static/img/cherry.png); */
     position: absolute; 
     z-index: 1;
     /* width: 50vh; */
