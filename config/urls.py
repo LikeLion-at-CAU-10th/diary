@@ -23,4 +23,6 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('accounts/', include('allauth.urls')),
     path('cherry/', cherry, name='cherry'),
+    path('input/', input, name='input'),
+    path('output/<int:id>', output, name='output'),
 ]
