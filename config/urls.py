@@ -20,9 +20,10 @@ from dot.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    # path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('accounts/', include('allauth.urls')),
     path('cherry/', cherry, name='cherry'),
-    path('input/', input, name='input'),
+    path('input/<int:id>', input, name='input'),
     path('output/<int:id>', output, name='output'),
+    path('', practice),
 ]
