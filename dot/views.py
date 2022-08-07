@@ -3,31 +3,50 @@ from django.shortcuts import get_object_or_404, render
 # Create your views here.
 from .models import *
 
+def init_picture(request, id):
+    memberId = request.user.id
+    pictureId = id
+    picture_data = get_object_or_404(Picture, pk = id)
+    lst = list(range(1,len(picture_data) + 1))
+    for i in range(len(lst)):
+        lst[i] = str(lst[i])
+    uncolored_dot_string = " ".join(lst)    
+    diary_list = []
+    for _ in range(len(lst)):
+        diary = Diary.objects.create(
+            title = '',
+            content = '',
+            weather = None,
+            feeling = None,
+        )
+        diary_list.append(str(diary.id))
+    
+    new_data = MemberPicture.objects.create(
+        member_id = memberId,
+        picture_id = pictureId,
+        uncolored_dot_info = uncolored_dot_string,
+        colored_dot_info = "",
+        diary_id = " ".join(diary_list)
+    )
+    # return render()
+    
 
-def choosen_picture(request, member_picture_id):
+def choosen_picture(request, diary_id, memberpicture_id):
 
     if request.method=="GET":
-        diary_data=get_object_or_404(Diary,pk=id)
-        member_picture_data=get_object_or_404(MemberPicture,pk=id)
-
+        diary_data=get_object_or_404(Diary,pk=diary_id)
         choosen_picture_dic={
                 "diary_id"        : diary_data.diary_id,
-                "member_id"        : member_picture_data.member_id,
-                "picture_id"        : member_picture_data.pictrue_id,
-
                 "title"     : diary_data.title,
                 "content" : diary_data.content,
                 "weather"     : diary_data.weather,
-                "feeling"  : diary_data.feeling,
-
-                "uncolored_dot_info":member_picture_data.uncolored_dot_info,
-                "colored_dot_info":member_picture_data.colored_dot_info
-                
+                "feeling"  : diary_data.feeling,          
         }
         
-        # return render(request,)
+        return render(request, output.html, {"choosen_picture_dic":choosen_picture_dic})
 
     elif request.method=="PATCH":
+        member_picture_data=get_object_or_404(MemberPicture,pk=memberpicture_id)
         new_diary=Diary.objects.update({
         "title"  :  request.POST['title'],
         "content"  :  request.POST['content'],
@@ -47,44 +66,5 @@ def choosen_picture(request, member_picture_id):
             "colored_dot_info":new_colored_dot_info
         })
 
-        # return render(request,)
+        return render(request, input.html, {"new_dot":new_dot} )
 
-
-
-
-
-
-
-
-
-
-
-def input(request, id):
-    if request.method=="POST":
-        diary_data=get_object_or_404(Diary, pk=id)
-        diary_data.title=request.POST['title']
-        diary_data.content=request.POST['content']
-        diary_data.create_date=request.POST['create_date']
-        diary_data.updated_date=request.POST['updated_date']
-        diary_data.weather=request.POST['weather']
-        diary_data.feeling=request.POST['feeling']
-
-def practice(request):
-    print(request.user.id)
-
-
-
-
-def output(request, id):
-    # if 'user_email' not in request.session:
-    #     return redirect('login_view')
-    # widget = get_object_or_404(StoreWidget, seq=id)
-    # related_widgets=StoreWidget.objects.filter(widget_type=widget.widget_type).exclude(seq=id)
-    # email= request.session['user_email']
-    # user = User_info.objects.get(user_email=email)
-
-    # # comment = get_object_or_404(Comment, id=id)
-    # comments = Comment.objects.filter(widget=widget)
-    date = get_object_or_404(date, id=id)
-
-    return render(request, 'output.html', {"date": date, 'title': title})
