@@ -1,0 +1,104 @@
+:root{
+  --input-error: #e6584e;
+  --input-error-border: #e6584e;
+}
+
+body {
+  background-color: #ECE7E1;
+}
+.container .Profile-container{
+  display : flex;
+  justify-content: center;
+  margin-bottom :3vh;
+}
+.container .Profile-img{
+ position :relative;
+ 
+}
+
+.container .Profile-add{
+  position : absolute;
+  top : 28.5vh;
+  right : 96vh;
+}
+
+.Logo-Container {
+  justify-content: center;
+  width: 98vw;
+  margin-top: 5vh;
+}
+
+.Logo {
+  width: 8vw;
+  height: 17vh;
+  float: right;
+}
+.container{
+  background-color: white;
+  width: 33vw;
+  height: 90vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cp-input{
+  border : none;
+  border-bottom: 1px solid #848484;
+  width: 24vw;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1vw;
+  line-height: 5vh;
+  text-align: left;
+  padding-left: 0.5vw;
+  color: #848484;
+}
+.container .Signup-text{
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2vw;
+  line-height: 12vh;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.container .Container{
+  margin-bottom : 10px;
+}
+
+.container .Finish-Container {
+  background-color: #FDFDFD;
+  border : none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0.5vw;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2vw;
+  line-height: 4vh;
+  text-align: center;
+  color: #000000;
+}
+.container .Submit-button{
+  margin-top : 10vh;
+  display: flex;
+  justify-content: center;
+}
+.cp-input.error {
+  padding-right: -7px;
+  border: 1px solid var(--input-error-border);
+  background-position: top 13px right 13px;
+
+  background-size: 29px;
+  background-repeat: no-repeat;
+}
+
+
+.error-message {
+  color: var(--input-error);
+  font-size: 14px;
+  line-height: 1.7;
+}

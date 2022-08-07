@@ -1,8 +1,0 @@
-{% load account socialaccount %} {% block title %}Home{% endblock %} {% block
-content %} {% if user.is_authenticated %} {{ user.username }} 님 환영합니다!🦁
-<p><a href="{% url 'logout' %}">로그아웃</a></p>
-{% else %}
-<p>로그인이 필요합니다.</p>
-<a href="{% url 'login' %}">로그인</a>
-<a href="{% provider_login_url 'kakao' method='oauth2' %}">카카오로 로그인</a>
-{% endif %} {% endblock %}

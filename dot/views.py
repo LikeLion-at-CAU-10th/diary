@@ -8,6 +8,7 @@ def cherry(request):
 
 
 def input(request):
+    request.user.id
     return render(request, 'input.html')
 
 
