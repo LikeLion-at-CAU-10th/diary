@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 from .models import *
+from django.forms import modelformset_factory
 
 def init_picture(request, id):
     memberId = request.user.id
@@ -21,11 +22,6 @@ def init_picture(request, id):
             feeling = None,
         )
         diary_list.append(str(diary.id))
-    # User 안에있는 picutre_list에서 picutre_id있는 string을 없애야됨...
-    # update해야함 >>> "1 2 3 4 5" >> string
-    # pictureId = int 
-    # arr = map(int,string.split()) -- > 얘는 안에 다 int형임
-    # new_string = " ".join(arr)
     
     new_data = MemberPicture.objects.create(
         member_id = memberId,
@@ -34,6 +30,18 @@ def init_picture(request, id):
         colored_dot_info = "",
         diary_id = " ".join(diary_list)
     )
+
+    num=get_object_or_404(User, memberId)
+    num=num.picture_list
+    arr=list(map(int,num.split()))
+    for n in arr: 
+        if pictureId==n:
+            arr.remove(n)
+    new_picture =' '.join(map(str, arr))
+    new_picture_list=User.objects.update({
+        "picture_list": request.POST['new_picture_list'],
+    })
+    
     # return render()
     
 
@@ -62,14 +70,18 @@ def choosen_picture(request, diary_id, memberpicture_id):
     
         
         uncolored=member_picture_data.uncolored_dot_info
-        new_uncolored_dot_info=uncolored-uncolored[:-1] 
-
+        
+        arr=list(map(int,uncolored.split()))
+        arr.pop()
+        arr =' '.join(map(str, arr))
+        new_uncolored_dot_info=arr
+    
         colored=member_picture_data.colored_dot_info
         new_colored_dot_info=str(int(colored)+1)
 
         new_dot=MemberPicture.objects.update({
-            "uncolored_dot_info":new_uncolored_dot_info,
-            "colored_dot_info":new_colored_dot_info
+            "uncolored_dot_info": request.POST['new_uncolored_dot_info'],
+            "colored_dot_info": request.POST['new_colored_dot_info']
         })
 
         return render(request, input.html, {"new_dot":new_dot} )
@@ -80,7 +92,12 @@ def pictures(reqeuest):
     pass
 
 def practice(request):
-    picture = Picture.objects.filter(pk = 1)
-   
-    context = {"picture" : picture[0]}
-    return render(request, 'dot/practice.html', context = context)
+    if request.method=="GET":
+        picture = Picture.objects.all()
+        context_list=[]
+        for i in range(len(picture)):
+            context_list.append(picture[i])
+    
+        context = {"picture_list" : context_list}
+        return render(request, 'dot/practice.html', context = context)
+
