@@ -1,0 +1,83 @@
+{% extends "accounts_base.html" %}
+{% load static %}
+{% load account socialaccount %}
+{% load widget_tweaks %}
+{% block content %}
+<main class = "container">
+    
+      <div class = "Login-Container">
+        <div class="Login-text">로그인</div>
+        <form  method="post" >
+          {% csrf_token %}
+          {% for error in form.non_field_errors %}
+            <div class="form-error error-message">{{ error }}</div>
+          {% endfor %}
+          <div class ="Container">
+            {{ form.login|add_class:"cp-input"|attr:"placeholder:이메일을 입력하세요"|add_error_class:"error" }}
+            {% for error in form.login.errors %}
+              <div class="form-error error-message">{{ error }}</div>
+            {% endfor %}
+          </div>
+          <div class="Container">
+            {{ form.password|add_class:"cp-input"|attr:"placeholder:비밀번호"|add_error_class:"error" }}
+            {% for error in form.password.errors %}
+              <div class="form-error error-message">{{ error }}</div>
+            {% endfor %}
+          </div>
+          <div class = "login-button">
+            <button class="cp-submit"  type="submit">로그인</button>
+          </div>
+        </form>
+        <div class="Search-Container">
+          <a href = "#">
+            <div class="Search-text">아이디 찾기</div>
+          </a>
+          <div class="vl"></div>
+          <a href = "#">
+            <div class="Search-text">비밀번호 찾기</div>
+          </a>
+          <div class="vl"></div>
+          <a href = "../signup">
+            <div class="Search-text">회원가입</div>
+          </a>
+        </div>
+        <div class="Easy-container">
+          <hr>
+          <div class="Easy-text">간편 로그인</div>
+          <hr>
+        </div>
+        
+        <div class="SNS-Container">
+          <div class="Naver-Container">
+              <div class="Naver-Logo"> 
+                <a href = "{% provider_login_url 'naver' %}">
+                  <img src= {% static 'accounts/svg/Naver.svg' %} alt="naver" class="Naver"> 
+                </a>
+              </div>
+              <div class="Naver-text">네이버</div>
+          </div>
+
+          <div class="Kakao-Container">
+              <div class="Kakao-Logo">
+                <a href = "{% provider_login_url 'kakao' %}">
+                  <img src= {% static 'accounts/svg/Kakao.svg' %} alt="kakao" class="Kakao">
+                </a>
+              </div>
+              <div class="Kakao-text">카카오톡</div>
+          </div>
+
+          <div class="Google-Container">
+              <div class="Google-Logo">
+                  <img src= {% static 'accounts/svg/Google.svg' %} alt="google" class="Google">
+              </div>
+              <div class="Google-text">구글</div>
+          </div>
+        </div>
+      </div>
+        
+    
+    
+    
+
+</main>
+{% endblock content %}
