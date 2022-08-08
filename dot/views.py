@@ -6,8 +6,9 @@ from .models import *
 def init_picture(request, id):
     memberId = request.user.id
     pictureId = id
+
     picture_data = get_object_or_404(Picture, pk = id)
-    lst = list(range(1,len(picture_data) + 1))
+    lst = list(range(1,len(picture_data.dot_count) + 1))
     for i in range(len(lst)):
         lst[i] = str(lst[i])
     uncolored_dot_string = " ".join(lst)    
@@ -20,6 +21,11 @@ def init_picture(request, id):
             feeling = None,
         )
         diary_list.append(str(diary.id))
+    # User 안에있는 picutre_list에서 picutre_id있는 string을 없애야됨...
+    # update해야함 >>> "1 2 3 4 5" >> string
+    # pictureId = int 
+    # arr = map(int,string.split()) -- > 얘는 안에 다 int형임
+    # new_string = " ".join(arr)
     
     new_data = MemberPicture.objects.create(
         member_id = memberId,
@@ -69,15 +75,12 @@ def choosen_picture(request, diary_id, memberpicture_id):
         return render(request, input.html, {"new_dot":new_dot} )
 # GET/ POST:
 # GET : User.picture_list 끌고와서 알아서 보여줘
-# <img src = {% static %}
-# POST : 
-# 
-
+# <img src = "{{ picture.picture_info.url }}"> <-- 이거로 접근가능 ... 이거 이용해서 화면에 잘 보여주도록 
 def pictures(reqeuest):
     pass
 
 def practice(request):
     picture = Picture.objects.filter(pk = 1)
-
-    context = {"picture" : picture}
+   
+    context = {"picture" : picture[0]}
     return render(request, 'dot/practice.html', context = context)
