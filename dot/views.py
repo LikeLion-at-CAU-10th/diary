@@ -84,3 +84,4 @@ def practice(request):
    
     context = {"picture" : picture[0]}
     return render(request, 'dot/practice.html', context = context)
+

@@ -7,11 +7,16 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="{%url 'create'%}" method="POST">
-      <input type="date" name="date" />
-      <input type="text" placeholder="제목" />
+    <form action="{%url 'update' diary_dot.diary_id%}" method="POST">
+      <input type="date" name="date" value="{{diary_dot.date}}" />
+      <input type="text" placeholder="제목" value="{{diary_dot.title}}" />
       <input type="file" />
-      <input type="text" placeholder="내용" name="content" />
+      <input
+        type="text"
+        placeholder="내용"
+        name="content"
+        value="{{diary_dot.content}}"
+      />
       <input type="submit" value="저장" />
       <input type="reset" value="취소" />
     </form>
