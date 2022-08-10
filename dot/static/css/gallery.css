@@ -1,0 +1,62 @@
+body{
+    background-color: #ECE7E1;
+    
+    font-family:'Malgun Gothic';
+    font-size:12pt;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+.arrow{
+    width: 15px;
+}
+.logo{
+    width: 75px;
+    margin:10px 175px;
+}
+.box{
+    border:1px solid #FFFFFF;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    width: 550px;
+    height: 500px;
+    margin: 5px;
+    padding: 10px;
+}
+.logos{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.box-bottom{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 175px;
+    margin:10px 0px;
+}
+hr{
+    width: 500px;
+    border: 0.5px solid black;
+}
+.card{
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+p{
+    text-align: center;
+    margin:0
+}
+a{
+    text-align: center;
+
+}
