@@ -1,0 +1,124 @@
+body{
+    background-color: #ECE7E1;
+    
+    font-family:'Malgun Gothic';
+    font-size:12pt;
+    margin: 0px;
+    padding: 0px;
+
+}
+p{
+    margin: 0px;
+    padding: 0px;
+
+}
+canvas{
+    position: relative; 
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
+.canvases{
+    position: absolute;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+
+    width: 80px;
+    margin-top: 68px;
+    margin-left: 22px;
+}
+
+.c12{
+    width: 105px;
+    height: 70px;
+    margin-left: 60px
+}
+
+.c23{
+    width: 37px;
+    height: 120px;
+}
+
+
+.dot{
+    background-color: rgb(160, 160, 160);
+    border-radius: 100%;
+    width:12px;
+    height: 12px;
+
+    position: relative; 
+    z-index: 2;
+    cursor: pointer;
+    margin: 3px;
+}
+.img{
+    position: absolute; 
+    z-index: 1;
+    width: 385px;
+    border-radius: 2vh;
+    border: solid 1px black;
+    align-items: center;
+
+}
+.input{
+    display: none;
+}
+.card{
+    display: flex;
+    justify-content: center;
+
+}
+.dots{
+    display: flex;
+
+    /* justify-content: right;
+    text-align: right; */
+    align-items: center;
+    margin-left: 150px;
+    margin-top: 40px;
+
+    flex-direction: column;
+
+    position: relative;
+    z-index: 3;
+}
+.num{ 
+    position: relative; 
+    z-index: 2;
+}
+.column{
+    display: flex;
+}
+#d1{
+    margin-right: 210px;
+    margin-top: 49px;
+}
+
+#d3{
+    margin-left: 77px;
+    margin-top: 29px;
+}
+
+
+
+
+/* 1590px 이상 */
+@media (min-width:1590px) {
+    .dots{
+        margin-top: 40px;
+    }
+    #dot1{
+        margin-top: 3px;
+    } 
+}
+
+/* 1400px 이하
+@media (max-width:1400px) {
+   #dot4{
+    margin-top: -1px;
+   }
+  
+} */
