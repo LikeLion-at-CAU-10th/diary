@@ -6,6 +6,5 @@ import config
 urlpatterns = [
   path('', pictures, name = 'picture_list') ,
   # path('<int:id>')
-  path('practice/', practice),
 ]
 

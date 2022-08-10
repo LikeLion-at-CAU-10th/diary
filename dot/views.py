@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from .models import *
 from django.forms import modelformset_factory
 
+# 그림선택후 그림에 대한 정보. 컬러드닷, 언컬러드. 일기생성. 유저객체
 def init_picture(request, id):
     memberId = request.user.id
     pictureId = id
@@ -88,16 +89,26 @@ def choosen_picture(request, diary_id, memberpicture_id):
 # GET/ POST:
 # GET : User.picture_list 끌고와서 알아서 보여줘
 # <img src = "{{ picture.picture_info.url }}"> <-- 이거로 접근가능 ... 이거 이용해서 화면에 잘 보여주도록 
-def pictures(reqeuest):
-    pass
 
-def practice(request):
+# 그림 선택.
+def pictures(request):
     if request.method=="GET":
-        picture = Picture.objects.all()
+        memberid=request.user.id
+        user_info=User.objects.filter(pk=memberid)[0]
+        # 업로드한 picturelist에 대한 정보=charfield="1 2 3 4"=picture_id
+
+        user_picture=user_info.picture_list 
+        print(user_picture)
+        user_picture=user_picture.split()
+        for i in range(len(user_picture)):
+            user_picture[i]=int(user_picture[i])
+        # user_picture=list(int,user_picture))
+        # user_picture=[1,2,3,4]
         context_list=[]
-        for i in range(len(picture)):
-            context_list.append(picture[i])
-    
+        for i in user_picture:
+            picture = Picture.objects.filter(pk=i)[0]
+            context_list.append(picture)
+
         context = {"picture_list" : context_list}
-        return render(request, 'dot/practice.html', context = context)
+        return render(request, 'dot/pictures.html', context = context)
 
