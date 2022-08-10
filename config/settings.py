@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-import os
-import json
+import os, json
 from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 secret_file = os.path.join(BASE_DIR, 'secrets.json')
 with open(secret_file) as f:
     secrets = json.loads(f.read())
-
 
 def get_secret(setting):
     """비밀 변수를 가져오거나 명시적 예외를 반환한다."""
@@ -53,18 +51,19 @@ DJANGO_INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'widget_tweaks',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.naver',
     'allauth.socialaccount.providers.kakao',
-
+    
 ]
 MY_APPS = [
     'dot',
     'accounts',
 ]
-INSTALLED_APPS = MY_APPS + DJANGO_INSTALLED_APPS
+INSTALLED_APPS  = MY_APPS + DJANGO_INSTALLED_APPS
 
 SITE_ID = 1
 
@@ -83,7 +82,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -145,23 +144,35 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFIELS_DIRS = [
+    BASE_DIR/ 'static',
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTHENTICATION_BACKENDS = (
+    
+    # Needed to login by username in Django admin, regardless of `allauth` 
+    'django.contrib.auth.backends.ModelBackend',
+ 
+    # `allauth` specific authentication methods, such as login by e-mail 
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+)
 
 AUTH_USER_MODEL = "accounts.User"
-
-LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/"
+ACCOUNT_SIGNUP_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = "index"
 ACCOUNT_LOGOUT_ON_GET = True
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SIGNUP_FORM_CLASS = "accounts.forms.SignupForm"
 ACCOUNT_SESSION_REMEMBER = True
 
-MEDIA_URL = '/media/'
+MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

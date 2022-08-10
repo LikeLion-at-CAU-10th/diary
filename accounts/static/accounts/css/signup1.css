@@ -1,0 +1,79 @@
+
+
+
+
+.Password-Container {
+    background-color: white;
+    border-bottom: 1px solid #848484;
+    width: 24vw;
+}
+
+.Password-text {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 5vh;
+    text-align: left;
+    padding-left: 0.5vw;
+    color: #848484;
+}
+
+.Check-Container {
+    background-color: white;
+    border-bottom: 1px solid #848484;
+    width: 24vw;
+}
+
+.Check-text {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 5vh;
+    text-align: left;
+    padding-left: 0.5vw;
+    color: #848484;
+}
+
+.Nickname-Container {
+    background-color: white;
+    border-bottom: 1px solid #848484;
+    width: 24vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Nickname-text {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 5vh;
+    text-align: left;
+    padding-left: 0.5vw;
+    color: #848484;
+}
+
+.Nickname-box {
+    background-color: #ECE7E1;
+    padding: 0.2vw;
+}
+
+.Finish-Container {
+    background-color: #FDFDFD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.5vw;
+}
+
+.Finish-text {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2vw;
+    line-height: 4vh;
+    text-align: center;
+    color: #000000;
+}
