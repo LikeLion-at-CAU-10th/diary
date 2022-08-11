@@ -76,7 +76,7 @@ def choosen_picture(request, diary_id,member_picture_id):
                 "feeling"  : diary_data.feeling,          
         }
         
-        return render(request, 'dot/test.html', {"choosen_picture_dic":choosen_picture_dic})
+        return render(request, 'input.html', {"choosen_picture_dic":choosen_picture_dic})
 
     elif request.method=="PATCH":
         member_picture_data=get_object_or_404(MemberPicture,pk=member_picture_id)
@@ -103,7 +103,7 @@ def choosen_picture(request, diary_id,member_picture_id):
             "colored_dot_info": request.POST['new_colored_dot_info']
         })
 
-        return render(request, 'dot/test.html', {"new_dot":new_dot} )
+        return render(request, 'input.html', {"new_dot":new_dot} )
 
 
 # 그림 테마들 반환, url=/dot, 

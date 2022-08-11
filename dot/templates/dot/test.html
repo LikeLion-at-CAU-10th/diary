@@ -9,8 +9,21 @@
     <title>Document</title>
 </head>
 <body>
-    {{ colored_dot }}
+    <form action="/boards/complete/" method="post">
+
+        제목 : <input type="text" name="title">
+    
+        <br>
+    
+        내용 : <input type="text" name="content">
+    
+        <input type="submit" value="작성">
+    
+    </form>
+
+
+    <!-- {{ colored_dot }}
     {{ diary_id }} 
-    {{ picture_data }}
+    {{ picture_data }} -->
 </body>
 </html>
