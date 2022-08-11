@@ -5,6 +5,7 @@ from dot.views import *
 import config
 urlpatterns = [
   path('', pictures, name = 'picture_list') ,
-  # path('<int:id>')
+  path('<int:id>', init_picture, name = 'init_picture'),
+  path('diary/<int:diary_id>', choosen_picture, name = 'choosen_picture'),
 ]
 
