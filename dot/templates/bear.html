@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dot Diary</title>
+    <link rel="stylesheet" href="seven.css" />
+  </head>
+  <body>
+    <section class="card">
+      <img src="img/bear.png" class="img"></div>
+      <div class="dots">
+        <div class="column">
+            <p class="num" id="num1">1</p>
+            <div class="dot" id="dot1" onclick="click1()"></div>
+            <div class="dot seven" id="dot7" onclick="click7()"></div>
+            <p class="num seven" id="num7">7</p>
+        </div>
+        <div class="column">
+            <p class="num" id="num2">2</p>
+            <div class="dot" id="dot2" onclick="click2()"></div>
+            <div class="dot" id="dot6" onclick="click6()"></div>
+            <p class="num" id="num6">6</p>
+        </div>
+        <div class="column">
+            <p class="num" id="num3">3</p>
+            <div class="dot" id="dot3" onclick="click3()"></div>
+            <div class="dot" id="dot5" onclick="click5()"></div>
+            <p class="num" id="num5">5</p>
+        </div>
+        <div class="column">
+            <div class="dot" id="dot4" onclick="click4()"></div>
+        </div>
+        <div class="column">
+            <p class="num" id="num4">4</p>
+        </div>
+
+      </div>
+      <div class="canvases">
+        <div class="flex">
+          <div class="c12">
+            <canvas id="onetwo" width="20" height="60"></canvas>
+          </div>
+          <div class="c67">
+            <canvas id="sixseven" width="20" height="60"></canvas>
+          </div>
+  
+        </div>
+        <div class="flex">
+          <div class="c23">
+            <canvas id="twothree" width="36" height="65"></canvas>
+          </div>
+          <div class="c56">
+            <canvas id="fivesix" width="36" height="65"></canvas>
+          </div>
+
+        </div>
+        <div class="flex">
+
+          <div class="c34">
+            <canvas id="threefour" width="88" height="40"></canvas>
+          </div>
+          <div class="c45">
+            <canvas id="fourfive" width="88" height="40"></canvas>
+          </div>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <script src="seven.js"></script>
+  </body>
+</html>

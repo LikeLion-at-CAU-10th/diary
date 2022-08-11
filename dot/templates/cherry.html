@@ -30,18 +30,20 @@
         </div>
         <div class="column grid">
           <!-- <a href="{url 'detail' blog.id }" id를 직접 숫자로 넣으면 될 듯-->
+            <!-- 1번점 -->
             {% if request.GET.count == 0 %}
-            <a href="./input.html">
+            <a href="{% url 'input' diary_dot.1 %}">
               <div class="dot" id="dot1"></div>
             </a>  
-            {% if request.GET.count == 1 %}
-            <a href="{% url 'output' ?.seq %}"> 
-              <div class="dot" id="dot1"></div>
+            {% else %}
+            <a href="{% url 'output' diary_dot.1 %}"> 
+              <div class="dot" id="dot1" ></div>
             </a> 
-            <a href="./input.html">
+            {% endif %}
+            <!-- 5번점 -->
+            <a href="{% url 'input' diary_dot.5 %}">
               <div class="dot" id="dot5"></div>
             </a>
-
         </div>
       </div>
       <div class="canvases">

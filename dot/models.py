@@ -34,7 +34,7 @@ class MemberPicture(models.Model):
 
     uncolored_dot_info = models.CharField(verbose_name="아직안쓴점", max_length=200)
     colored_dot_info = models.CharField(verbose_name="쓴점", max_length=200)
-
+    diary_id=models.CharField(verbose_name="일기아이디",max_length=200, null=True,blank=True)
 
 class Diary(models.Model):
     diary_id = models.AutoField(primary_key=True)
