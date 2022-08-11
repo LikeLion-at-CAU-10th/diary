@@ -10,9 +10,11 @@
        
         <div class="Profile-container">
             <img src={% static 'accounts/svg/Profile.svg' %} alt="profile" class="Profile-img">
-            <a href = "#">
-              <img src={% static 'accounts/svg/Profile Add.svg' %} alt="profile" class="Profile-add">
-            </a>
+            <label for = "id_profile" style = "position : absolute; top : 261px; left: 794px;"> 
+              <img src = {% static 'accounts/svg/Profile Add.svg' %}>
+            </label>
+            <input type = "file" class = "profile_button" name = "profile" accept = "image/*" id = "id_profile" style = "display : none">
+            
         </div>
 
         <div class="Container">

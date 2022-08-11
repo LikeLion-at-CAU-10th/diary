@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="gallery.css" />
+
+    <title>gallery</title>
+  </head>
+  <body>
+    <div class="box">
+      <div class="logos">
+        <img src="img/leftarrow.svg" class="arrow" />
+        <img src="img/coffee.png" class="logo" />
+        <img src="img/rightarrow.svg" class="arrow" />
+      </div>
+      <hr />
+      <!-- {%for ? in ?%}
+        <a href="{%url '?'%}">
+          <img src="{% static '?'%}" />
+        </a>
+        <p>{{?.date}} ~ {{?.date}}</p>
+        {%endfor%} -->
+      <div class="box-bottom">
+        <!-- {%for i in ?%} -->
+        <div class="cards">
+          <a href="rocket.html">
+            <img src="img/rocket.png" class="card" />
+          </a>
+          <p>7.21 ~ 8.10</p>
+        </div>
+
+        <!-- {%endfor%} -->
+      </div>
+    </div>
+  </body>
+</html>

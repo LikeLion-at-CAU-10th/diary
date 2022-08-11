@@ -8,9 +8,7 @@
   <title>Document</title>
 </head>
 <body>
-  {% for picture in picture_list %}
-    <p>{{ picture.picture_id }}</p>
-    <img src = "{{ picture.picture_info.url }}">
-  {% endfor %}
+  <p>{{ picture.picture_id }}</p>
+  <img src = "{{ picture.picture_info.url }}">
 </body>
 </html>
