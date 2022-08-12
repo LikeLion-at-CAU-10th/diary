@@ -7,11 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="{%url 'create'%}" method="POST">
+    <form action="{%url 'choosen_picture' choosen_picture_dic.diary_id choosen_picture_dic.member_picture_id %}" method="Post">
+      {% csrf_token %}
+      {{ choosen_picture_dic }}
       <input type="date" name="date" />
-      <input type="text" placeholder="제목" />
+      <input type="text" placeholder="제목" value="{{ choosen_picture_dic.title }}" />
       <input type="file" />
-      <input type="text" placeholder="내용" name="content" />
+      <textarea> {{ choosen_picture_dic.content }} </textarea>
       <input type="submit" value="저장" />
       <input type="reset" value="취소" />
     </form>

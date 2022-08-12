@@ -67,27 +67,26 @@ def choosen_picture(request, diary_id,member_picture_id):
 
     if request.method=="GET":
         diary_data=Diary.objects.filter(pk=diary_id)[0]
-        print(diary_data)
         choosen_picture_dic={
                 "diary_id"        : diary_data.diary_id,
+                "member_picture_id" : member_picture_id,
                 "title"     : diary_data.title,
                 "content" : diary_data.content,
                 "weather"     : diary_data.weather,
                 "feeling"  : diary_data.feeling,          
         }
-        
         return render(request, 'input.html', {"choosen_picture_dic":choosen_picture_dic})
 
     elif request.method=="PATCH":
-        member_picture_data=get_object_or_404(MemberPicture,pk=member_picture_id)
-        new_diary=Diary.objects.update({
-        "title"  :  request.POST['title'],
-        "content"  :  request.POST['content'],
-        "weather"   :  request.POST['weather'],
-        "feeling"   :  request.POST['feeling']
-        })
-    
-        
+        diary_data.title=request.POST['title']
+        diary_data.content=request.POST['content']
+        diary_data.weather=request.POST['weather']
+        diary_data.feeling=request.POST['feeling']
+        diary_data.save()
+
+        print(diary_data)
+
+        member_picture_data=MemberPicture.objects.filter(pk=member_picture_id)[0]
         uncolored=member_picture_data.uncolored_dot_info
         
         arr=list(map(int,uncolored.split()))
@@ -103,7 +102,7 @@ def choosen_picture(request, diary_id,member_picture_id):
             "colored_dot_info": request.POST['new_colored_dot_info']
         })
 
-        return render(request, 'input.html', {"new_dot":new_dot} )
+        return render(request, 'output.html', {"new_dot":new_dot} )
 
 
 # 그림 테마들 반환, url=/dot, 
@@ -128,3 +127,7 @@ def pictures(request):
         print(context)
 
         return render(request, 'dot/pictures.html', context = context)
+
+
+def cherry(request):
+    return render(request, 'cherry.html')
