@@ -1,61 +1,65 @@
-{% extends "accounts_base.html" %}
-{% load static %}
-{% load widget_tweaks %}
-{% block content %}
-<main class = "container">
-    <div class="Signup-text">회원가입</div>
-    <form  method="post" action = "/accounts/signup/" enctype = "multipart/form-data">
-      
-      {% csrf_token %}
-       
-        <div class="Profile-container">
-            <img src={% static 'accounts/svg/Profile.svg' %} alt="profile" class="Profile-img">
-            <label for = "id_profile" style = "position : absolute; top : 261px; left: 794px;"> 
-              <img src = {% static 'accounts/svg/Profile Add.svg' %}>
-            </label>
-            <input type = "file" class = "profile_button" name = "profile" accept = "image/*" id = "id_profile" style = "display : none">
-            
-        </div>
+{% extends "accounts_base.html" %} {% load static %} {% load widget_tweaks %}
+{%block content %}
+<section class="container">
+  <div class="Signup-text">회원가입</div>
+  <form method="post" action="/accounts/signup/" enctype="multipart/form-data">
+    {% csrf_token %}
 
-        <div class="Container">
-            {{ form.email|add_class:"cp-input"|attr:"placeholder:아이디(이메일)을 입력해주세요"|add_error_class:"error" }}
-            {% comment %} <input class = "input-block" type="email" name="email" placeholder="아이디(이메일)을 입력해주세요" autocomplete="email" required id="id_email"> {% endcomment %}
-            {% for error in form.email.errors %}
-                <div class="error-message">{{ error }}</div>
-            {% endfor %}
-        </div>
-        <div class = "Container">
-          {{ form.nickname|add_class:"cp-input"|attr:"placeholder:닉네임을 입력하세요"|add_error_class:"error" }}
-          
-          {% comment %} <input class = "input-block"type="text" name="nickname" maxlength="15" placeholder="닉네임을 입력해주세요" class="cp-input" required id="id_nickname"> {% endcomment %}
-          {% for error in form.nickname.errors %}
-            <div class="error-message">{{ error }}</div>
-          {% endfor %}
-          
-        </div>
-        <div class = "Container">
-          {{ form.password1|add_class:"cp-input"|attr:"placeholder:비밀번호를 입력하세요"|add_error_class:"error" }}
+    <div class="Profile-container">
+      <img
+        src="{% static 'accounts/svg/Profile.svg' %}"
+        alt="profile"
+        class="Profile-img"
+      />
 
-          {% comment %} <input class = "input-block"type="password" name="password1" placeholder="비밀번호" autocomplete="new-password" class="cp-input" required id="id_password1"> {% endcomment %}
-          {% for error in form.password1.errors %}
-            <div class="error-message">{{ error }}</div>
-          {% endfor %}
-        </div>
-        <div class = "Container">
-        
-          {{ form.password2|add_class:"cp-input"|attr:"placeholder:비밀번호를 한번더 입력하세요"|add_error_class:"error" }}
+      <label for="id_profile">
+        <img
+          src="{% static 'accounts/svg/Profile Add.svg' %}"
+          style="
+            position: relative;
+            z-index: 2;
+            padding-left: 15vh;
+            padding-top: 12vh;
+          "
+        />
+      </label>
+      <input
+        type="file"
+        class="profile_button"
+        name="profile"
+        accept="image/*"
+        id="id_profile"
+        style="display: none"
+      />
+    </div>
 
-          {% comment %} <input class = "input-block" type="password" name="password2" placeholder="비밀번호 확인" class="cp-input" required id="id_password2"> {% endcomment %}
-          {% for error in form.password2.errors %}
-            <div class="error-message">{{ error }}</div>
-          {% endfor %}   
-        </div>
-        <div class = "Submit-button">
-            <button class="Finish-Container"  type="submit">회원가입</button>
-        </div>
-    </form>
-    
-    
-
-</main>
+    <div class="Container">
+      {{form.email|add_class:"cp-input"|attr:"placeholder:아이디(이메일)을입력해주세요"|add_error_class:"error"}}
+      {% for error in form.email.errors %}
+      <div class="error-message">{{ error }}</div>
+      {% endfor %}
+    </div>
+    <div class="Container">
+      {{form.nickname|add_class:"cp-input"|attr:"placeholder:닉네임을입력하세요"|add_error_class:"error"}}
+      {%for error in form.nickname.errors%}
+      <div class="error-message">{{ error }}</div>
+      {% endfor %}
+    </div>
+    <div class="Container">
+      {{form.password1|add_class:"cp-input"|attr:"placeholder:비밀번호를입력하세요"|add_error_class:"error"}}
+      {% for error in form.password1.errors %}
+      <div class="error-message">{{ error }}</div>
+      {% endfor %}
+    </div>
+    <div class="Container">
+      {{form.password2|add_class:"cp-input"|attr:"placeholder:비밀번호를한번더입력하세요"|add_error_class:"error"}}
+      {% for error in form.password2.errors %}
+      <div class="error-message">{{ error }}</div>
+      {% endfor %}
+    </div>
+    <div class="Submit-button">
+      <button class="Finish-Container" type="submit">회원가입</button>
+    </div>
+  </form>
+</section>
 {% endblock content %}
