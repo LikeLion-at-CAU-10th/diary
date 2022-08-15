@@ -63,8 +63,7 @@ def init_picture(request, id):
     return render(request, 'dot/test.html', context=context)
     
 
-def choosen_picture(request, diary_id,member_picture_id):
-
+def choosen_picture_get(request, diary_id,member_picture_id):
     if request.method=="GET":
         diary_data=Diary.objects.filter(pk=diary_id)[0]
         choosen_picture_dic={
@@ -77,33 +76,38 @@ def choosen_picture(request, diary_id,member_picture_id):
         }
         return render(request, 'input.html', {"choosen_picture_dic":choosen_picture_dic})
 
-    elif request.method=="PATCH":
-        diary_data.title=request.POST['title']
-        diary_data.content=request.POST['content']
-        diary_data.weather=request.POST['weather']
-        diary_data.feeling=request.POST['feeling']
-        diary_data.save()
 
-        print(diary_data)
-
+def choosen_picture_patch(request, diary_id,member_picture_id):
+    if request.method=="PATCH":
         member_picture_data=MemberPicture.objects.filter(pk=member_picture_id)[0]
         uncolored=member_picture_data.uncolored_dot_info
-        
         arr=list(map(int,uncolored.split()))
-        arr.pop()
+        del arr[0]
         arr =' '.join(map(str, arr))
         new_uncolored_dot_info=arr
     
         colored=member_picture_data.colored_dot_info
-        new_colored_dot_info=str(int(colored)+1)
+        try :
+            new_colored_dot_info=int(colored)+1
+        except:
+            new_colored_dot_info=1
 
-        new_dot=MemberPicture.objects.update({
-            "uncolored_dot_info": request.POST['new_uncolored_dot_info'],
-            "colored_dot_info": request.POST['new_colored_dot_info']
-        })
+        diary_data=Diary.objects.filter(pk=diary_id)[0]
+        diary_data.title=request.POST['title']
+        diary_data.content=request.POST['content']
+        diary_data.weather=request.POST['weather']
+        diary_data.feeling=request.POST['feeling']
+        member_picture_data.uncolored_dot_info= request.POST['new_uncolored_dot_info']
+        member_picture_data.colored_dot_info= request.POST['new_colored_dot_info'] 
+        member_picture_data.save()
 
-        return render(request, 'output.html', {"new_dot":new_dot} )
+        diary_data.save()
+        
+       
+        print(diary_data)
 
+        return render(request, 'output1.html', {"diary_data":diary_data}, {"member_picture_data":member_picture_data} )
+    return render(request, 'output1.html')
 
 # 그림 테마들 반환, url=/dot, 
 # context={'picture_list': [<Picture: Picture object (1)>, <Picture: Picture object (2)>, 

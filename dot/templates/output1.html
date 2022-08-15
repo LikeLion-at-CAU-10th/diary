@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,15 +8,16 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="{%url 'choosen_picture_patch' choosen_picture_dic.diary_id choosen_picture_dic.member_picture_id %}" method="Post">
       {% csrf_token %}
-      {{ choosen_picture_dic }}
+      {{ member_picture_data }}
+      {{ diary_data }}
+
       <input type="date" name="date" />
-      <input type="text" placeholder="제목" value="{{ choosen_picture_dic.title }}" />
+      <input type="text" placeholder="제목" value="{{ diary_data.title }}" />
       <input type="file" />
-      <textarea> {{ choosen_picture_dic.content }} </textarea>
+      <textarea> {{ diary_data.content }} </textarea>
       <input type="submit" value="저장" />
       <input type="reset" value="취소" />
-    </form>
+
   </body>
 </html>
