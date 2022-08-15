@@ -27,9 +27,15 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     # path('accounts/', include("django.contrib.auth.urls")),
     path('accounts/', include('allauth.urls')),
+<<<<<<< HEAD
     # path('cherry/', cherry, name='cherry'),
     path('dot/', include('dot.urls')),
     
+=======
+
+    path('dot/' ,include('dot.urls')),
+
+>>>>>>> 94aa01548fc47bfe0b4c08b5eee7eaf9ea720d80
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
