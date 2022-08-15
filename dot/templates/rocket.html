@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,22 +9,31 @@
     <link rel="stylesheet" href="../static/css/rocket.css" />
   </head>
   <body>
+    {% if colored_dot == 0 %}
     <section class="card">
       <img src="../static/img/rocket.png" class="img"></div>
-      <div class="dots">
-        <div class="column">
-            <p class="num" id="num2">2</p>
+      <div class = "dots">
+        <div class = "column">
+            <p class = "num" id="num2">2</p>
         </div>
         <div class="column">
-            <div class="dot" id="dot2" onclick="click2()"></div>
-        </div>
+            
 
-        <div class="column" id="d1">
-            <p class="num" id="num1">1</p>
-            <div class="dot" id="dot1" onclick="click1()"></div>
+              <div class="dot" id="dot2"></div>
+            
         </div>
+      
+        <div class="column" id="d1">
+
+            <p class="num" id="num1">1</p>
+            <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+              {% csrf_token %}
+              <button class="dot" id="dot1" ></button>
+            </form>
+        </div>
+        
         <div class="column" id="d3">
-            <div class="dot" id="dot3" onclick="click3()"></div>
+            <div class="dot" id="dot3" ></div>
             <p class="num" id="num3">3</p>
 
         </div>
@@ -40,7 +50,119 @@
         
       </div>
     </section>
-
+    
     <script src="../static/js/rocket.js"></script>
+    {% elif colored_dot == 1 %}
+    <section class="card">
+      <img src="../static/img/rocket.png" class="img"></div>
+      <div class = "dots">
+        <div class = "column">
+            <p class = "num" id="num2">2</p>
+        </div>
+        <div class="column">
+          <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}"  method = "GET" >
+            {% csrf_token %}
+            <button class="dot" id="dot2" ></button>
+          </form>
+        </div>
+      
+        <div class="column" id="d1">
+            <p class="num" id="num1">1</p>
+            <div class="dot" id="dot1" ></div>
+        </div>
+        
+        <div class="column" id="d3">
+            <div class="dot" id="dot3" ></div>
+            <p class="num" id="num3">3</p>
+
+        </div>
+        
+
+      </div>
+      <div class="canvases">
+          <div class="c12">
+            <canvas id="onetwo" width="105" height="70"></canvas>
+          </div>
+          <div class="c23">
+            <canvas id="twothree" width="37" height="120"></canvas>
+          </div>
+      </div>
+    </section>
+    
+    <script src="../static/js/rocket1.js"></script>
+    {% elif colored_dot == 2 %}
+    <section class="card">
+      <img src="../static/img/rocket.png" class="img"></div>
+      <div class = "dots">
+        <div class = "column">
+            <p class = "num" id="num2">2</p>
+        </div>
+        <div class="column">
+          <div class="dot" id="dot2"></div>
+        </div>
+      
+        <div class="column" id="d1">
+            <p class="num" id="num1">1</p>
+            <div class="dot" id="dot1" ></div>
+        </div>
+        
+        <div class="column" id="d3">
+          <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}"  method = "GET" >
+            {% csrf_token %}
+            <button class="dot" id="dot3" ></button>
+          </form>
+            <p class="num" id="num3">3</p>
+
+        </div>
+        
+
+      </div>
+      <div class="canvases">
+          <div class="c12">
+            <canvas id="onetwo" width="105" height="70"></canvas>
+          </div>
+          <div class="c23">
+            <canvas id="twothree" width="37" height="120"></canvas>
+          </div>
+      </div>
+    </section>
+    
+    <script src="../static/js/rocket2.js"></script>
+    {% else %}
+    <section class="card">
+      <img src="../static/img/rocket.png" class="img"></div>
+      <div class = "dots">
+        <div class = "column">
+            <p class = "num" id="num2">2</p>
+        </div>
+        <div class="column">
+          <div class="dot" id="dot2"></div>
+        </div>
+      
+        <div class="column" id="d1">
+            <p class="num" id="num1">1</p>
+            <div class="dot" id="dot1" ></div>
+        </div>
+        
+        <div class="column" id="d3">
+            <div class="dot" id="dot3" ></div>
+            <p class="num" id="num3">3</p>
+
+        </div>
+        
+
+      </div>
+      <div class="canvases">
+          <div class="c12">
+            <canvas id="onetwo" width="105" height="70"></canvas>
+          </div>
+          <div class="c23">
+            <canvas id="twothree" width="37" height="120"></canvas>
+          </div>
+      </div>
+    </section>
+    
+    <script src="../static/js/rocket3.js"></script>
+    {% endif %}
   </body>
 </html>

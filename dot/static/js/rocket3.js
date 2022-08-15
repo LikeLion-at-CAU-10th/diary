@@ -68,3 +68,8 @@ function click3() {
   dot3.style.backgroundColor = newColor;
   //   }
 }
+window.onload = function(){
+  click1(); 
+  click2();
+  click3();
+}
