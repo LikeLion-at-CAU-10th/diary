@@ -11,13 +11,20 @@
       {% csrf_token %}
       {{ member_picture_data }}
       {{ diary_data }}
-
       <input type="date" name="date" />
-      <input type="text" placeholder="제목" value="{{ diary_data.title }}" />
-      <input type="file" />
-      <textarea> {{ diary_data.content }} </textarea>
+      <input type="text" placeholder="제목" value="{{ diary_data.title }}" name = "title"/>
+      <input type="file" name =  />
+      <input type="text" placeholder="내용" value="{{ diary_data.content }}" name = "content"/>
+      <input type="text" placeholder="날씨" value="{{ diary_data.weather }}" name = "weather"/>
+      <input type="text" placeholder="기분" value="{{ diary_data.feeling }}" name = "feeling"/>
+      <input type="text" placeholder="컬러" value="{{ member_picture_data.new_colored_dot_info }}" name= 'member_picture_data.new_colored_dot_info'/>
+      <input type="text" placeholder="언컬러" value="{{ member_picture_data.new_uncolored_dot_info }}" name= 'member_picture_data.new_uncolored_dot_info'/>
+      
+            
+      
       <input type="submit" value="저장" />
       <input type="reset" value="취소" />
+      </form>
 
   </body>
 </html>

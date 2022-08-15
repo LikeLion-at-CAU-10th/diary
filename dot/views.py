@@ -74,7 +74,7 @@ def choosen_picture(request, diary_id,member_picture_id):
                 "weather"     : diary_data.weather,
                 "feeling"  : diary_data.feeling,          
         }
-        return render(request, 'input.html', {"choosen_picture_dic":choosen_picture_dic})
+        return render(request, 'diary.html', {"choosen_picture_dic":choosen_picture_dic})
 
     elif request.method=="POST":
         member_picture_data=MemberPicture.objects.filter(pk=member_picture_id)[0]
@@ -95,15 +95,20 @@ def choosen_picture(request, diary_id,member_picture_id):
         diary_data.content=request.POST['content']
         diary_data.weather=request.POST['weather']
         diary_data.feeling=request.POST['feeling']
-        member_picture_data.uncolored_dot_info= request.POST['new_uncolored_dot_info']
-        member_picture_data.colored_dot_info= request.POST['new_colored_dot_info'] 
-        member_picture_data.save()
         diary_data.save()
         
        
-        print(diary_data)
-        return redirect('choosen_picture_get')
-        # return render(request, 'output1.html', {"diary_data":diary_data})
+        member_picture_data.uncolored_dot_info= new_uncolored_dot_info
+        member_picture_data.colored_dot_info= new_colored_dot_info 
+        member_picture_data.save()
+
+        context={
+        "diary_data" : diary_data,
+        "member_picture_data": member_picture_data
+    }
+
+        
+        return render(request, 'diary_after.html', context=context)
     # return render(request, 'output1.html')
 
 # 그림 테마들 반환, url=/dot, 

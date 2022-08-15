@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: #ECE7E1;
+    /* 아니 이거 왜 안되냐고;미치고 팔짝뛰겠네 */
+}
+
+
+.nav-login {
+    float: right;
+    margin: 0px 10px 0px
+}
+
+.nav ul {
+    list-style-type: none;
+    float: left;
+}
+
+.nav li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    margin: 10px 0px 10px 0px;
+    /* padding..되긴 했는데 외..?된거지..?긁적 */
+}
+
+#line {
+    position: relative;
+    top: 500px;
+    left: 100px;
+}
+
+
+.input {
+    width: 951px;
+    height: 800px;
+    background-color: #F6F5F0;
+    position: relative;
+    top: 130px;
+    left: 230px;
+    display: block;
+}
+
+.date {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    right: 50px;
+
+}
+
+.file {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    right: 50px;
+}
+
+.text {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    right: 50px;
+    width: 850px;
+    height: 500px;
+    border: 0;
+}
+
+.save {
+    position: absolute;
+    top: 130px;
+    left: 800px;
+    right: 50px;
+    bottom: 600px;
+}

@@ -12,8 +12,19 @@
       {{ choosen_picture_dic }}
       <input type="date" name="date" />
       <input type="text" placeholder="제목" value="{{ choosen_picture_dic.title }}" name = "title"/>
-      <input type="file" name =  />
-      <textarea> {{ choosen_picture_dic.content }} </textarea>
+
+      <input type="text" placeholder="내용" value="{{ choosen_picture_dic.content }}" name = "content"/>
+      <input type="text" placeholder="날씨" value="{{ choosen_picture_dic.weather }}" name = "weather"/>
+      <input type="text" placeholder="기분" value="{{ choosen_picture_dic.feeling }}" name = "feeling"/>
+      {{ member_picture_data.new_colored_dot_info }}
+      {{ member_picture_data.new_uncolored_dot_info }}
+
+      
+      <!-- <input type="text" placeholder="컬러" value="{{ 'member_picture_data.new_colored_dot_info' }}" name= 'member_picture_data.new_colored_dot_info'/> --> -->
+      <!-- <input type="text" placeholder="언컬러" value="{{ 'member_picture_data.new_uncolored_dot_info' }}" name= 'member_picture_data.new_uncolored_dot_info'/> --> -->
+      
+            
+    
       <input type="submit" value="저장" />
       <input type="reset" value="취소" />
     </form>
