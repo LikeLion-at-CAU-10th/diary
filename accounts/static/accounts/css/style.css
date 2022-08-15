@@ -9,11 +9,12 @@ body {
 .container .Profile-container{
   display : flex;
   justify-content: center;
-  margin-bottom :3vh;
+  margin-bottom :40px;
 }
 .container .Profile-img{
- position :relative;
- 
+ /* position :relative; */
+  position:absolute;
+  z-index: 1;
 }
 
 .container .Profile-add{
@@ -83,7 +84,7 @@ body {
   color: #000000;
 }
 .container .Submit-button{
-  margin-top : 10vh;
+  margin-top : 20px;
   display: flex;
   justify-content: center;
 }
@@ -190,4 +191,3 @@ a {
   background-color: #ECE7E1;
   border : none;
 }
-\
