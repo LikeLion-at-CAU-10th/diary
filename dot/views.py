@@ -76,8 +76,12 @@ def choosen_picture(request, diary_id, memberpicture_id):
 # GET/ POST:
 # GET : User.picture_list 끌고와서 알아서 보여줘
 # <img src = "{{ picture.picture_info.url }}"> <-- 이거로 접근가능 ... 이거 이용해서 화면에 잘 보여주도록 
-def pictures(reqeuest):
-    pass
+# 이미지 누르면 갈 url과 어떠한 이미지를 띄울지랑 언제부터 언제까지의 일기인지
+def pictures(request):
+    user = User.objects.filter(pk = request.user.id)
+    print(user)
+    return render(request,'rocket.html')
+    
 
 def practice(request):
     picture = Picture.objects.filter(pk = 1)
