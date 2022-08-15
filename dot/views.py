@@ -1,5 +1,5 @@
 from cgi import test
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render,redirect
 
 # Create your views here.
 from .models import *
@@ -63,7 +63,7 @@ def init_picture(request, id):
     return render(request, 'dot/test.html', context=context)
     
 
-def choosen_picture_get(request, diary_id,member_picture_id):
+def choosen_picture(request, diary_id,member_picture_id):
     if request.method=="GET":
         diary_data=Diary.objects.filter(pk=diary_id)[0]
         choosen_picture_dic={
@@ -76,9 +76,7 @@ def choosen_picture_get(request, diary_id,member_picture_id):
         }
         return render(request, 'input.html', {"choosen_picture_dic":choosen_picture_dic})
 
-
-def choosen_picture_patch(request, diary_id,member_picture_id):
-    if request.method=="PATCH":
+    elif request.method=="POST":
         member_picture_data=MemberPicture.objects.filter(pk=member_picture_id)[0]
         uncolored=member_picture_data.uncolored_dot_info
         arr=list(map(int,uncolored.split()))
@@ -100,14 +98,13 @@ def choosen_picture_patch(request, diary_id,member_picture_id):
         member_picture_data.uncolored_dot_info= request.POST['new_uncolored_dot_info']
         member_picture_data.colored_dot_info= request.POST['new_colored_dot_info'] 
         member_picture_data.save()
-
         diary_data.save()
         
        
         print(diary_data)
-
-        return render(request, 'output1.html', {"diary_data":diary_data}, {"member_picture_data":member_picture_data} )
-    return render(request, 'output1.html')
+        return redirect('choosen_picture_get')
+        # return render(request, 'output1.html', {"diary_data":diary_data})
+    # return render(request, 'output1.html')
 
 # 그림 테마들 반환, url=/dot, 
 # context={'picture_list': [<Picture: Picture object (1)>, <Picture: Picture object (2)>, 
