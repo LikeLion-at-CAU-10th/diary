@@ -15,13 +15,6 @@ class Picture(models.Model):
     order = models.IntegerField(verbose_name='점순서')
 
 
-# class Dot(models.model):
-#     dot_id=models.AutoField(primary_key=True)
-#     picture_id=models.ForeignKey(to=Picture, on_delete=models.CASCADE, blank=False)
-#     x=models.IntegerField(verbose_name='점의x좌표')
-#     y=models.IntegerField(verbose_name='점의y좌표')
-
-
 class MemberPicture(models.Model):
     member_picture_id = models.AutoField(primary_key=True)
     member_id = models.ForeignKey(
@@ -34,7 +27,7 @@ class MemberPicture(models.Model):
 
     uncolored_dot_info = models.CharField(verbose_name="아직안쓴점", max_length=200)
     colored_dot_info = models.CharField(verbose_name="쓴점", max_length=200)
-
+    diary_id=models.CharField(verbose_name="일기아이디",max_length=200, null=True,blank=True)
 
 class Diary(models.Model):
     diary_id = models.AutoField(primary_key=True)

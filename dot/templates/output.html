@@ -13,13 +13,14 @@
     <input type="text" placeholder="내용" />
     <input type="submit" value="저장" />
     <input type="reset" value="취소" />
-
+    {{ new_dot }}
     <section>
-      <div class="date">{{diary_dot.date}}</div>
-      <div class="title">{{diary_dot.title}}</div>
-      <img class="img" src="{{diary_dot.image.url}}" />
-      <div class="detail">{{diary_dot.detail}}</div>
-      <a href="{%url 'edit' diary_dot.id%}"><button>수정</button></a>
+      <div class="date">{{diary_data.create_date}}</div>
+      <div class="title">{{diary_data.title}}</div>
+      <img class="img"  />
+      <div class="detail">{{diary_data.content}}</div>
+      <a href="{%url 'choosen_picture' choosen_picture_dic.diary_id choosen_picture_dic.member_picture_id %}"><button>수정</button></a>
     </section>
   </body>
 </html>
+
