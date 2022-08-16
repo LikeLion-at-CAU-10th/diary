@@ -33,10 +33,7 @@ def contains_number(value):
 class CustomPasswordValidator:
     def validate(self, password, user=None):
         if (
-            len(password) < 8
-            or not contains_lowercase_letter(password)
-            or not contains_number(password)
-            or not contains_special_character(password)
+            
         ):
             raise ValidationError("8자 이상의 영문 소문자, 숫자, 특수문자 조합이어야 합니다.")
 
