@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ECE7E1;
+
+}
+
+
+.nav-login {
+    float: right;
+    margin: 0px 10px 0px
+}
+
+.nav ul {
+    list-style-type: none;
+    float: left;
+}
+
+.nav li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    margin: 10px 0px 10px 0px;
+    /* padding..되긴 했는데 외..?된거지..?긁적 */
+}
+
+.wrap{
+    margin-left:350px;
+}
+#line {
+    position: relative;
+    top: 400px;
+    width: 700;
+    position: relative;
+    z-index: 1;
+    left: 20px;
+}
+
+#tape {
+    position: relative;
+    top:160px;
+    width: 200px;
+    position: relative;
+    z-index: 1;
+    left: 530px;
+}
+.text{
+    border: none;
+    padding-top:160px;
+}
+
+.text:focus{
+    outline: none;
+}
+
+
+
+
+.in{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    width:200px;
+    border: none; background: transparent
+}
+
+.weather{
+    margin-left: 350px;
+    width:80px;
+    border: none; background: transparent
+}
+
+.feeling{
+    width:80px;
+    border: none; background: transparent
+} 
+
+.input {
+    width: 900px;
+    height: 800px;
+    background-color: #F6F5F0;
+    position: relative;
+    top: 130px;
+    left: 180px;
+    display: block;
+       
+}
+
+.date {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    right: 50px;
+
+}
+
+
+.file {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    right: 50px;
+}
+
+.text {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    right: 50px;
+    width: 850px;
+    height: 500px;
+    border: 0;
+    background-color: #F6F5F0;
+
+}
+
+.save {
+    position: absolute;
+    top: 130px;
+    left: 800px;
+    right: 50px;
+    bottom: 600px;
+}

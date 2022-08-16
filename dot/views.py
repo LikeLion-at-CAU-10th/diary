@@ -5,6 +5,13 @@ from django.shortcuts import get_object_or_404, render,redirect
 from .models import *
 from django.forms import modelformset_factory
 
+# from dateime import datetime
+# from django.utils.dateformat import DateFormat
+
+# def date(request):
+#     tody=DateFormat(datetime.now()).format('Ymd')
+
+
 # 그림선택후 그림에 대한 정보. 컬러드닷, 언컬러드. 일기생성. 유저객체
 # 이거 나중에 배포하면 picture_id 다 조절해야됨.
 # 이미지랑 다이어리 id, 컬러드닷.
@@ -133,7 +140,7 @@ def choosen_picture(request, diary_id,member_picture_id):
                 "feeling"  : diary_data.feeling,          
         }
         
-        return render(request, 'input.html', {"choosen_picture_dic":choosen_picture_dic})
+        return render(request, 'diary.html', {"choosen_picture_dic":choosen_picture_dic})
 
     elif request.method=="POST":
         member_picture_data=MemberPicture.objects.filter(pk=member_picture_id)[0]

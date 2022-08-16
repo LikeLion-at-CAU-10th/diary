@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일기를 잇다</title>
+    <link rel="stylesheet" href="{% static '../static/css/diary.css' %}">
+    <!-- <link rel="stylesheet" href="../static/css/diary.css"> -->
+  </head>
+
+  <body>
+
+
+  <div class="whole">
+
+    
+     <img src="/static/img/tape.png" id="tape">
+
+     <img src="/static/img/Line.png" id="line">
+
+     <script src="../static/js/time.js"></script>
+
+    <div class="input">
+      <form action="{%url 'choosen_picture_patch' choosen_picture_dic.diary_id choosen_picture_dic.member_picture_id %}" method="Post">
+      
+      {% csrf_token %}
+      <!-- {{ choosen_picture_dic }} -->
+        <br>
+        <div class="wrap">
+          <input type="text" class="title" placeholder="제목" value="{{ choosen_picture_dic.title }}" name = "title"/>
+    
+          <input type="text" class="weather" placeholder="날씨" value="{{ choosen_picture_dic.weather }}" name = "weather"/>
+          <input type="text" class="feeling" placeholder="기분" value="{{ choosen_picture_dic.feeling }}" name = "feeling"/>
+      
+        </div>  
+        <textarea type="text" class="text" placeholder="내용" value="{{ choosen_picture_dic.content }}" class="text" style="word-wrap:break-word" name = "content"/></textarea>
+      
+        <div class="save">
+          <input type="submit" value="저장" class="submit"/>
+          <input type="reset" value="취소" class="reset"/>
+        </div>
+      </div>  
+      </form>
+    </div>
+  </div>
+  </body>
+</html>
