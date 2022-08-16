@@ -9,19 +9,20 @@ body{
 }
 .container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction : column;
 }
 
 .container .element{
     display : flex;
-    justify-content: space-evenly;
+    justify-content: center;
     
 }
 .element_img{
     display:flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
+
 
 img{
     width: 200px;
@@ -33,4 +34,5 @@ img{
     width: 200px;
     border-radius: 15px;
     background-color: transparent;
+    margin: 0px 10px;
 }
