@@ -38,13 +38,14 @@ def init_picture(request, id):
                 "picture_data": picture_data,
                 "member_picture_id": member_picture_data.member_picture_id
             }
-
+   
             if pictureId == 1:
-                return render(request, 'rocket.html', context=context)
+                return render(request, 'rocket.html', context = context)
             elif pictureId == 2:
-                return render(request, 'cherry.html', context=context)
+                return render(request, 'cherry.html', context = context)
             elif pictureId == 3:
-                return render(request, 'bear.html', context=context)
+                return render(request,'bear.html', context = context)
+
             return render(request, 'dot/test.html', context=context)
         else:
             lst = list(range(1, picture_data.dot_count + 1))
@@ -93,12 +94,15 @@ def init_picture(request, id):
                 "member_picture_id": new_data.member_picture_id
             }
 
+
             if pictureId == 1:
-                return render(request, 'rocket.html', context=context)
+                return render(request, 'rocket.html', context = context)
             elif pictureId == 2:
-                return render(request, 'cherry.html', context=context)
+                return render(request, 'cherry.html', context = context)
             elif pictureId == 3:
-                return render(request, 'bear.html', context=context)
+                return render(request,'bear.html', context = context)
+
+
             return render(request, 'dot/test.html', context=context)
     if request.method == 'GET':
         member_data = User.objects.filter(pk=request.user.id)[0]
@@ -123,11 +127,14 @@ def init_picture(request, id):
         }
         print(colored_dot)
         if pictureId == 1:
-            return render(request, 'rocket.html', context=context)
+
+
+            return render(request, 'rocket.html', context = context)
         elif pictureId == 2:
-            return render(request, 'cherry.html', context=context)
+            return render(request, 'cherry.html', context = context)
         elif pictureId == 3:
-            return render(request, 'bear.html', context=context)
+            return render(request,'bear.html', context = context)
+
         return render(request, 'dot/test.html', context=context)
 
 

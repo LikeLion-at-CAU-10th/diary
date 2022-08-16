@@ -11,17 +11,6 @@ body {
   justify-content: center;
   margin-bottom :40px;
 }
-.container .Profile-img{
- /* position :relative; */
-  position:absolute;
-  z-index: 1;
-}
-
-.container .Profile-add{
-  position : absolute;
-  top : 28.5vh;
-  right : 96vh;
-}
 
 .Logo-Container {
   justify-content: center;
