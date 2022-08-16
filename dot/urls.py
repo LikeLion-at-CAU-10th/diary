@@ -9,5 +9,5 @@ urlpatterns = [
   path('<int:id>', init_picture, name = 'init_picture'),
   path('diary/<int:diary_id>/<int:member_picture_id>', choosen_picture, name = 'choosen_picture_get'),
   path('update_diary/<int:diary_id>/<int:member_picture_id>', choosen_picture, name = 'choosen_picture_patch'),    
-  # path('gallery/', gallery, )
+  path('gallery/', gallery, name= 'my_picture')
 ]
