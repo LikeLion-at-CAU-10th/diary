@@ -1,27 +1,25 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block header_css %}
-<link rel="stylesheet" href= "{% static 'css/gallery.css' %}" />
-{% endblock%}
-{% block contents %}
-  <div class = "container">
-    <div class="box">
-      <div class="logos">
-        <img src={% static 'img/leftarrow.svg' %} class="arrow" />
-        <img src={% static 'img/coffee.png' %} class="logo" />
-        <img src={% static 'img/rightarrow.svg' %} class="arrow" />
-      </div>
-      <hr />
-     
-      <div class="box-bottom">
-        
-        <div class="cards">
-          <a href="rocket.html">
-            <img src="img/rocket.png" class="card" />
-          </a>
-        </div> 
+{% extends 'base.html' %} {% load static %} {% block header_css %}
+<link rel="stylesheet" href="{% static 'css/select.css' %}" />
+<link href='https://fonts.googleapis.com/css?family=Imperial Script' rel='stylesheet'>
+{% endblock%} {% block contents %}
+<div class="container">
+  <p class = "hi">2022</p>
+  {% for three_element in picture_list %}
 
-      </div>
+  <div class="element">
+    {% for element in three_element %}
+    <div class="element_img">
+      <form action="{% url 'init_picture' element.picture_id %}" method="POST">
+        {% csrf_token %}
+
+        <button type="submit" class="button">
+          <img src="{{ element.picture_info.url }}" class="card-img" />
+        </button>
+      </form>
     </div>
+    {% endfor %}
   </div>
+
+  {% endfor %}
+</div>
 {% endblock %}

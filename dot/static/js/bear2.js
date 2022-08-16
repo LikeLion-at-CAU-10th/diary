@@ -173,4 +173,5 @@ function click7() {
 window.onload = function(){
   click1();
   click2();
+
 }
