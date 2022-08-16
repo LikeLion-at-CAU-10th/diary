@@ -14,7 +14,7 @@
   <body>
 
 
-
+  <div class="whole">
 
     <div class="nav">
       <div class="nav-login">
@@ -32,28 +32,28 @@
         </div>
      </div>
 
-     {% comment %} <img src="img/Line.png" id="line"> {% endcomment %}
+     <img src="img/Line.png" id="line">
 
      <div class="input">
-       {% comment %} <form action="{%url 'choosen_picture_get' diary_data.diary_id diary_data.member_picture_id %}" method="get"> {% endcomment %}
-      {% comment %} {% csrf_token %} {% endcomment %}
+       <form action="{%url 'choosen_picture_patch' choosen_picture_dic.diary_id choosen_picture_dic.member_picture_id %}" method="Post">
+      
+      {% csrf_token %}
       <!-- {{ choosen_picture_dic }} -->
-        {% comment %} <p>{{ diary_data.title }}</p>
-        <p>{{ diary_data.weather }}</p>
-        <p>{{ diary_data.feeling }}</p>
-        <p>{{ diary_data.content }}</p> {% endcomment %}
-
-        {% comment %} <input type="text" placeholder="제목" value="{{ choosen_picture_dic.title }}" name = "title"/>
+        <input type="text" placeholder="제목" value="{{ choosen_picture_dic.title }}" name = "title"/>
+        
         <input type="text" placeholder="날씨" value="{{ choosen_picture_dic.weather }}" name = "weather"/>
+    
         <input type="text" placeholder="기분" value="{{ choosen_picture_dic.feeling }}" name = "feeling"/>
         <input type="file" class="file"/>
-        <input type="text" placeholder="내용" value="{{ choosen_picture_dic.content }}" class="text" style="word-wrap:break-word" name = "content"/> {% endcomment %}
+        
+        <input type="text" placeholder="내용" value="{{ choosen_picture_dic.content }}" class="text" style="word-wrap:break-word" name = "content"/>
 
-        {% comment %} <div class="save">
+        <div class="save">
           <input type="submit" value="저장" class="submit"/>
           <input type="reset" value="취소" class="reset"/>
-        </div> {% endcomment %}
+        </div>
       </form>
     </div>
+  </div>
   </body>
 </html>
