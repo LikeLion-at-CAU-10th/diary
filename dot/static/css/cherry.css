@@ -100,7 +100,7 @@ canvas{
     align-items: center;
     margin-left: -20px;
     /* margin-top: 16vh; */
-    margin-top: 118px;
+    margin-top: 110px;
 
     flex-direction: column;
     /* width:15vh; */
@@ -232,7 +232,7 @@ canvas{
         margin-left: 10px;
     }
     .dots{
-        margin-top: 118px;
+        margin-top: 110px;
         margin-right: 5px;
     }
     body{
