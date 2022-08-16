@@ -1,17 +1,12 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dot Diary</title>
-    <link rel="stylesheet" href="../static/css/rocket.css" />
-  </head>
-  <body>
+{% block header_css %}
+<link rel="stylesheet" href= "{% static 'css/rocket.css' %}" />
+{% endblock%}
+{% block contents %}
     {% if colored_dot == 0 %}
     <section class="card">
-      <img src="../static/img/rocket.png" class="img"></div>
+      <img src= "../static/img/rocket.png"  class="img"></div>
       <div class = "dots">
         <div class = "column">
             <p class = "num" id="num2">2</p>
@@ -183,5 +178,4 @@
     
     <script src="../static/js/rocket3.js"></script>
     {% endif %}
-  </body>
-</html>
+{% endblock %}
