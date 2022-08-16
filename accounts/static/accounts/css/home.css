@@ -1,13 +1,20 @@
 * {
     box-sizing: border-box;
 }
-
-.body {
-    height: 100vh;
-    width: 100vw;
-    background: url(img/background.PNG) center/cover no-repeat;
+.click{
+    margin: 0px 10px;
 }
-
+.body {
+    height: 120vh;
+    width: 100%;
+    background: url(../../img/image\ 65.png) center/cover no-repeat;
+}
+a{
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+    color: black;
+}
 
 .logo {
     float: right;
@@ -15,13 +22,19 @@
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 15px;
+   
 }
 
 .center {
-    position: absolute;
-    top: 230px;
+    /* position: absolute; */
+    /* top: 230px;
     bottom: 100px;
-    left: 580px;
+    left: 580px; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    
 }
   
 
@@ -29,12 +42,17 @@
 .senten {
     font-size: 30px;
     font-family: fantasy;
-    color: rgba(240, 238, 215, 0.963);
+    /* color: rgba(240, 238, 215, 0.963); */
+    color:black;
+    text-align: center;
+    padding-top: 350px;
+    padding-left: 45px;
 }
-
 .nav-menu {
-    position: absolute;
+    /* position: absolute;
     top: 390px;
-    left: 640px;
+    left: 640px; */
+    display: flex;
+    justify-content: center;
 }
 
