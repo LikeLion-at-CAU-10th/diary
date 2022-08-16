@@ -1,24 +1,23 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block header_css %}
-<link rel="stylesheet" href= "{% static 'css/select.css' %}" />
-{% endblock%}
-{% block contents %}
-    <div class="container">
-      {% for three_element in picture_list %}
-      
-      <div class = "element">
-        {% for element in three_element %}
-        <div class = "element_img">
-          <form action = "{% url 'init_picture' element.picture_id %}" method ="POST">
-            {% csrf_token %}
-            
-            <button type = "submit" ><img src = "{{ element.picture_info.url }}"></button>
-          </form>
-        </div>
-        {% endfor %}
-      </div>
-      
-      {% endfor %}
+{% extends 'base.html' %} {% load static %} {% block header_css %}
+<link rel="stylesheet" href="{% static 'css/select.css' %}" />
+{% endblock%} {% block contents %}
+<div class="container">
+  {% for three_element in picture_list %}
+
+  <div class="element">
+    {% for element in three_element %}
+    <div class="element_img">
+      <form action="{% url 'init_picture' element.picture_id %}" method="POST">
+        {% csrf_token %}
+
+        <button type="submit" class="button">
+          <img src="{{ element.picture_info.url }}" class="card-img" />
+        </button>
+      </form>
     </div>
+    {% endfor %}
+  </div>
+
+  {% endfor %}
+</div>
 {% endblock %}

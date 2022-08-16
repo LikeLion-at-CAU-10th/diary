@@ -24,10 +24,13 @@ body{
 }
 
 img{
-    width: 150px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 15px;
 }
-button{
+.button{
     border:0;
-    width: 150px;
-
+    width: 200px;
+    border-radius: 15px;
+    background-color: transparent;
 }
