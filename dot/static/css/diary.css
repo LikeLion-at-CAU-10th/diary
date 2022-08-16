@@ -136,7 +136,12 @@ input:focus {outline: none;}
     height: 350px;
 
 }
-
+.time{
+    border: none;
+    background-color: transparent;
+    padding: 25px 40px;
+    font-size: 30px;
+}
 .save {
     /* position: absolute;
     top: 130px;
