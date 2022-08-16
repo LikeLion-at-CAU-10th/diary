@@ -1,6 +1,6 @@
 body{ background-color: #ECE7E1; font-family:'Malgun Gothic'; font-size:12pt;
     margin: 0px; padding: 0px; } 
-    .column4{
+    #column4{
         display: flex;
         margin-bottom: 31px;
     }
