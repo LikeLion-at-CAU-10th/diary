@@ -31,11 +31,11 @@ def init_picture(request, id):
                 "member_picture_id":member_picture_data.member_picture_id
             }
             
-            if pictureId == 1:
+            if pictureId == 6:
                 return render(request, 'rocket.html', context = context)
-            elif pictureId == 2:
+            elif pictureId == 7:
                 return render(request, 'cherry.html', context = context)
-            elif pictureId == 3:
+            elif pictureId == 8:
                 return render(request,'bear.html', context = context)
             return render(request, 'dot/test.html', context=context)
         else:
@@ -85,11 +85,11 @@ def init_picture(request, id):
                 "member_picture_id":new_data.member_picture_id
             }
             
-            if pictureId == 1:
+            if pictureId == 6:
                 return render(request, 'rocket.html', context = context)
-            elif pictureId == 2:
+            elif pictureId == 7:
                 return render(request, 'cherry.html', context = context)
-            elif pictureId == 3:
+            elif pictureId == 8:
                 return render(request,'bear.html', context = context)
             return render(request, 'dot/test.html', context=context)
     if request.method == 'GET':
@@ -113,11 +113,11 @@ def init_picture(request, id):
             "member_picture_id":member_picture_data.member_picture_id
         }
         
-        if pictureId == 1:
+        if pictureId == 6:
             return render(request, 'rocket.html', context = context)
-        elif pictureId == 2:
+        elif pictureId == 7:
             return render(request, 'cherry.html', context = context)
-        elif pictureId == 3:
+        elif pictureId == 8:
             return render(request,'bear.html', context = context)
         return render(request, 'dot/test.html', context=context)
 
@@ -132,7 +132,7 @@ def choosen_picture(request, diary_id,member_picture_id):
                 "weather"     : diary_data.weather,
                 "feeling"  : diary_data.feeling,          
         }
-        print(member_picture_id)
+        
         return render(request, 'input.html', {"choosen_picture_dic":choosen_picture_dic})
 
     elif request.method=="POST":
@@ -186,10 +186,10 @@ def pictures(request):
         
        
         context_list=[]
-        for i in user_picture:
+        for i in range(6,9):
             picture = Picture.objects.filter(pk=i)[0]
             context_list.append(picture)
-        real_idx = 0
+        real_idx = 0    
         idx = 0
         three_context_list = []
         while real_idx < len(context_list):
@@ -204,7 +204,7 @@ def pictures(request):
         context = {
             "picture_list" : three_context_list,
         }
-        print(context)
+        print(three_context_list)
         
         return render(request, 'select.html', context = context)
 

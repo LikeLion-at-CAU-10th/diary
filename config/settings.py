@@ -162,9 +162,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 AUTH_USER_MODEL = "accounts.User"
-ACCOUNT_SIGNUP_REDIRECT_URL = "index"
-LOGIN_REDIRECT_URL = "index"
+ACCOUNT_SIGNUP_REDIRECT_URL = "picture_list"
+LOGIN_REDIRECT_URL = "picture_list"
 LOGOUT_REDIRECT_URL = "index"
+
 ACCOUNT_LOGOUT_ON_GET = True
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True
