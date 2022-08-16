@@ -184,10 +184,10 @@ def pictures(request):
        
         user_picture=list(map(int,user_picture.split()))
         
-       
-        context_list=[]
-        for i in range(6,9):
-            picture = Picture.objects.filter(pk=i)[0]
+        picture_list = Picture.objects.all()
+        context_list = []
+        for i in range(3):
+            picture = Picture.objects.filter(pk=picture_list[i].picture_id)[0]
             context_list.append(picture)
         real_idx = 0    
         idx = 0
@@ -204,7 +204,6 @@ def pictures(request):
         context = {
             "picture_list" : three_context_list,
         }
-        print(three_context_list)
         
         return render(request, 'select.html', context = context)
 
