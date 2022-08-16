@@ -229,12 +229,13 @@ def gallery(request):
     for member_picture in member_pictures:
         if member_picture.uncolored_dot_info == '':
             complete_member_picture.append([])
-            complete_member_picture[idx].append(member_picture.picture_id.picture_id)
-            picture = Picture.objects.filter(picture_id = member_picture.picture_id.picture_id)[0].picture_info
+           
+            picture = Picture.objects.filter(picture_id = member_picture.picture_id.picture_id)[0]
             complete_member_picture[idx].append(picture)
             idx += 1
     context = {
         "picture" : complete_member_picture
     }
+  
     return render(request, 'gallery.html',context = context)
 

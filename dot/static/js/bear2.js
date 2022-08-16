@@ -178,3 +178,4 @@ window.onload = function () {
   click1();
   click2();
 };
+

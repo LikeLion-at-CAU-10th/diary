@@ -38,3 +38,10 @@ img{
     background-color: transparent;
     margin: 0px 20px;
 }
+.hi{
+    font-family: 'Imperial Script';
+    font-size: 65px;
+    display: flex;
+    justify-content: center;
+}
+
