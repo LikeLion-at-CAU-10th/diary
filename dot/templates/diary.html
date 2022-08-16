@@ -23,9 +23,27 @@
 
         <br>
         <div class="wrap">
-          <p>{{ choosen_picture_dic.month }}</p>
-          <p>{{ choosen_picture_dic.day }}</p>
-          <p>{{ choosen_picture_dic.day_en }}</p>
+
+          <input type="text" class="time" value="{{choosen_picture_dic.time}}">
+          
+            <select name="font-size" class="font-size">
+              <option value="">글꼴크기</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+            </select>
+            &nbsp;
+            <select name="font-type" class="font-type">
+              <option value="">글꼴선택</option>
+              <option value="Noto Sans Kr">Noto Sans Kr</option>
+              <option value="Acc어린이마음고운체">Acc어린이마음고운체</option>
+              <option value="코트라손글씨체">코트라손글씨체</option>
+              <option value="KoPubWorld바탕">KoPubWorld바탕</option>
+              <option value="나눔손글씨 딸에게 엄마가">나눔손글씨딸에게엄마가</option>
+            </select>
+          
+          
+          
 
           <!-- <input type="text" class="weather" placeholder="날씨" value="{{ choosen_picture_dic.weather }}" name = "weather"/>
           <input type="text" class="feeling" placeholder="기분" value="{{ choosen_picture_dic.feeling }}" name = "feeling"/> -->
