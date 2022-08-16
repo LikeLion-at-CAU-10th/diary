@@ -70,4 +70,5 @@ function click3() {
 }
 window.onload = function(){
   click1(); 
+
 }

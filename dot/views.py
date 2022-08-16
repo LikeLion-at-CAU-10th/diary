@@ -13,7 +13,7 @@ from django.forms import modelformset_factory
 
 
 # 그림선택후 그림에 대한 정보. 컬러드닷, 언컬러드. 일기생성. 유저객체
-
+# 이거 나중에 배포하면 picture_id 다 조절해야됨.
 # 이미지랑 다이어리 id, 컬러드닷.
 def init_picture(request, id):
     if request.method == 'POST':
@@ -30,7 +30,7 @@ def init_picture(request, id):
                 colored_dot=int(member_picture_data.uncolored_dot_info[0])-1
             except:
                 colored_dot=picture_data.dot_count
-
+            
             context={
                 "colored_dot" : colored_dot,
                 "diary_id" : int_diary,
@@ -119,7 +119,7 @@ def init_picture(request, id):
             "picture_data":picture_data,
             "member_picture_id":member_picture_data.member_picture_id
         }
-        
+        print(colored_dot)
         if pictureId == 6:
             return render(request, 'rocket.html', context = context)
         elif pictureId == 7:
@@ -145,8 +145,15 @@ def choosen_picture(request, diary_id,member_picture_id):
     elif request.method=="POST":
         member_picture_data=MemberPicture.objects.filter(pk=member_picture_id)[0]
         uncolored=member_picture_data.uncolored_dot_info
+        diary = list(map(int,member_picture_data.diary_id.split()))
         arr=list(map(int,uncolored.split()))
-        del arr[0]
+        try:
+            value = int(arr[0]) - 1
+            if diary[value] == diary_id:
+                del arr[0]
+        except:
+            pass
+        
         
         arr =' '.join(map(str, arr))
         new_uncolored_dot_info=arr

@@ -65,7 +65,7 @@ canvas{
     height: 1vh; */
     width:12px;
     height: 12px;
-
+    border : none;
     position: relative; 
     z-index: 2;
     /* margin: 0.1vh; */
