@@ -39,9 +39,14 @@
       {% csrf_token %}
       <!-- {{ choosen_picture_dic }} -->
         <input type="text" placeholder="제목" value="{{ diary_data.title }}" name = "title"/>
+ 
+        
         <input type="text" placeholder="날씨" value="{{ diary_data.weather }}" name = "weather"/>
+        
         <input type="text" placeholder="기분" value="{{ diary_data.feeling }}" name = "feeling"/>
+                
         <input type="file" class="file"/>
+        
         <input type="text" placeholder="내용" value="{{ diary_data.content }}" class="text" style="word-wrap:break-word" name = "content"/>
 
         <div class="save">

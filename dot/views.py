@@ -60,7 +60,7 @@ def init_picture(request, id):
         "member_picture_id":new_data.member_picture_id
     }
 
-    return render(request, 'dot/test.html', context=context)
+    return render(request, 'dot/testg.html', context=context)
     
 
 def choosen_picture(request, diary_id,member_picture_id):
