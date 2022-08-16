@@ -47,8 +47,8 @@ canvas{
     background-color: rgb(160, 160, 160);
     border-radius: 100%;
     width:12px;
-    height: 12px;
-
+    height:12px;
+    border: none;
     position: relative; 
     z-index: 2;
     cursor: pointer;

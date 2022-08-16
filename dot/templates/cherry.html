@@ -1,49 +1,43 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% block header %}
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dot Diary</title>
-    <link rel="stylesheet" href="{% static 'css/cherry.css' %}" />
-{% endblock %}
-{% block contents %}
+    <link rel="stylesheet" href="{% static '../static/css/cherry.css' %}" />
+    {% if colored_dot == 0 %}
     <section class="card">
-      <!-- <div class="img"></div> -->
-      <img src="{% static 'img/cherry.png' %}" class="img" alt="no img"/>
+      
+      <img src="{% static '../static/img/cherry.png' %}" class="img" alt="no img"/>
       <div class="dots">
         <div class="column">
           <p class="num" id="num3">3</p>
         </div>
         <div class="column">
           <p class="num" id="num2">2</p>
-            <div class="dot" id="dot3" onclick="click3()"></div>
+            <div class="dot" id="dot3" ></div>
           <p class="num" id="num4">4</p>
         </div>
         <div class="column">
           <p class="num" id="num1">1</p>
-            <div class="dot" id="dot2" onclick="click2()"></div>
-            <div class="dot" id="dot4" onclick="click4()"></div>
+            <div class="dot" id="dot2" ></div>
+            <div class="dot" id="dot4" ></div>
 
           <p class="num" id="num5">5</p>
         </div>
         <div class="column grid">
           <!-- <a href="{url 'detail' blog.id }" id를 직접 숫자로 넣으면 될 듯-->
             <!-- 1번점 -->
-            {% if request.GET.count == 0 %}
-            <a href="{% url 'input' diary_dot.1 %}">
-              <div class="dot" id="dot1"></div>
-            </a>  
-            {% else %}
-            <a href="{% url 'output' diary_dot.1 %}"> 
-              <div class="dot" id="dot1" ></div>
-            </a> 
-            {% endif %}
+            <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot1"></button>
+            </form>
             <!-- 5번점 -->
-            <a href="{% url 'input' diary_dot.5 %}">
-              <div class="dot" id="dot5"></div>
-            </a>
+            
+            <div class="dot" id="dot5"></div>
+            
         </div>
       </div>
       <div class="canvases">
@@ -66,6 +60,325 @@
       </div>
     </section>
 
-    <script src="{% static 'js/cherry.js' %}"></script>
-{% endblock %}
+    <script src="{% static '../static/js/cherry.js' %}"></script>
+    {% elif colored_dot == 1 %}
+    <section class="card">
+      
+      <img src="{% static '../static/img/cherry.png' %}" class="img" alt="no img"/>
+      <div class="dots">
+        <div class="column">
+          <p class="num" id="num3">3</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num2">2</p>
+            <div class="dot" id="dot3" ></div>
+          <p class="num" id="num4">4</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num1">1</p>
+            <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot2"></button>
+            </form>
+            
+            <div class="dot" id="dot4" ></div>
+
+          <p class="num" id="num5">5</p>
+        </div>
+        <div class="column grid">
+          <!-- <a href="{url 'detail' blog.id }" id를 직접 숫자로 넣으면 될 듯-->
+            <!-- 1번점 -->
+            <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot1"></button>
+            </form>
+            <!-- 5번점 -->
+            
+            <div class="dot" id="dot5"></div>
+           
+        </div>
+      </div>
+      <div class="canvases">
+        <div class="c12">
+          <canvas id="onetwo" width="10" height="40"></canvas>
+        </div>
+        <div class="c23">
+          <canvas id="twothree" width="25" height="30"></canvas>
+        </div>
+        <div class="c34">
+          <canvas id="threefour" width="35" height="20"></canvas>
+        </div>
+        <div class="c45">
+          <canvas id="fourfive" width="15" height="30"></canvas>
+        </div>
+  
+      </div>
+
+          <!-- <canvas width="50" height="50"></canvas> -->
+      </div>
+    </section>
+
+    <script src="{% static '../static/js/cherry1.js' %}"></script>
+    {% elif colored_dot == 2 %}
+    <section class="card">
+      
+      <img src="{% static '../static/img/cherry.png' %}" class="img" alt="no img"/>
+      <div class="dots">
+        <div class="column">
+          <p class="num" id="num3">3</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num2">2</p>
+          <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}" method = "GET">
+            {% csrf_token %}
+            <button class="dot" id="dot3"></button>
+          </form>
+            
+          <p class="num" id="num4">4</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num1">1</p>
+            <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot2"></button>
+            </form>
+            
+            <div class="dot" id="dot4" ></div>
+
+          <p class="num" id="num5">5</p>
+        </div>
+        <div class="column grid">
+          <!-- <a href="{url 'detail' blog.id }" id를 직접 숫자로 넣으면 될 듯-->
+            <!-- 1번점 -->
+            <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot1"></button>
+            </form>
+            <!-- 5번점 -->
+            
+            <div class="dot" id="dot5"></div>
+           
+        </div>
+      </div>
+      <div class="canvases">
+        <div class="c12">
+          <canvas id="onetwo" width="10" height="40"></canvas>
+        </div>
+        <div class="c23">
+          <canvas id="twothree" width="25" height="30"></canvas>
+        </div>
+        <div class="c34">
+          <canvas id="threefour" width="35" height="20"></canvas>
+        </div>
+        <div class="c45">
+          <canvas id="fourfive" width="15" height="30"></canvas>
+        </div>
+  
+      </div>
+
+          <!-- <canvas width="50" height="50"></canvas> -->
+      </div>
+    </section>
+
+    <script src="{% static '../static/js/cherry2.js' %}"></script>
+    {% elif colored_dot == 3 %}
+    <section class="card">
+      
+      <img src="{% static '../static/img/cherry.png' %}" class="img" alt="no img"/>
+      <div class="dots">
+        <div class="column">
+          <p class="num" id="num3">3</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num2">2</p>
+          <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}" method = "GET">
+            {% csrf_token %}
+            <button class="dot" id="dot3"></button>
+          </form>
+            
+          <p class="num" id="num4">4</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num1">1</p>
+            <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot2"></button>
+            </form>
+            <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot4"></button>
+            </form>
+            
+
+          <p class="num" id="num5">5</p>
+        </div>
+        <div class="column grid">
+          <!-- <a href="{url 'detail' blog.id }" id를 직접 숫자로 넣으면 될 듯-->
+            <!-- 1번점 -->
+            <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot1"></button>
+            </form>
+            <!-- 5번점 -->
+            
+            <div class="dot" id="dot5"></div>
+           
+        </div>
+      </div>
+      <div class="canvases">
+        <div class="c12">
+          <canvas id="onetwo" width="10" height="40"></canvas>
+        </div>
+        <div class="c23">
+          <canvas id="twothree" width="25" height="30"></canvas>
+        </div>
+        <div class="c34">
+          <canvas id="threefour" width="35" height="20"></canvas>
+        </div>
+        <div class="c45">
+          <canvas id="fourfive" width="15" height="30"></canvas>
+        </div>
+  
+      </div>
+
+          <!-- <canvas width="50" height="50"></canvas> -->
+      </div>
+    </section>
+
+    <script src="{% static '../static/js/cherry3.js' %}"></script>
+    {% elif colored_dot == 4 %}
+    <section class="card">
+      
+      <img src="{% static '../static/img/cherry.png' %}" class="img" alt="no img"/>
+      <div class="dots">
+        <div class="column">
+          <p class="num" id="num3">3</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num2">2</p>
+          <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}" method = "GET">
+            {% csrf_token %}
+            <button class="dot" id="dot3"></button>
+          </form>
+            
+          <p class="num" id="num4">4</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num1">1</p>
+            <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot2"></button>
+            </form>
+            <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot4"></button>
+            </form>
+            
+
+          <p class="num" id="num5">5</p>
+        </div>
+        <div class="column grid">
+          <!-- <a href="{url 'detail' blog.id }" id를 직접 숫자로 넣으면 될 듯-->
+            <!-- 1번점 -->
+            <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot1"></button>
+            </form>
+            <!-- 5번점 -->
+            <form action = "{% url 'choosen_picture_get' diary_id.4 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot5"></button>
+            </form>
+            
+        </div>
+      </div>
+      <div class="canvases">
+        <div class="c12">
+          <canvas id="onetwo" width="10" height="40"></canvas>
+        </div>
+        <div class="c23">
+          <canvas id="twothree" width="25" height="30"></canvas>
+        </div>
+        <div class="c34">
+          <canvas id="threefour" width="35" height="20"></canvas>
+        </div>
+        <div class="c45">
+          <canvas id="fourfive" width="15" height="30"></canvas>
+        </div>
+  
+      </div>
+
+          <!-- <canvas width="50" height="50"></canvas> -->
+      </div>
+    </section>
+
+    <script src="{% static '../static/js/cherry4.js' %}"></script>
+    {% else %}
+    <section class="card">
+      
+      <img src="{% static '../static/img/cherry.png' %}" class="img" alt="no img"/>
+      <div class="dots">
+        <div class="column">
+          <p class="num" id="num3">3</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num2">2</p>
+          <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}" method = "GET">
+            {% csrf_token %}
+            <button class="dot" id="dot3"></button>
+          </form>
+            
+          <p class="num" id="num4">4</p>
+        </div>
+        <div class="column">
+          <p class="num" id="num1">1</p>
+            <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot2"></button>
+            </form>
+            <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot4"></button>
+            </form>
+            
+
+          <p class="num" id="num5">5</p>
+        </div>
+        <div class="column grid">
+          <!-- <a href="{url 'detail' blog.id }" id를 직접 숫자로 넣으면 될 듯-->
+            <!-- 1번점 -->
+            <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot1"></button>
+            </form>
+            <!-- 5번점 -->
+            <form action = "{% url 'choosen_picture_get' diary_id.4 member_picture_id %}" method = "GET">
+              {% csrf_token %}
+              <button class="dot" id="dot5"></button>
+            </form>
+            
+        </div>
+      </div>
+      <div class="canvases">
+        <div class="c12">
+          <canvas id="onetwo" width="10" height="40"></canvas>
+        </div>
+        <div class="c23">
+          <canvas id="twothree" width="25" height="30"></canvas>
+        </div>
+        <div class="c34">
+          <canvas id="threefour" width="35" height="20"></canvas>
+        </div>
+        <div class="c45">
+          <canvas id="fourfive" width="15" height="30"></canvas>
+        </div>
+  
+      </div>
+
+          <!-- <canvas width="50" height="50"></canvas> -->
+      </div>
+    </section>
+
+    <script src="{% static '../static/js/cherry5.js' %}"></script>
+    {% endif %}
 </html>

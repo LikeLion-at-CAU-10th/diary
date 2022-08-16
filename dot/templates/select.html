@@ -1,18 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="select.css" />
+    <link rel="stylesheet" href="../static/css/select.css" />
 
     <title>select</title>
   </head>
   <body>
-    <div class="cards">
-      <img src="img/rocket.png" />
-      <img src="img/cherry.png" />
-      <img src="img/bear.png" />
+    <div class="container">
+      {% for three_element in picture_list %}
+      
+      <div class = "element">
+        {% for element in three_element %}
+        <div class = "element_img">
+          <form action = "{% url 'init_picture' element.picture_id %}" method ="POST">
+            {% csrf_token %}
+            
+            <button type = "submit" ><img src = "{{ element.picture_info.url }}"></button>
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+      
+      {% endfor %}
     </div>
   </body>
 </html>

@@ -7,13 +7,27 @@ body{
     padding: 0px;
 
 }
-.cards{
+.container{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction : column;
 }
+
+.container .element{
+    display : flex;
+    justify-content: space-evenly;
+    
+}
+.element_img{
+    display:flex;
+    justify-content: space-evenly;
+}
+
 img{
     width: 150px;
-    margin: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
+}
+button{
+    border:0;
+    width: 150px;
+
 }
