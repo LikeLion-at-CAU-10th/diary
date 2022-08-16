@@ -18,6 +18,7 @@
         <div class = "element_img">
           <form action = "{% url 'init_picture' element.picture_id %}" method ="POST">
             {% csrf_token %}
+            
             <button type = "submit" ><img src = "{{ element.picture_info.url }}"></button>
           </form>
         </div>

@@ -10,7 +10,7 @@ body{ background-color: #ECE7E1; font-family:'Malgun Gothic'; font-size:12pt;
     margin-top: 1px; } .c34{ width:88px; height: 40px; margin-top: 1px;
     margin-right: 1px; } .c45{ width: 88px; height: 40px; margin-top: 1px;
     margin-left: 1px; } .dot{ background-color: rgb(160, 160, 160); border-radius:
-    100%; width:12px; height: 12px; position: relative; z-index: 2; cursor: pointer;
+    100%; width:12px;border : none; height: 12px; position: relative; z-index: 2; cursor: pointer;
     margin: 3px; } .img{ position: absolute; z-index: 1; width: 385px;
     border-radius: 2vh; border: solid 1px black; align-items: center; } .input{
     display: none; } .card{ display: flex; justify-content: center; } .dots{
