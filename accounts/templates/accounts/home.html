@@ -21,9 +21,9 @@
 
     <div class="nav-menu">
       {% if user.is_authenticated %}
-      <a href="{% url 'picture_list'%}" class="click">일기쓰기</a>
+      <a href="{% url 'picture_list' %}" class="click">일기쓰기</a>
       |
-      <a href="#" class="click">마이페이지</a>
+      <a href="{% url 'my_picture' %}" class="click">마이페이지</a>
       {% else %}
 
       <a href="{% url 'account_login' %}" class="click">로그인</a>
