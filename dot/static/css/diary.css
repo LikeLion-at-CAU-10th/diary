@@ -1,9 +1,16 @@
 * {
     box-sizing: border-box;
 }
-
+.whole{
+    /* display: flex;
+    justify-content: center; */
+    position: absolute;
+    z-index: 1;
+}
 body {
     background-color: #ECE7E1;
+    display: flex;
+    justify-content: center;       
 
 }
 
@@ -26,36 +33,37 @@ body {
 }
 
 .wrap{
-    margin-left:350px;
+    padding-top: 50px;
+
 }
 #line {
-    position: relative;
-    top: 400px;
+    /* position: relative;
+    top: 400px; */
     width: 700;
-    position: relative;
+    /* position: relative;
     z-index: 1;
-    left: 20px;
+    left: 20px; */
 }
 
 #tape {
-    position: relative;
+    /* position: relative;
     top:160px;
-    width: 200px;
+    width: 200px; 
     position: relative;
     z-index: 1;
-    left: 530px;
+    left: 530px;*/
+    position: relative;
+    z-index: 2;
+
 }
-.text{
-    border: none;
-    padding-top:160px;
-}
+
 
 .text:focus{
     outline: none;
 }
 
 
-
+input:focus {outline: none;}
 
 .in{
     display: flex;
@@ -63,64 +71,82 @@ body {
 }
 
 .title{
-    width:200px;
-    border: none; background: transparent
+    width:700px;
+    border: none; 
+    background: transparent;
+    padding: 25px 40px;
 }
 
 .weather{
-    margin-left: 350px;
+   float: right;
     width:80px;
-    border: none; background: transparent
+    border: none; 
+    background: transparent;
+    padding-right: 40px;
 }
 
 .feeling{
+    float: right;
     width:80px;
-    border: none; background: transparent
+    border: none; 
+    background: transparent
 } 
 
 .input {
     width: 900px;
-    height: 800px;
+    height: 650px;
     background-color: #F6F5F0;
-    position: relative;
+    /* position: relative;
     top: 130px;
-    left: 180px;
-    display: block;
-       
+    left: 180px; */
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    
 }
 
 .date {
-    position: absolute;
+    /* position: absolute;
     top: 30px;
     left: 50px;
-    right: 50px;
+    right: 50px; */
 
 }
 
 
 .file {
-    position: absolute;
+    /* position: absolute;
     top: 200px;
     left: 50px;
-    right: 50px;
+    right: 50px; */
 }
 
 .text {
-    position: absolute;
+    /* position: absolute;
     top: 150px;
     left: 50px;
-    right: 50px;
+    right: 50px; */
     width: 850px;
-    height: 500px;
+    height: 350px;
     border: 0;
     background-color: #F6F5F0;
+    padding: 25px 40px;
+    border: none;
+    padding-top:160px;
+    height: 400px;
 
 }
 
 .save {
-    position: absolute;
+    /* position: absolute;
     top: 130px;
-    left: 800px;
+    left: 800px; 
     right: 50px;
-    bottom: 600px;
+    bottom: 600px;*/
+    display: flex;
+    justify-content: center;
+}
+.button{
+    margin: 10px;
 }

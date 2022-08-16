@@ -13,13 +13,9 @@
 
   <body>
 
+    <img src="/static/img/tape.png" id="tape">
 
   <div class="whole">
-
-    
-     <img src="/static/img/tape.png" id="tape">
-
-     <img src="/static/img/Line.png" id="line">
 
      <script src="../static/js/time.js"></script>
 
@@ -28,19 +24,27 @@
       
       {% csrf_token %}
       <!-- {{ choosen_picture_dic }} -->
+
         <br>
         <div class="wrap">
-          <input type="text" class="title" placeholder="제목" value="{{ choosen_picture_dic.title }}" name = "title"/>
-    
           <input type="text" class="weather" placeholder="날씨" value="{{ choosen_picture_dic.weather }}" name = "weather"/>
           <input type="text" class="feeling" placeholder="기분" value="{{ choosen_picture_dic.feeling }}" name = "feeling"/>
+          <br>
+          <input type="text" class="title" placeholder="제목" value="{{ choosen_picture_dic.title }}" name = "title"/>
+    
       
         </div>  
+        <div style="display: flex; justify-content: center;">
+          <img src="/static/img/Line.png" id="line">
+
+
+        </div>
+
         <textarea type="text" class="text" placeholder="내용" value="{{ choosen_picture_dic.content }}" class="text" style="word-wrap:break-word" name = "content"/></textarea>
       
         <div class="save">
-          <input type="submit" value="저장" class="submit"/>
-          <input type="reset" value="취소" class="reset"/>
+          <input type="submit" value="저장" class="button submit"/>
+          <input type="reset" value="취소" class="button reset"/>
         </div>
       </div>  
       </form>
