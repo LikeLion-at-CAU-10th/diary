@@ -16,7 +16,8 @@ body{
 .container .element{
     display : flex;
     justify-content: center;
-    
+    margin-top: 30px;
+
 }
 .element_img{
     display:flex;
@@ -28,11 +29,12 @@ img{
     width: 200px;
     overflow: hidden;
     border-radius: 15px;
+    border: 1px solid black;
 }
 .button{
     border:0;
     width: 200px;
     border-radius: 15px;
     background-color: transparent;
-    margin: 0px 10px;
+    margin: 0px 20px;
 }
