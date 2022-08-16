@@ -5,6 +5,13 @@ from django.shortcuts import get_object_or_404, render,redirect
 from .models import *
 from django.forms import modelformset_factory
 
+# from dateime import datetime
+# from django.utils.dateformat import DateFormat
+
+# def date(request):
+#     tody=DateFormat(datetime.now()).format('Ymd')
+
+
 # 그림선택후 그림에 대한 정보. 컬러드닷, 언컬러드. 일기생성. 유저객체
 
 # 이미지랑 다이어리 id, 컬러드닷.

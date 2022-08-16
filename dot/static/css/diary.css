@@ -25,20 +25,66 @@ body {
     /* padding..되긴 했는데 외..?된거지..?긁적 */
 }
 
+.wrap{
+    margin-left:350px;
+}
 #line {
     position: relative;
-    top: 500px;
-    left: 100px;
+    top: 400px;
+    width: 700;
+    position: relative;
+    z-index: 1;
+    left: 20px;
+}
+
+#tape {
+    position: relative;
+    top:160px;
+    width: 200px;
+    position: relative;
+    z-index: 1;
+    left: 530px;
+}
+.text{
+    border: none;
+    padding-top:160px;
+}
+
+.text:focus{
+    outline: none;
 }
 
 
+
+
+.in{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    width:200px;
+    border: none; background: transparent
+}
+
+.weather{
+    margin-left: 350px;
+    width:80px;
+    border: none; background: transparent
+}
+
+.feeling{
+    width:80px;
+    border: none; background: transparent
+} 
+
 .input {
-    width: 950px;
+    width: 900px;
     height: 800px;
     background-color: #F6F5F0;
     position: relative;
     top: 130px;
-    left: 160px;
+    left: 180px;
     display: block;
        
 }
@@ -50,6 +96,7 @@ body {
     right: 50px;
 
 }
+
 
 .file {
     position: absolute;
