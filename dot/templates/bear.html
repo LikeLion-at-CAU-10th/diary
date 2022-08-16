@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dot Diary</title>
-    <link rel="stylesheet" href="../static/css/bear.css" />
-  </head>
-  <body>
+{% extends 'base.html' %}
+{% load static %}
+{% block header_css %}
+<link rel="stylesheet" href= "{% static 'css/bear.css' %}" />
+{% endblock%}
+{% block contents %}
     {% if colored_dot == 0 %}
     <section class="card">
       <img src="../static/img/bear.png" class="img"></div>
@@ -652,5 +648,4 @@
 
     <script src="../static/js/bear7.js"></script>
     {% endif %}
-  </body>
-</html>
+{% endblock %}

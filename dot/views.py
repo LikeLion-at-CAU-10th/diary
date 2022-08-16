@@ -38,11 +38,11 @@ def init_picture(request, id):
                 "member_picture_id":member_picture_data.member_picture_id
             }
             
-            if pictureId == 6:
+            if pictureId == 1:
                 return render(request, 'rocket.html', context = context)
-            elif pictureId == 7:
+            elif pictureId == 2:
                 return render(request, 'cherry.html', context = context)
-            elif pictureId == 8:
+            elif pictureId == 3:
                 return render(request,'bear.html', context = context)
             return render(request, 'dot/test.html', context=context)
         else:
@@ -92,11 +92,11 @@ def init_picture(request, id):
                 "member_picture_id":new_data.member_picture_id
             }
             
-            if pictureId == 6:
+            if pictureId == 1:
                 return render(request, 'rocket.html', context = context)
-            elif pictureId == 7:
+            elif pictureId == 2:
                 return render(request, 'cherry.html', context = context)
-            elif pictureId == 8:
+            elif pictureId == 3:
                 return render(request,'bear.html', context = context)
             return render(request, 'dot/test.html', context=context)
     if request.method == 'GET':
@@ -120,11 +120,11 @@ def init_picture(request, id):
             "member_picture_id":member_picture_data.member_picture_id
         }
         print(colored_dot)
-        if pictureId == 6:
+        if pictureId == 1:
             return render(request, 'rocket.html', context = context)
-        elif pictureId == 7:
+        elif pictureId == 2:
             return render(request, 'cherry.html', context = context)
-        elif pictureId == 8:
+        elif pictureId == 3:
             return render(request,'bear.html', context = context)
         return render(request, 'dot/test.html', context=context)
 
