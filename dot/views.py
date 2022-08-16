@@ -183,8 +183,6 @@ def pictures(request):
         user_picture=user_info.picture_list 
        
         user_picture=list(map(int,user_picture.split()))
-        
-       
         context_list=[]
         for i in user_picture:
             picture = Picture.objects.filter(pk=i)[0]
