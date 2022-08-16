@@ -170,6 +170,6 @@ function click7() {
   dot7.style.backgroundColor = newColor;
   //   }
 }
-window.onload = function(){
+window.onload = function () {
   click1();
-}
+};
