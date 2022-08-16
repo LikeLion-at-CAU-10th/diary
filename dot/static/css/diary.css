@@ -7,7 +7,7 @@
     position: absolute;
     z-index: 1;
 }
-body {
+.body {
     background-color: #ECE7E1;
     display: flex;
     justify-content: center;       
@@ -15,7 +15,7 @@ body {
 }
 
 
-.nav-login {
+/* .nav-login {
     float: right;
     margin: 0px 10px 0px
 }
@@ -29,8 +29,8 @@ body {
     display: inline;
     padding: 0px 10px 0px 10px;
     margin: 10px 0px 10px 0px;
-    /* padding..되긴 했는데 외..?된거지..?긁적 */
-}
+    padding..되긴 했는데 외..?된거지..?긁적
+} */
 
 .wrap{
     padding-top: 50px;
@@ -94,7 +94,7 @@ input:focus {outline: none;}
 
 .input {
     width: 900px;
-    height: 650px;
+    height: 600px;
     background-color: #F6F5F0;
     /* position: relative;
     top: 130px;
@@ -128,13 +128,12 @@ input:focus {outline: none;}
     left: 50px;
     right: 50px; */
     width: 850px;
-    height: 350px;
+    height: 300px;
     border: 0;
     background-color: #F6F5F0;
     padding: 25px 40px;
     border: none;
-    padding-top:160px;
-    height: 400px;
+    height: 350px;
 
 }
 
@@ -146,6 +145,7 @@ input:focus {outline: none;}
     bottom: 600px;*/
     display: flex;
     justify-content: center;
+
 }
 .button{
     margin: 10px;
