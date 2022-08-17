@@ -76,7 +76,48 @@
       </form>
     </div>
   </div>
-  <img src="{%static 'img/smile.png'%}" id="sticker">
-</div>
 
+  <div class="sticker-zone">
+    <div id="tape-bar">
+      <div style="display: flex; flex-direction: row; margin: 2px 2px 0px 2px;">
+        <p id="sticker-font">스티커</p>
+        <img src="{%static 'img/x.png'%}" id="x" onClick="xClick()">
+      </div>
+      <div style="display: flex; justify-content:center">
+        <hr style="margin: 0px 0px 10px 0px;width: 200px;">
+      </div>
+      <div id="tape-img" style="display: flex; justify-content:center">
+        <img src="{%static 'img/tape.png'%}" class="tape-style" style="transform: rotate(15deg);margin-top: -20px;">
+        <img src="{%static 'img/tape1.png'%}" class="tape-style thin-tape" style="margin-top: -20px;">
+        <img src="{%static 'img/tape2.png'%}" class="tape-style thin-tape">
+        <img src="{%static 'img/tape3.png'%}" class="tape-style thin-tape">
+        <img src="{%static 'img/tape4.png'%}" class="tape-style thin-tape">
+        <img src="{%static 'img/tape5.png'%}" class="tape-style thin-tape">
+        <img src="{%static 'img/tape6.png'%}" class="tape-style thin-tape">
+        <img src="{%static 'img/tape7.png'%}" class="tape-style thin-tape">
+        <img src="{%static 'img/tape8.png'%}" class="tape-style thin-tape">
+        <img src="{%static 'img/tape9.png'%}" class="tape-style" style="transform: rotate(8deg); margin-top: -10px;">
+        <img src="{%static 'img/tape10.png'%}" class="tape-style" style="transform: rotate(8deg); margin-top: -12px;">
+        <img src="{%static 'img/tape11.png'%}" class="tape-style" style="transform: rotate(8deg); margin-top: -12px;    margin-bottom: 10px;">
+  
+      </div>
+    </div>
+    <img src="{%static 'img/smile.png'%}" id="smile-sticker" onclick="smileClick()">
+
+  </div>
+  
+</div>
+<script>
+  const sticker=document.querySelector("#tape-bar");
+  const smile=document.querySelector("#smile-sticker");
+  const x=document.querySelector("#x");
+  
+  const smileClick=()=>{
+    sticker.style.visibility="visible";
+  }
+  const xClick=()=>{
+    sticker.style.visibility="hidden";
+  }
+
+</script>
 {% endblock %}

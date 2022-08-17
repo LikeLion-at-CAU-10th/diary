@@ -11,14 +11,55 @@
     margin-top: -30px;
     background-color: #ECE7E1;
     display: flex;
-    justify-content: center;       
+    justify-content: center;   
+       
 
 }
 
-#sticker{
+#tape-bar{
+    width: 235px;
+    background-color: #F2F0ED;
+    box-shadow: 5px 5px 10px 0px grey;
+    visibility: hidden;
+
+}
+.sticker-zone{
+    float:right;
+    display: flex;
+    flex-direction: column;
+    margin-top: -110px;
+}
+#x{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    /* margin: 15px 15px 0px 130px; */
+}
+#sticker-font{
+    font-family: 'Noto Sans';
+    font-size: 15pt;
+    width: 200px;
+    padding: 10px;
+}
+#smile-sticker{
     float:right;
     width: 50px;
-    margin-top: 500px;
+    margin: 10px 10px 0px 175px;
+    cursor: pointer;
+}
+.tape-style{
+    width: 200px;
+    cursor: pointer;
+}
+.thin-tape{
+    padding: 10px;
+
+}
+#tape-img{
+    margin-left: 15px;
+    /* display: flex;
+    justify-content: center; */
+    flex-direction: column;
 }
 /* .nav-login {
     float: right;
