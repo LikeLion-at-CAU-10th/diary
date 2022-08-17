@@ -7,6 +7,10 @@ body{
     padding: 0px;
 
 }
+form{
+    padding: 0px;
+    margin:0px;
+}
 p{
     margin: 0px;
     padding: 0px;
@@ -159,14 +163,14 @@ canvas{
 
 
     margin-left:50px;
-    margin-top: -7px;
+    /* margin-top: -7px; */
 }
 #dot2{
     margin-right: 25px;
 }
 #dot4{
     margin-left: 25px;
-    margin-top: -7px;
+    /* margin-top: -7px; */
 }
 #dot3{
     margin: 0px 30px 0px 20px;
@@ -190,21 +194,24 @@ canvas{
 
 }
 #num4{
-    margin-top: -7px;
+    margin-top: -1px;
 }
 /* .grid{
     display: grid;
     grid-template-columns: 4fr 6fr;
 } */
 
-/* 1440px */
+/* 1520px 이상*/
 @media (min-width:1520px) {
     #dot1{
         margin-left: 10px;
     }
     .dots{
-        margin-top: 115px;
-        margin-right: 5px;
+        /* margin-top: 115px;
+        margin-right: 5px; */
+        margin-top: 104px;
+        margin-right: 9px;
+        transform: rotate(-4deg);
     }
     body{
         background-color: #ECE7E1;
@@ -226,14 +233,17 @@ canvas{
     
 }
 
-/* 1600px */
+/* 1600px 이상 */
 @media (min-width:1590px) {
     #dot1{
         margin-left: 10px;
     }
     .dots{
-        margin-top: 110px;
-        margin-right: 5px;
+        /* margin-top: 110px;
+        margin-right: 5px; */
+        margin-top: 104px;
+        margin-right: 7px;
+        transform: rotate(-4deg);
     }
     body{
         background-color: #ECE7E1;
@@ -256,14 +266,17 @@ canvas{
     
 }
 
-/* 1200px */
+/* 1200px 이하*/
 @media (max-width:1250px) {
     #dot1{
         margin-left: 10px;
     }
     .dots{
-        margin-top: 115px;
-        margin-right: 5px;
+        /* margin-top: 115px;
+        margin-right: 5px; */
+        margin-top: 102px;
+        margin-right: 6px;
+        transform: rotate(-4deg);
     }
     body{
         background-color: #ECE7E1;
