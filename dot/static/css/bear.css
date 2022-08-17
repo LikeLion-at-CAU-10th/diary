@@ -35,7 +35,7 @@ body{ background-color: #ECE7E1; font-family:'Malgun Gothic'; font-size:12pt;
     margin-right:120px; } #dot6{ margin-left: 120px; } #dot3{ margin-right:85px;
     margin-top: 16px; } #dot5{ margin-left: 85px; margin-top: 16px; } #dot4{
     margin-top: -7px; } #num4{ margin-top: -33px; } .seven{ margin-top: 7px; } /*
-    1590px 이상 */ @media (min-width:1590px) { .dots{ margin-top: 208px; } #dot1{
+    1590px 이상 */ @media (min-width:1590px) { .dots{ margin-top: 202px; } #dot1{
     margin-top: -1px; } } /* 1350px 이하 */ @media (max-width:1350px) { #canvases{
     margin-left: -10px; } }
     
