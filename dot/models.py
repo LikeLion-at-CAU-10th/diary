@@ -13,7 +13,7 @@ class Picture(models.Model):
     dot_count = models.IntegerField(verbose_name='점갯수')
     picture_info = models.ImageField(verbose_name='일기그림')
     order = models.IntegerField(verbose_name='점순서')
-
+    picture_complete_info = models.ImageField(verbose_name = "다한그림", null = True)
 
 class MemberPicture(models.Model):
     member_picture_id = models.AutoField(primary_key=True)
