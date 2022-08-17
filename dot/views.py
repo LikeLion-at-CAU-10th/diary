@@ -1,3 +1,4 @@
+from datetime import datetime, date
 from cgi import test
 from django.shortcuts import get_object_or_404, render, redirect
 
@@ -130,31 +131,35 @@ def init_picture(request, id):
             return render(request, 'bear.html', context=context)
         return render(request, 'dot/test.html', context=context)
 
-from datetime import datetime, date
-
 
 def what_day_is_it(date):
-    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    days = ['Monday', 'Tuesday', 'Wednesday',
+            'Thursday', 'Friday', 'Saturday', 'Sunday']
     day = date.weekday()
     return days[day]
 
+
 def what_month_is_it(month):
-    months = ['January','February','March','April','May',"June",'July','August',"September","October","November",'December']
+    months = ['January', 'February', 'March', 'April', 'May', "June",
+              'July', 'August', "September", "October", "November", 'December']
     return months[month-1]
+
 
 def choosen_picture(request, diary_id, member_picture_id):
     if request.method == "GET":
         diary_data = Diary.objects.filter(pk=diary_id)[0]
-        
-        day_en = what_day_is_it(date(diary_data.create_date.year,diary_data.create_date.month,diary_data.create_date.day))
+
+        day_en = what_day_is_it(date(diary_data.create_date.year,
+                                diary_data.create_date.month, diary_data.create_date.day))
         choosen_picture_dic = {
             "diary_id": diary_data.diary_id,
             "member_picture_id": member_picture_id,
             "title": diary_data.title,
             "content": diary_data.content,
+            "year": diary_data.create_date.year,
             "month": what_month_is_it(diary_data.create_date.month),
-            "day" : diary_data.create_date.day,
-            "day_en" : day_en,
+            "day": diary_data.create_date.day,
+            "day_en": day_en,
         }
 
         return render(request, 'diary.html', {"choosen_picture_dic": choosen_picture_dic})

@@ -24,8 +24,6 @@
         <br>
         <div class="wrap">
 
-          <input type="text" class="time" value="{{choosen_picture_dic.time}}">
-          
             <select name="font-size" class="font-size">
               <option value="">글꼴크기</option>
               <option value="15">15</option>
@@ -43,6 +41,9 @@
             </select>
           
           
+            <p class="time">{{choosen_picture_dic.month}} {{choosen_picture_dic.day}}, {{choosen_picture_dic.year}}</p>
+            <p class="time">{{choosen_picture_dic.day_en}}</p>
+  
           
 
           <!-- <input type="text" class="weather" placeholder="날씨" value="{{ choosen_picture_dic.weather }}" name = "weather"/>

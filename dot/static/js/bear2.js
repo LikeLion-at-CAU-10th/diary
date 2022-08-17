@@ -41,9 +41,6 @@ function click2() {
     context.moveTo(0, 60);
     context.lineTo(20, 0);
     context.stroke();
-    document.querySelector(".canvases").style.marginLeft = "0px";
-    document.querySelector(".canvases").style.marginTop = "-60px";
-    console.log("아~");
   } else {
     //다음페이지 나오게 -> html에 연결해두고 display:none해놨다가 display:block으로 변경하자
   }
@@ -178,4 +175,3 @@ window.onload = function () {
   click1();
   click2();
 };
-
