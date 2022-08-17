@@ -298,3 +298,35 @@ canvas{
     
     
 }
+/* 1375px 이하*/
+@media (max-width:1375px) {
+    #dot1{
+        margin-left: 10px;
+    }
+    .dots{
+        /* margin-top: 115px;
+        margin-right: 5px; */
+        margin-top: 104px;
+        margin-right: 6px;
+        transform: rotate(-3deg);
+    }
+    body{
+        background-color: #ECE7E1;
+        
+        font-family:'Malgun Gothic';
+    }
+    .canvases{
+        position: absolute;
+        z-index: 1;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        margin-left: -20px;
+        margin-top: 135px;
+
+        width: 80px;
+    }
+    
+    
+}
