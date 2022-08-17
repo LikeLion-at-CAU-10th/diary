@@ -1,7 +1,4 @@
-from operator import mod
-from pyexpat import model
 from tabnanny import verbose
-from turtle import title
 from django.db import models
 from django.forms import CharField
 from accounts.models import User
