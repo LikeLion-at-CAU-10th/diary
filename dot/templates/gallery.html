@@ -1,9 +1,13 @@
 {% extends 'base.html' %} {% load static %} {% block header_css %}
 <link rel="stylesheet" href="{% static 'css/select.css' %}" />
-<link href='https://fonts.googleapis.com/css?family=Imperial Script' rel='stylesheet'>
+<link
+  href="https://fonts.googleapis.com/css?family=Imperial Script"
+  rel="stylesheet"
+/>
 {% endblock%} {% block contents %}
-<div class="container">
-  <p class = "hi">2022</p>
+<p class="hi">2022</p>
+
+<div class="container" style="flex-direction: row">
   {% for three_element in picture %}
 
   <div class="element">
