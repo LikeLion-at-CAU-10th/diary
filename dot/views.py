@@ -242,15 +242,15 @@ def gallery(request):
     user = User.objects.filter(pk=request.user.id)[0]
     member_pictures = MemberPicture.objects.filter(member_id=request.user.id)
     complete_member_picture = []
-    idx = 0
+    complete_member_picture.append([])
+
     for member_picture in member_pictures:
         if member_picture.uncolored_dot_info == '':
-            complete_member_picture.append([])
 
             picture = Picture.objects.filter(
                 picture_id=member_picture.picture_id.picture_id)[0]
-            complete_member_picture[idx].append(picture)
-            idx += 1
+            complete_member_picture[0].append(picture)
+            
     context = {
         "picture": complete_member_picture
     }
