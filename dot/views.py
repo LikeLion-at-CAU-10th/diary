@@ -148,15 +148,23 @@ def what_month_is_it(month):
 def choosen_picture(request, diary_id, member_picture_id):
     if request.method == "GET":
         diary_data = Diary.objects.filter(pk=diary_id)[0]
+        print(diary_data.foreign_key_tape)
+        tape_data = Tape.objects.filter(pk = int(diary_data.foreign_key_tape))[0]
+        
         member_picture_data = MemberPicture.objects.filter(pk=member_picture_id)[
             0]
         picture_id = member_picture_data.picture_id.picture_id
-        print(picture_id)
         day_en = what_day_is_it(date(diary_data.create_date.year,
                                 diary_data.create_date.month, diary_data.create_date.day))
+        tapes = Tape.objects.all()
+        tape = []
+        for i in tapes:
+            tape.append(i)
+       
         choosen_picture_dic = {
             "diary_id": diary_data.diary_id,
             "member_picture_id": member_picture_id,
+            "tape_info" : tape_data.tape_info,
             "picture_id" : picture_id, 
             "title": diary_data.title,
             "content": diary_data.content,
@@ -164,6 +172,7 @@ def choosen_picture(request, diary_id, member_picture_id):
             "month": what_month_is_it(diary_data.create_date.month),
             "day": diary_data.create_date.day,
             "day_en": day_en,
+            "tape_all" : tape,
         }
 
         return render(request, 'diary.html', {"choosen_picture_dic": choosen_picture_dic})
@@ -189,8 +198,10 @@ def choosen_picture(request, diary_id, member_picture_id):
             new_colored_dot_info = int(colored)+1
         except:
             new_colored_dot_info = 1
-
+        print(request.POST['foreign_key_tape'])
+        
         diary_data = Diary.objects.filter(pk=diary_id)[0]
+        # diary_data.foreign_key_tape = request.POST['tape_id']
         diary_data.title = request.POST['title']
         diary_data.content = request.POST['content']
         diary_data.save()
