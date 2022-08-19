@@ -31,7 +31,7 @@ class Tape(models.Model):
 class Diary(models.Model):
     diary_id = models.AutoField(primary_key=True)
     foreign_key = models.CharField(verbose_name='일기외래키', max_length=200)
-    foreign_key_tape = models.CharField(verbose_name = "테입 외래키", max_length = 200, default = "0")
+    foreign_key_tape = models.CharField(verbose_name = "테입 외래키", max_length = 200, default = "1")
     title = models.CharField(verbose_name='일기제목', max_length=200)
     content = models.TextField(verbose_name='일기내용')
     create_date = models.DateTimeField(verbose_name="작성일시", auto_now_add=True)

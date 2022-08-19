@@ -23,11 +23,12 @@
 
     <div class="input">
       <form action="{%url 'choosen_picture_patch' choosen_picture_dic.diary_id choosen_picture_dic.member_picture_id %}" method="Post">
+        {% comment %} <img src="{{ element.picture_complete_info.url }}" class="card-img" /> {% endcomment %}
       
       {% csrf_token %}
       <!-- {{ choosen_picture_dic }} -->
-        <img src="{%static 'img/tape.png'%}" id="tape">
-
+        <img src="{{ choosen_picture_dic.tape_info.url }}" id="tape">
+        
         <br>
         <div class="wrap">
 
@@ -68,18 +69,96 @@
         </div>
 
         <textarea type="text" class="text" placeholder="내용" value="{{ choosen_picture_dic.content }}" class="text" style="word-wrap:break-word" name = "content">{{ choosen_picture_dic.content }}</textarea>
+        <div class="sticker-zone">
+          <div id="tape-bar">
+            <div style="display: flex; flex-direction: row; margin: 2px 2px 0px 2px;">
+              <p id="sticker-font">스티커</p>
+              <img src="{%static 'img/x.png'%}" id="x" onClick="xClick()">
+            </div>
+            <div style="display: flex; justify-content:center">
+              <hr style="margin: 0px 0px 10px 0px;width: 200px;">
+            </div>
+            {% for tape in choosen_picture_dic.tape_all %}
+              <label><input type = "radio" name = "foreign_key_tape" id = "tape{{ tape.tape_id }}" class ="tape-style thin-tape"  value =  "{{ tape.tape_id }}" style = "display : none;"></label>
+              <img src = "{{ tape.tape_info.url }}" class ="tape-style thin-tape" onclick = "tape{{ tape.tape_id }}Click()">       
+             
+            {% endfor %}
+            {% comment %} <div id="tape-img" style="display: flex; justify-content:center">
+              <input type="radio" id="radio0" name="radio0" style="display: none;">
+              <label for="radio0" onclick="tape0Click()">
+                <img src="{%static 'img/tape.png'%}" id="tape0" class="tape-style" style="padding-bottom: 1vh;" onclick="tape0Click()">
+              </label>
       
+              <input type="radio" id="radio1" name="radio1" style="display: none;">
+              <label for="radio1">
+              <img src="{%static 'img/tape1.png'%}" id="tape1" class="tape-style thin-tape" style="margin-top: -20px;" onclick="tape1Click()">
+              </label>
+      
+              <input type="radio" id="radio2" name="radio2" style="display: none;">
+              <label for="radio2">
+                <img src="{%static 'img/tape2.png'%}" id="tape2" class="tape-style thin-tape" onclick="tape2Click()">
+              </label>
+      
+              <input type="radio" id="radio3" name="radio3" style="display: none;">
+              <label for="radio3">
+              <img src="{%static 'img/tape3.png'%}" id="tape3" class="tape-style thin-tape" onclick="tape3Click()">
+              </label>
+      
+              <input type="radio" id="radio4" name="radio4" style="display: none;">
+              <label for="radio4">
+              <img src="{%static 'img/tape4.png'%}" id="tape4" class="tape-style thin-tape" onclick="tape4Click()">
+              </label>
+      
+              <input type="radio" id="radio5" name="radio5" style="display: none;">
+              <label for="radio5">
+              <img src="{%static 'img/tape5.png'%}" id="tape5" class="tape-style thin-tape" onclick="tape5Click()">
+              </label>
+      
+              <input type="radio" id="radio6" name="radio6" style="display: none;">
+              <label for="radio6">
+              <img src="{%static 'img/tape6.png'%}" id="tape6" class="tape-style thin-tape" onclick="tape6Click()">
+              </label>
+      
+              <input type="radio" id="radio7" name="radio7" style="display: none;">
+              <label for="radio7">
+              <img src="{%static 'img/tape7.png'%}" id="tape7" class="tape-style thin-tape" onclick="tape7Click()">
+              </label>
+      
+              <input type="radio" id="radio8" name="radio8" style="display: none;">
+              <label for="radio8">
+              <img src="{%static 'img/tape8.png'%}" id="tape8" class="tape-style thin-tape" onclick="tape8Click()">
+            </label>
+      
+              <input type="radio" id="radio9" name="radio9" style="display: none;">
+              <label for="radio9">
+              <img src="{%static 'img/tape9.png'%}" id="tape9" class="tape-style"  onclick="tape9Click()">
+             </label>
+      
+             <input type="radio" id="radio10" name="radio10" style="display: none;">
+             <label for="radio10">
+              <img src="{%static 'img/tape10.png'%}" id="tape10" class="tape-style"   onclick="tape10Click()">
+              </label>
+      
+              <input type="radio" id="radio11" name="radio11" style="display: none;">
+              <label for="radio11">        
+              <img src="{%static 'img/tape11.png'%}" id="tape11" class="tape-style"    onclick="tape11Click()">
+             </label>
+            </div> {% endcomment %}
+          </div>
+      
+        </div> 
         <div class="save">
           <input type="submit" value="저장" class="button submit"/>
           <a href = "{% url 'init_picture' choosen_picture_dic.picture_id %}" ><input type="button" value="뒤로가기" class="button reset"> </a>
         </div>
-      </div>  
+      </div>
+      
       </form>
     </div>
   </div>
   <img src="{%static 'img/smile.png'%}" id="smile-sticker" onclick="smileClick()">
 
-  <div class="sticker-zone">
+  {% comment %} <div class="sticker-zone">
     <div id="tape-bar">
       <div style="display: flex; flex-direction: row; margin: 2px 2px 0px 2px;">
         <p id="sticker-font">스티커</p>
@@ -151,7 +230,7 @@
       </div>
     </div>
 
-  </div>
+  </div> {% endcomment %}
 </div>
 
 <script>
