@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block header_css %}
+<<<<<<< HEAD
 <link rel="stylesheet" href="../static/css/star.css" />
+=======
+<link rel="stylesheet" href= "{% static 'css/star.css' %}" />
+>>>>>>> d63c3a4ed5398d52d805834a78cee4953412c0c3
 {% endblock%}
 {% block contents %}
     {% if colored_dot == 0 %}
@@ -10,24 +14,51 @@
         <div class="dots">
           <div class="column">
               <p class="num" id="num9">9</p>
+<<<<<<< HEAD
+=======
+              <div class="dot" id="dot9"></div>
+              <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                {% csrf_token %}
+                <button class="dot" id="dot1" ></button>
+              </form>
+>>>>>>> d63c3a4ed5398d52d805834a78cee4953412c0c3
               <p class="num" id="num1">1</p>
           </div>
-          
+           
           <div class="column">
             <p class="num num-blank" id="num8">8</p>
+<<<<<<< HEAD
+=======
+            <div class="dot" id="dot8" ></div>
+            <div class="dot" id="dot2"></div>
+>>>>>>> d63c3a4ed5398d52d805834a78cee4953412c0c3
             <p class="num num-blank" id="num2">2</p>
           </div>
        
             <div class="column">
                 <p class="num" id="num7">7</p>
+<<<<<<< HEAD
                 <p class="num" id="num3">3</p>
             </div>
             <div class="column" style="flex-direction: column;">
+=======
+                <div class="dot" id="dot7"></div>
+                <div class="dot" id="dot3" ></div>
+                <p class="num" id="num3">3</p>
+            </div>
+            <div class="column" style="flex-direction: column;">
+                <div class="dot" id="dot5" ></div>
+>>>>>>> d63c3a4ed5398d52d805834a78cee4953412c0c3
                 <p class="num" id="num8">5</p>
             </div>
            
             <div class="column" style="margin-top: -10px;">
                 <p class="num num-blank" id="num6">6</p>
+<<<<<<< HEAD
+=======
+                <div class="dot" id="dot6" ></div>
+                <div class="dot" id="dot4" ></div>
+>>>>>>> d63c3a4ed5398d52d805834a78cee4953412c0c3
                 <p class="num num-blank" id="num4">4</p>
             </div>
         </div>
@@ -127,6 +158,7 @@
         
         <div class="flex">
 
+<<<<<<< HEAD
             <div class="c78">
             <canvas id="seveneight"width="56" height="50"></canvas>
         </div>
@@ -154,3 +186,914 @@
        </div>
 </body>
 </html>
+=======
+      <script src="../static/js/star.js"></script>
+    {% elif colored_dot == 1 %}
+    <section class="card">
+        <img src="../static/img/star.jpeg" class="img"></div>
+        <div class="dots">
+          <div class="column">
+              <p class="num" id="num9">9</p>
+              <div class="dot" id="dot9"></div>
+              <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                {% csrf_token %}
+                <button class="dot" id="dot1" ></button>
+              </form>
+              <p class="num" id="num1">1</p>
+          </div>
+          
+          <div class="column">
+            <p class="num num-blank" id="num8">8</p>
+            <div class="dot" id="dot8" ></div>
+            <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+                {% csrf_token %}
+                <button class="dot" id="dot2" ></button>
+            </form>
+            
+            <p class="num num-blank" id="num2">2</p>
+          </div>
+       
+            <div class="column">
+                <p class="num" id="num7">7</p>
+                <div class="dot" id="dot7"></div>
+                <div class="dot" id="dot3" ></div>
+                <p class="num" id="num3">3</p>
+            </div>
+            <div class="column" style="flex-direction: column;">
+                <div class="dot" id="dot5" ></div>
+                <p class="num" id="num8">5</p>
+            </div>
+           
+            <div class="column" style="margin-top: -10px;">
+                <p class="num num-blank" id="num6">6</p>
+                <div class="dot" id="dot6" ></div>
+                <div class="dot" id="dot4" ></div>
+                <p class="num num-blank" id="num4">4</p>
+            </div>
+        </div>
+        <div class="canvases">
+            <div class="flex">
+                <div class="c89">
+                    <canvas id="eightnine" width="80" height="30"></canvas>
+                </div>
+                <div class="c12">
+                  <canvas id="onetwo" width="80" height="30"></canvas>
+                </div>
+            </div>
+            
+            <div class="flex">
+
+                <div class="c78">
+                <canvas id="seveneight"width="56" height="50"></canvas>
+            </div>
+            <div class="c23">
+              <canvas id="twothree" width="56" height="50"></canvas>
+            </div>
+            </div>
+            <div class="flex">
+
+                <div class="c67">
+                    <canvas id="sixseven" width="80" height="30"></canvas>
+                </div>
+                <div class="c34">
+                    <canvas id="threefour" width="80" height="30"></canvas>
+                </div>
+            </div>
+           <div class="flex">
+
+            <div class="c56">
+                <canvas id="fivesix" width="80" height="30"></canvas>
+            </div>
+            <div class="c45">
+            <canvas id="fourfive" width="80" height="30"></canvas>
+            </div>
+           </div>
+           
+            
+            
+            
+            
+        </div>
+      </section>
+
+      <script src="../static/js/star1.js"></script>  
+    {% elif colored_dot == 2 %}
+    <section class="card">
+        <img src="../static/img/star.jpeg" class="img"></div>
+        <div class="dots">
+          <div class="column">
+              <p class="num" id="num9">9</p>
+              <div class="dot" id="dot9"></div>
+              <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                {% csrf_token %}
+                <button class="dot" id="dot1" ></button>
+              </form>
+              <p class="num" id="num1">1</p>
+          </div>
+          
+          <div class="column">
+            <p class="num num-blank" id="num8">8</p>
+            <div class="dot" id="dot8" ></div>
+            <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+                {% csrf_token %}
+                <button class="dot" id="dot2" ></button>
+            </form>
+            
+            <p class="num num-blank" id="num2">2</p>
+          </div>
+       
+            <div class="column">
+                <p class="num" id="num7">7</p>
+                <div class="dot" id="dot7"></div>
+                <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}"  method = "GET" >
+                    {% csrf_token %}
+                    <button class="dot" id="dot3" ></button>
+                </form>
+                <p class="num" id="num3">3</p>
+            </div>
+            <div class="column" style="flex-direction: column;">
+                <div class="dot" id="dot5" ></div>
+                <p class="num" id="num8">5</p>
+            </div>
+           
+            <div class="column" style="margin-top: -10px;">
+                <p class="num num-blank" id="num6">6</p>
+                <div class="dot" id="dot6" ></div>
+                <div class="dot" id="dot4" ></div>
+                <p class="num num-blank" id="num4">4</p>
+            </div>
+        </div>
+        <div class="canvases">
+            <div class="flex">
+                <div class="c89">
+                    <canvas id="eightnine" width="80" height="30"></canvas>
+                </div>
+                <div class="c12">
+                  <canvas id="onetwo" width="80" height="30"></canvas>
+                </div>
+            </div>
+            
+            <div class="flex">
+
+                <div class="c78">
+                <canvas id="seveneight"width="56" height="50"></canvas>
+            </div>
+            <div class="c23">
+              <canvas id="twothree" width="56" height="50"></canvas>
+            </div>
+            </div>
+            <div class="flex">
+
+                <div class="c67">
+                    <canvas id="sixseven" width="80" height="30"></canvas>
+                </div>
+                <div class="c34">
+                    <canvas id="threefour" width="80" height="30"></canvas>
+                </div>
+            </div>
+           <div class="flex">
+
+            <div class="c56">
+                <canvas id="fivesix" width="80" height="30"></canvas>
+            </div>
+            <div class="c45">
+            <canvas id="fourfive" width="80" height="30"></canvas>
+            </div>
+           </div>
+           
+            
+            
+            
+            
+        </div>
+      </section>
+
+      <script src="../static/js/star2.js"></script>
+      {% elif colored_dot == 3 %}
+      <section class="card">
+          <img src="../static/img/star.jpeg" class="img"></div>
+          <div class="dots">
+            <div class="column">
+                <p class="num" id="num9">9</p>
+                <div class="dot" id="dot9"></div>
+                <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                  {% csrf_token %}
+                  <button class="dot" id="dot1" ></button>
+                </form>
+                <p class="num" id="num1">1</p>
+            </div>
+            
+            <div class="column">
+              <p class="num num-blank" id="num8">8</p>
+              <div class="dot" id="dot8" ></div>
+              <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+                  {% csrf_token %}
+                  <button class="dot" id="dot2" ></button>
+              </form>
+              
+              <p class="num num-blank" id="num2">2</p>
+            </div>
+         
+              <div class="column">
+                  <p class="num" id="num7">7</p>
+                  <div class="dot" id="dot7"></div>
+                  <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}"  method = "GET" >
+                      {% csrf_token %}
+                      <button class="dot" id="dot3" ></button>
+                  </form>
+                  <p class="num" id="num3">3</p>
+              </div>
+              <div class="column" style="flex-direction: column;">
+                  <div class="dot" id="dot5" ></div>
+                  <p class="num" id="num8">5</p>
+              </div>
+             
+              <div class="column" style="margin-top: -10px;">
+                  <p class="num num-blank" id="num6">6</p>
+                  <div class="dot" id="dot6" ></div>
+                  <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}"  method = "GET" >
+                    {% csrf_token %}
+                    <button class="dot" id="dot4" ></button>
+                  </form>
+                  <p class="num num-blank" id="num4">4</p>
+              </div>
+          </div>
+          <div class="canvases">
+              <div class="flex">
+                  <div class="c89">
+                      <canvas id="eightnine" width="80" height="30"></canvas>
+                  </div>
+                  <div class="c12">
+                    <canvas id="onetwo" width="80" height="30"></canvas>
+                  </div>
+              </div>
+              
+              <div class="flex">
+  
+                  <div class="c78">
+                  <canvas id="seveneight"width="56" height="50"></canvas>
+              </div>
+              <div class="c23">
+                <canvas id="twothree" width="56" height="50"></canvas>
+              </div>
+              </div>
+              <div class="flex">
+  
+                  <div class="c67">
+                      <canvas id="sixseven" width="80" height="30"></canvas>
+                  </div>
+                  <div class="c34">
+                      <canvas id="threefour" width="80" height="30"></canvas>
+                  </div>
+              </div>
+             <div class="flex">
+  
+              <div class="c56">
+                  <canvas id="fivesix" width="80" height="30"></canvas>
+              </div>
+              <div class="c45">
+              <canvas id="fourfive" width="80" height="30"></canvas>
+              </div>
+             </div>
+             
+              
+              
+              
+              
+          </div>
+        </section>
+  
+        <script src="../static/js/star3.js"></script>
+        {% elif colored_dot == 4 %}
+        <section class="card">
+            <img src="../static/img/star.jpeg" class="img"></div>
+            <div class="dots">
+              <div class="column">
+                  <p class="num" id="num9">9</p>
+                  <div class="dot" id="dot9"></div>
+                  <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                    {% csrf_token %}
+                    <button class="dot" id="dot1" ></button>
+                  </form>
+                  <p class="num" id="num1">1</p>
+              </div>
+              
+              <div class="column">
+                <p class="num num-blank" id="num8">8</p>
+                <div class="dot" id="dot8" ></div>
+                <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+                    {% csrf_token %}
+                    <button class="dot" id="dot2" ></button>
+                </form>
+                
+                <p class="num num-blank" id="num2">2</p>
+              </div>
+           
+                <div class="column">
+                    <p class="num" id="num7">7</p>
+                    <div class="dot" id="dot7"></div>
+                    <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}"  method = "GET" >
+                        {% csrf_token %}
+                        <button class="dot" id="dot3" ></button>
+                    </form>
+                    <p class="num" id="num3">3</p>
+                </div>
+                <div class="column" style="flex-direction: column;">
+                    <form action = "{% url 'choosen_picture_get' diary_id.4 member_picture_id %}"  method = "GET" >
+                        {% csrf_token %}
+                        <button class="dot" id="dot5" ></button>
+                      </form>
+                    <p class="num" id="num8">5</p>
+                </div>
+               
+                <div class="column" style="margin-top: -10px;">
+                    <p class="num num-blank" id="num6">6</p>
+                    <div class="dot" id="dot6" ></div>
+                    <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}"  method = "GET" >
+                      {% csrf_token %}
+                      <button class="dot" id="dot4" ></button>
+                    </form>
+                    <p class="num num-blank" id="num4">4</p>
+                </div>
+            </div>
+            <div class="canvases">
+                <div class="flex">
+                    <div class="c89">
+                        <canvas id="eightnine" width="80" height="30"></canvas>
+                    </div>
+                    <div class="c12">
+                      <canvas id="onetwo" width="80" height="30"></canvas>
+                    </div>
+                </div>
+                
+                <div class="flex">
+    
+                    <div class="c78">
+                    <canvas id="seveneight"width="56" height="50"></canvas>
+                </div>
+                <div class="c23">
+                  <canvas id="twothree" width="56" height="50"></canvas>
+                </div>
+                </div>
+                <div class="flex">
+    
+                    <div class="c67">
+                        <canvas id="sixseven" width="80" height="30"></canvas>
+                    </div>
+                    <div class="c34">
+                        <canvas id="threefour" width="80" height="30"></canvas>
+                    </div>
+                </div>
+               <div class="flex">
+    
+                <div class="c56">
+                    <canvas id="fivesix" width="80" height="30"></canvas>
+                </div>
+                <div class="c45">
+                <canvas id="fourfive" width="80" height="30"></canvas>
+                </div>
+               </div>
+               
+                
+                
+                
+                
+            </div>
+          </section>
+    
+          <script src="../static/js/star4.js"></script>
+          {% elif colored_dot == 5 %}
+          <section class="card">
+              <img src="../static/img/star.jpeg" class="img"></div>
+              <div class="dots">
+                <div class="column">
+                    <p class="num" id="num9">9</p>
+                    <div class="dot" id="dot9"></div>
+                    <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                      {% csrf_token %}
+                      <button class="dot" id="dot1" ></button>
+                    </form>
+                    <p class="num" id="num1">1</p>
+                </div>
+                
+                <div class="column">
+                  <p class="num num-blank" id="num8">8</p>
+                  <div class="dot" id="dot8" ></div>
+                  <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+                      {% csrf_token %}
+                      <button class="dot" id="dot2" ></button>
+                  </form>
+                  
+                  <p class="num num-blank" id="num2">2</p>
+                </div>
+             
+                  <div class="column">
+                      <p class="num" id="num7">7</p>
+                      <div class="dot" id="dot7"></div>
+                      <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}"  method = "GET" >
+                          {% csrf_token %}
+                          <button class="dot" id="dot3" ></button>
+                      </form>
+                      <p class="num" id="num3">3</p>
+                  </div>
+                  <div class="column" style="flex-direction: column;">
+                      <form action = "{% url 'choosen_picture_get' diary_id.4 member_picture_id %}"  method = "GET" >
+                          {% csrf_token %}
+                          <button class="dot" id="dot5" ></button>
+                        </form>
+                      <p class="num" id="num8">5</p>
+                  </div>
+                 
+                  <div class="column" style="margin-top: -10px;">
+                      <p class="num num-blank" id="num6">6</p>
+                      <form action = "{% url 'choosen_picture_get' diary_id.5 member_picture_id %}"  method = "GET" >
+                        {% csrf_token %}
+                        <button class="dot" id="dot6" ></button>
+                      </form>
+                      <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}"  method = "GET" >
+                        {% csrf_token %}
+                        <button class="dot" id="dot4" ></button>
+                      </form>
+                      <p class="num num-blank" id="num4">4</p>
+                  </div>
+              </div>
+              <div class="canvases">
+                  <div class="flex">
+                      <div class="c89">
+                          <canvas id="eightnine" width="80" height="30"></canvas>
+                      </div>
+                      <div class="c12">
+                        <canvas id="onetwo" width="80" height="30"></canvas>
+                      </div>
+                  </div>
+                  
+                  <div class="flex">
+      
+                      <div class="c78">
+                      <canvas id="seveneight"width="56" height="50"></canvas>
+                  </div>
+                  <div class="c23">
+                    <canvas id="twothree" width="56" height="50"></canvas>
+                  </div>
+                  </div>
+                  <div class="flex">
+      
+                      <div class="c67">
+                          <canvas id="sixseven" width="80" height="30"></canvas>
+                      </div>
+                      <div class="c34">
+                          <canvas id="threefour" width="80" height="30"></canvas>
+                      </div>
+                  </div>
+                 <div class="flex">
+      
+                  <div class="c56">
+                      <canvas id="fivesix" width="80" height="30"></canvas>
+                  </div>
+                  <div class="c45">
+                  <canvas id="fourfive" width="80" height="30"></canvas>
+                  </div>
+                 </div>
+                 
+                  
+                  
+                  
+                  
+              </div>
+            </section>
+      
+            <script src="../static/js/star5.js"></script>
+            {% elif colored_dot == 6 %}
+            <section class="card">
+                <img src="../static/img/star.jpeg" class="img"></div>
+                <div class="dots">
+                  <div class="column">
+                      <p class="num" id="num9">9</p>
+                      <div class="dot" id="dot9"></div>
+                      <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                        {% csrf_token %}
+                        <button class="dot" id="dot1" ></button>
+                      </form>
+                      <p class="num" id="num1">1</p>
+                  </div>
+                  
+                  <div class="column">
+                    <p class="num num-blank" id="num8">8</p>
+                    <div class="dot" id="dot8" ></div>
+                    <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+                        {% csrf_token %}
+                        <button class="dot" id="dot2" ></button>
+                    </form>
+                    
+                    <p class="num num-blank" id="num2">2</p>
+                  </div>
+               
+                    <div class="column">
+                        <p class="num" id="num7">7</p>
+                        <form action = "{% url 'choosen_picture_get' diary_id.6 member_picture_id %}"  method = "GET" >
+                            {% csrf_token %}
+                            <button class="dot" id="dot7" ></button>
+                          </form>
+                        <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}"  method = "GET" >
+                            {% csrf_token %}
+                            <button class="dot" id="dot3" ></button>
+                        </form>
+                        <p class="num" id="num3">3</p>
+                    </div>
+                    <div class="column" style="flex-direction: column;">
+                        <form action = "{% url 'choosen_picture_get' diary_id.4 member_picture_id %}"  method = "GET" >
+                            {% csrf_token %}
+                            <button class="dot" id="dot5" ></button>
+                          </form>
+                        <p class="num" id="num8">5</p>
+                    </div>
+                   
+                    <div class="column" style="margin-top: -10px;">
+                        <p class="num num-blank" id="num6">6</p>
+                        <form action = "{% url 'choosen_picture_get' diary_id.5 member_picture_id %}"  method = "GET" >
+                          {% csrf_token %}
+                          <button class="dot" id="dot6" ></button>
+                        </form>
+                        <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}"  method = "GET" >
+                          {% csrf_token %}
+                          <button class="dot" id="dot4" ></button>
+                        </form>
+                        <p class="num num-blank" id="num4">4</p>
+                    </div>
+                </div>
+                <div class="canvases">
+                    <div class="flex">
+                        <div class="c89">
+                            <canvas id="eightnine" width="80" height="30"></canvas>
+                        </div>
+                        <div class="c12">
+                          <canvas id="onetwo" width="80" height="30"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+        
+                        <div class="c78">
+                        <canvas id="seveneight"width="56" height="50"></canvas>
+                    </div>
+                    <div class="c23">
+                      <canvas id="twothree" width="56" height="50"></canvas>
+                    </div>
+                    </div>
+                    <div class="flex">
+        
+                        <div class="c67">
+                            <canvas id="sixseven" width="80" height="30"></canvas>
+                        </div>
+                        <div class="c34">
+                            <canvas id="threefour" width="80" height="30"></canvas>
+                        </div>
+                    </div>
+                   <div class="flex">
+        
+                    <div class="c56">
+                        <canvas id="fivesix" width="80" height="30"></canvas>
+                    </div>
+                    <div class="c45">
+                    <canvas id="fourfive" width="80" height="30"></canvas>
+                    </div>
+                   </div>
+                   
+                    
+                    
+                    
+                    
+                </div>
+              </section>
+        
+              <script src="../static/js/star6.js"></script>
+              {% elif colored_dot == 7 %}
+              <section class="card">
+                  <img src="../static/img/star.jpeg" class="img"></div>
+                  <div class="dots">
+                    <div class="column">
+                        <p class="num" id="num9">9</p>
+                        <div class="dot" id="dot9"></div>
+                        <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                          {% csrf_token %}
+                          <button class="dot" id="dot1" ></button>
+                        </form>
+                        <p class="num" id="num1">1</p>
+                    </div>
+                    
+                    <div class="column">
+                      <p class="num num-blank" id="num8">8</p>
+                      <form action = "{% url 'choosen_picture_get' diary_id.7 member_picture_id %}"  method = "GET" >
+                        {% csrf_token %}
+                        <button class="dot" id="dot8" ></button>
+                      </form>
+                      <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+                          {% csrf_token %}
+                          <button class="dot" id="dot2" ></button>
+                      </form>
+                      
+                      <p class="num num-blank" id="num2">2</p>
+                    </div>
+                 
+                      <div class="column">
+                          <p class="num" id="num7">7</p>
+                          <form action = "{% url 'choosen_picture_get' diary_id.6 member_picture_id %}"  method = "GET" >
+                              {% csrf_token %}
+                              <button class="dot" id="dot7" ></button>
+                            </form>
+                          <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}"  method = "GET" >
+                              {% csrf_token %}
+                              <button class="dot" id="dot3" ></button>
+                          </form>
+                          <p class="num" id="num3">3</p>
+                      </div>
+                      <div class="column" style="flex-direction: column;">
+                          <form action = "{% url 'choosen_picture_get' diary_id.4 member_picture_id %}"  method = "GET" >
+                              {% csrf_token %}
+                              <button class="dot" id="dot5" ></button>
+                            </form>
+                          <p class="num" id="num8">5</p>
+                      </div>
+                     
+                      <div class="column" style="margin-top: -10px;">
+                          <p class="num num-blank" id="num6">6</p>
+                          <form action = "{% url 'choosen_picture_get' diary_id.5 member_picture_id %}"  method = "GET" >
+                            {% csrf_token %}
+                            <button class="dot" id="dot6" ></button>
+                          </form>
+                          <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}"  method = "GET" >
+                            {% csrf_token %}
+                            <button class="dot" id="dot4" ></button>
+                          </form>
+                          <p class="num num-blank" id="num4">4</p>
+                      </div>
+                  </div>
+                  <div class="canvases">
+                      <div class="flex">
+                          <div class="c89">
+                              <canvas id="eightnine" width="80" height="30"></canvas>
+                          </div>
+                          <div class="c12">
+                            <canvas id="onetwo" width="80" height="30"></canvas>
+                          </div>
+                      </div>
+                      
+                      <div class="flex">
+          
+                          <div class="c78">
+                          <canvas id="seveneight"width="56" height="50"></canvas>
+                      </div>
+                      <div class="c23">
+                        <canvas id="twothree" width="56" height="50"></canvas>
+                      </div>
+                      </div>
+                      <div class="flex">
+          
+                          <div class="c67">
+                              <canvas id="sixseven" width="80" height="30"></canvas>
+                          </div>
+                          <div class="c34">
+                              <canvas id="threefour" width="80" height="30"></canvas>
+                          </div>
+                      </div>
+                     <div class="flex">
+          
+                      <div class="c56">
+                          <canvas id="fivesix" width="80" height="30"></canvas>
+                      </div>
+                      <div class="c45">
+                      <canvas id="fourfive" width="80" height="30"></canvas>
+                      </div>
+                     </div>
+                     
+                      
+                      
+                      
+                      
+                  </div>
+                </section>
+          
+                <script src="../static/js/star7.js"></script>
+                {% elif colored_dot == 8 %}
+                <section class="card">
+                    <img src="../static/img/star.jpeg" class="img"></div>
+                    <div class="dots">
+                      <div class="column">
+                          <p class="num" id="num9">9</p>
+                          <form action = "{% url 'choosen_picture_get' diary_id.8 member_picture_id %}"  method = "GET" >
+                            {% csrf_token %}
+                            <button class="dot" id="dot9" ></button>
+                          </form>
+                          <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                            {% csrf_token %}
+                            <button class="dot" id="dot1" ></button>
+                          </form>
+                          <p class="num" id="num1">1</p>
+                      </div>
+                      
+                      <div class="column">
+                        <p class="num num-blank" id="num8">8</p>
+                        <form action = "{% url 'choosen_picture_get' diary_id.7 member_picture_id %}"  method = "GET" >
+                          {% csrf_token %}
+                          <button class="dot" id="dot8" ></button>
+                        </form>
+                        <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+                            {% csrf_token %}
+                            <button class="dot" id="dot2" ></button>
+                        </form>
+                        
+                        <p class="num num-blank" id="num2">2</p>
+                      </div>
+                   
+                        <div class="column">
+                            <p class="num" id="num7">7</p>
+                            <form action = "{% url 'choosen_picture_get' diary_id.6 member_picture_id %}"  method = "GET" >
+                                {% csrf_token %}
+                                <button class="dot" id="dot7" ></button>
+                              </form>
+                            <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}"  method = "GET" >
+                                {% csrf_token %}
+                                <button class="dot" id="dot3" ></button>
+                            </form>
+                            <p class="num" id="num3">3</p>
+                        </div>
+                        <div class="column" style="flex-direction: column;">
+                            <form action = "{% url 'choosen_picture_get' diary_id.4 member_picture_id %}"  method = "GET" >
+                                {% csrf_token %}
+                                <button class="dot" id="dot5" ></button>
+                              </form>
+                            <p class="num" id="num8">5</p>
+                        </div>
+                       
+                        <div class="column" style="margin-top: -10px;">
+                            <p class="num num-blank" id="num6">6</p>
+                            <form action = "{% url 'choosen_picture_get' diary_id.5 member_picture_id %}"  method = "GET" >
+                              {% csrf_token %}
+                              <button class="dot" id="dot6" ></button>
+                            </form>
+                            <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}"  method = "GET" >
+                              {% csrf_token %}
+                              <button class="dot" id="dot4" ></button>
+                            </form>
+                            <p class="num num-blank" id="num4">4</p>
+                        </div>
+                    </div>
+                    <div class="canvases">
+                        <div class="flex">
+                            <div class="c89">
+                                <canvas id="eightnine" width="80" height="30"></canvas>
+                            </div>
+                            <div class="c12">
+                              <canvas id="onetwo" width="80" height="30"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+            
+                            <div class="c78">
+                            <canvas id="seveneight"width="56" height="50"></canvas>
+                        </div>
+                        <div class="c23">
+                          <canvas id="twothree" width="56" height="50"></canvas>
+                        </div>
+                        </div>
+                        <div class="flex">
+            
+                            <div class="c67">
+                                <canvas id="sixseven" width="80" height="30"></canvas>
+                            </div>
+                            <div class="c34">
+                                <canvas id="threefour" width="80" height="30"></canvas>
+                            </div>
+                        </div>
+                       <div class="flex">
+            
+                        <div class="c56">
+                            <canvas id="fivesix" width="80" height="30"></canvas>
+                        </div>
+                        <div class="c45">
+                        <canvas id="fourfive" width="80" height="30"></canvas>
+                        </div>
+                       </div>
+                       
+                        
+                        
+                        
+                        
+                    </div>
+                  </section>
+            
+                  <script src="../static/js/star8.js"></script>
+                  {% elif colored_dot == 9 %}
+                  <section class="card">
+                      <img src="../static/img/star.jpeg" class="img"></div>
+                      <div class="dots">
+                        <div class="column">
+                            <p class="num" id="num9">9</p>
+                            <form action = "{% url 'choosen_picture_get' diary_id.8 member_picture_id %}"  method = "GET" >
+                              {% csrf_token %}
+                              <button class="dot" id="dot9" ></button>
+                            </form>
+                            <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}"  method = "GET" >
+                              {% csrf_token %}
+                              <button class="dot" id="dot1" ></button>
+                            </form>
+                            <p class="num" id="num1">1</p>
+                        </div>
+                        
+                        <div class="column">
+                          <p class="num num-blank" id="num8">8</p>
+                          <form action = "{% url 'choosen_picture_get' diary_id.7 member_picture_id %}"  method = "GET" >
+                            {% csrf_token %}
+                            <button class="dot" id="dot8" ></button>
+                          </form>
+                          <form action = "{% url 'choosen_picture_get' diary_id.1 member_picture_id %}"  method = "GET" >
+                              {% csrf_token %}
+                              <button class="dot" id="dot2" ></button>
+                          </form>
+                          
+                          <p class="num num-blank" id="num2">2</p>
+                        </div>
+                     
+                          <div class="column">
+                              <p class="num" id="num7">7</p>
+                              <form action = "{% url 'choosen_picture_get' diary_id.6 member_picture_id %}"  method = "GET" >
+                                  {% csrf_token %}
+                                  <button class="dot" id="dot7" ></button>
+                                </form>
+                              <form action = "{% url 'choosen_picture_get' diary_id.2 member_picture_id %}"  method = "GET" >
+                                  {% csrf_token %}
+                                  <button class="dot" id="dot3" ></button>
+                              </form>
+                              <p class="num" id="num3">3</p>
+                          </div>
+                          <div class="column" style="flex-direction: column;">
+                              <form action = "{% url 'choosen_picture_get' diary_id.4 member_picture_id %}"  method = "GET" >
+                                  {% csrf_token %}
+                                  <button class="dot" id="dot5" ></button>
+                                </form>
+                              <p class="num" id="num8">5</p>
+                          </div>
+                         
+                          <div class="column" style="margin-top: -10px;">
+                              <p class="num num-blank" id="num6">6</p>
+                              <form action = "{% url 'choosen_picture_get' diary_id.5 member_picture_id %}"  method = "GET" >
+                                {% csrf_token %}
+                                <button class="dot" id="dot6" ></button>
+                              </form>
+                              <form action = "{% url 'choosen_picture_get' diary_id.3 member_picture_id %}"  method = "GET" >
+                                {% csrf_token %}
+                                <button class="dot" id="dot4" ></button>
+                              </form>
+                              <p class="num num-blank" id="num4">4</p>
+                          </div>
+                      </div>
+                      <div class="canvases">
+                          <div class="flex">
+                              <div class="c89">
+                                  <canvas id="eightnine" width="80" height="30"></canvas>
+                              </div>
+                              <div class="c12">
+                                <canvas id="onetwo" width="80" height="30"></canvas>
+                              </div>
+                          </div>
+                          
+                          <div class="flex">
+              
+                              <div class="c78">
+                              <canvas id="seveneight"width="56" height="50"></canvas>
+                          </div>
+                          <div class="c23">
+                            <canvas id="twothree" width="56" height="50"></canvas>
+                          </div>
+                          </div>
+                          <div class="flex">
+              
+                              <div class="c67">
+                                  <canvas id="sixseven" width="80" height="30"></canvas>
+                              </div>
+                              <div class="c34">
+                                  <canvas id="threefour" width="80" height="30"></canvas>
+                              </div>
+                          </div>
+                         <div class="flex">
+              
+                          <div class="c56">
+                              <canvas id="fivesix" width="80" height="30"></canvas>
+                          </div>
+                          <div class="c45">
+                          <canvas id="fourfive" width="80" height="30"></canvas>
+                          </div>
+                         </div>
+                         
+                          
+                          
+                          
+                          
+                      </div>
+                    </section>
+              
+                    <script src="../static/js/star9.js"></script>
+    {% endif %}
+{% endblock %}
+>>>>>>> d63c3a4ed5398d52d805834a78cee4953412c0c3

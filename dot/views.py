@@ -47,7 +47,8 @@ def init_picture(request, id):
             elif pictureId == 3:
                 return render(request, 'bear.html', context=context)
             elif pictureId == 4:
-                return render(request, 'star.html', context=context)        
+                   return render(request, 'star.html', context=context)        
+
             return render(request, 'dot/test.html', context=context)
         else:
             lst = list(range(1, picture_data.dot_count + 1))
@@ -126,7 +127,7 @@ def init_picture(request, id):
             "picture_data": picture_data,
             "member_picture_id": member_picture_data.member_picture_id
         }
-        print(colored_dot)
+        
         if pictureId == 1:
             return render(request, 'rocket.html', context=context)
         elif pictureId == 2:
@@ -135,6 +136,7 @@ def init_picture(request, id):
             return render(request, 'bear.html', context=context)
         elif pictureId == 4:
                 return render(request, 'star.html', context=context)  
+
         return render(request, 'dot/test.html', context=context)
 
 
@@ -154,8 +156,17 @@ def what_month_is_it(month):
 def choosen_picture(request, diary_id, member_picture_id):
     if request.method == "GET":
         diary_data = Diary.objects.filter(pk=diary_id)[0]
-        print(diary_data.foreign_key_tape)
+        print("이거는",diary_data.foreign_key_tape)
+
+
+        # if diary_data.foreign_key_tape=="False":
+        #     tape_data = Tape.objects.filter(pk = 1)[0]
+        # else :
         tape_data = Tape.objects.filter(pk = int(diary_data.foreign_key_tape))[0]
+
+
+
+
         
         member_picture_data = MemberPicture.objects.filter(pk=member_picture_id)[
             0]
@@ -208,10 +219,13 @@ def choosen_picture(request, diary_id, member_picture_id):
         
         
         diary_data = Diary.objects.filter(pk=diary_id)[0]
+        # diary_data.foreign_key_tape = request.POST.get('foreign_key_tape', "False" )
         diary_data.foreign_key_tape = request.POST['foreign_key_tape']
+
         diary_data.title = request.POST['title']
         diary_data.content = request.POST['content']
         diary_data.save()
+        print(diary_data.foreign_key_tape)
 
         member_picture_data.uncolored_dot_info = new_uncolored_dot_info
         member_picture_data.colored_dot_info = new_colored_dot_info
@@ -258,7 +272,7 @@ def pictures(request):
                 except:
                     break
             idx += 1
-        print(three_context_list)
+        
         context = {
             "picture_list": three_context_list,
         }

@@ -79,7 +79,7 @@
               <hr style="margin: 0px 0px 10px 0px;width: 200px;">
             </div>
             {% for tape in choosen_picture_dic.tape_all %}
-              <label for=  "foreign_key_tape{{ forloop.counter }}"><input type = "radio" name = "foreign_key_tape" id = "tape{{ tape.tape_id }}" class ="tape-style thin-tape"  value =  "{{ tape.tape_id }}" ></label>
+              <label for=  "foreign_key_tape{{ forloop.counter }}"><input type = "radio" name = "foreign_key_tape" id = "tape{{ tape_data.tape_id }}" class ="tape-style thin-tape"  value =  "{{ tape_data.tape_id }}" ></label>
               <img src = "{{ tape.tape_info.url }}" class ="tape-style thin-tape" onclick = "tape{{ tape.tape_id }}Click()">       
              
             {% endfor %}
