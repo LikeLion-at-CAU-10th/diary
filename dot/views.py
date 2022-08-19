@@ -46,6 +46,8 @@ def init_picture(request, id):
                 return render(request, 'cherry.html', context=context)
             elif pictureId == 3:
                 return render(request, 'bear.html', context=context)
+            elif pictureId == 4:
+                return render(request, 'star.html', context=context)
             return render(request, 'dot/test.html', context=context)
         else:
             lst = list(range(1, picture_data.dot_count + 1))
@@ -100,6 +102,8 @@ def init_picture(request, id):
                 return render(request, 'cherry.html', context=context)
             elif pictureId == 3:
                 return render(request, 'bear.html', context=context)
+            elif pictureId == 4:
+                return render(request, 'star.html', context=context)
             return render(request, 'dot/test.html', context=context)
     if request.method == 'GET':
         member_data = User.objects.filter(pk=request.user.id)[0]
@@ -129,6 +133,8 @@ def init_picture(request, id):
             return render(request, 'cherry.html', context=context)
         elif pictureId == 3:
             return render(request, 'bear.html', context=context)
+        elif pictureId == 4:
+                return render(request, 'star.html', context=context)
         return render(request, 'dot/test.html', context=context)
 
 
