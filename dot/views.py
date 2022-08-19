@@ -46,6 +46,8 @@ def init_picture(request, id):
                 return render(request, 'cherry.html', context=context)
             elif pictureId == 3:
                 return render(request, 'bear.html', context=context)
+            elif pictureId == 4:
+                return render(request, 'star.html', context=context)
             return render(request, 'dot/test.html', context=context)
         else:
             lst = list(range(1, picture_data.dot_count + 1))
@@ -100,6 +102,8 @@ def init_picture(request, id):
                 return render(request, 'cherry.html', context=context)
             elif pictureId == 3:
                 return render(request, 'bear.html', context=context)
+            elif pictureId == 4:
+                return render(request, 'star.html', context=context)
             return render(request, 'dot/test.html', context=context)
     if request.method == 'GET':
         member_data = User.objects.filter(pk=request.user.id)[0]
@@ -129,6 +133,8 @@ def init_picture(request, id):
             return render(request, 'cherry.html', context=context)
         elif pictureId == 3:
             return render(request, 'bear.html', context=context)
+        elif pictureId == 4:
+                return render(request, 'star.html', context=context)
         return render(request, 'dot/test.html', context=context)
 
 
@@ -237,7 +243,7 @@ def pictures(request):
 
         picture_list = Picture.objects.all()
         context_list = []
-        for i in range(3):
+        for i in range(4):
             picture = Picture.objects.filter(pk=picture_list[i].picture_id)[0]
             context_list.append(picture)
         real_idx = 0
@@ -252,6 +258,7 @@ def pictures(request):
                 except:
                     break
             idx += 1
+        print(three_context_list)
         context = {
             "picture_list": three_context_list,
         }

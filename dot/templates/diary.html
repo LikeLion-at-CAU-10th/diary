@@ -85,7 +85,7 @@
               <label for=  "foreign_key_tape{{ forloop.counter }}"><input type = "radio" name = "foreign_key_tape" id = "tape{{ tape.tape_id }}" class ="tape-style thin-tape"  value =  "{{ tape.tape_id }}"  onclick = tape{{ tape.tape_id }}Click()></label>
               <img src = "{{ tape.tape_info.url }}" class ="tape-style thin-tape">       
             </div>
-             
+             <!--  -->
             {% endfor %}
             {% comment %} 
             <div id="tape-img" style="display: flex; justify-content:center">
