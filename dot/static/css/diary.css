@@ -12,22 +12,29 @@
     background-color: #ECE7E1;
     display: flex;
     justify-content: center;   
-       
-
+    
 }
 
 #tape-bar{
     width: 235px;
     background-color: #F2F0ED;
-    box-shadow: 5px 5px 10px 0px grey;
+    box-shadow: 0px 0px 10px 0px grey;
     visibility: hidden;
-    margin-top: -60px;
+    margin-top: -610px;
+    margin-left: 900px;
+}
+label{
+    width: 115px;
+    margin: 8px -5px -11px -85px;
+    padding: 0px;
 }
 .sticker-zone{
-    float:right;
+    float: right;
     display: flex;
     flex-direction: column;
-
+    width: 500px;
+    position: absolute;
+    z-index: 1;
 }
 /* d */
 #x{
@@ -61,6 +68,8 @@
     /* display: flex;
     justify-content: center; */
     flex-direction: column;
+    text-align: center;
+
 }
 /* .nav-login {
     float: right;
@@ -103,7 +112,8 @@
     z-index: 2;
     transform: rotate(-15deg);
     width: 25vh;
-    margin-top: 2vh;
+    margin-top: -5vh;
+    margin-left: 350px;
 }
 
 
@@ -146,6 +156,7 @@ p{
     width:80px;
     border: none; 
     background: transparent;
+    margin-right: 50px;
 } 
 
 .input {
@@ -206,7 +217,10 @@ p{
     bottom: 600px;*/
     display: flex;
     justify-content: center;
-
+    /* margin-left: 400px; */
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
 .button{
     margin: 10px;
