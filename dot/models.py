@@ -1,7 +1,6 @@
 from operator import mod
 from pyexpat import model
 from tabnanny import verbose
-from turtle import title
 from django.db import models
 from django.forms import CharField
 from accounts.models import User
@@ -39,3 +38,4 @@ class Diary(models.Model):
     updated_date = models.DateTimeField(verbose_name="수정일시", auto_now=True)
     weather = models.ImageField(verbose_name='날씨이모지')
     feeling = models.ImageField(verbose_name='감정이모지')
+    tape = models.ImageField(verbose_name = "테이프")
