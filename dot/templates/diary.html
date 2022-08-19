@@ -15,7 +15,9 @@
 {% block contents %}
 <div class="body">
  
-  {% comment %} <img src="{%static 'img/tape.png'%}" id="tape"> {% endcomment %}
+  {% comment %}
+    <img src="{%static 'img/tape.png'%}" id="tape"> 
+  {% endcomment %}
 
   <div class="whole">
 
@@ -79,11 +81,14 @@
               <hr style="margin: 0px 0px 10px 0px;width: 200px;">
             </div>
             {% for tape in choosen_picture_dic.tape_all %}
-              <label for=  "foreign_key_tape{{ forloop.counter }}"><input type = "radio" name = "foreign_key_tape" id = "tape{{ tape.tape_id }}" class ="tape-style thin-tape"  value =  "{{ tape.tape_id }}" ></label>
-              <img src = "{{ tape.tape_info.url }}" class ="tape-style thin-tape" onclick = "tape{{ tape.tape_id }}Click()">       
+            <div style="display:flex">
+              <label for=  "foreign_key_tape{{ forloop.counter }}"><input type = "radio" name = "foreign_key_tape" id = "tape{{ tape.tape_id }}" class ="tape-style thin-tape"  value =  "{{ tape.tape_id }}"  onclick = tape{{ tape.tape_id }}Click()></label>
+              <img src = "{{ tape.tape_info.url }}" class ="tape-style thin-tape">       
+            </div>
              
             {% endfor %}
-            {% comment %} <div id="tape-img" style="display: flex; justify-content:center">
+            {% comment %} 
+            <div id="tape-img" style="display: flex; justify-content:center">
               <input type="radio" id="radio0" name="radio0" style="display: none;">
               <label for="radio0" onclick="tape0Click()">
                 <img src="{%static 'img/tape.png'%}" id="tape0" class="tape-style" style="padding-bottom: 1vh;" onclick="tape0Click()">
@@ -147,6 +152,7 @@
           </div>
       
         </div> 
+        <br>
         <div class="save">
           <input type="submit" value="저장" class="button submit"/>
           <a href = "{% url 'init_picture' choosen_picture_dic.picture_id %}" ><input type="button" value="뒤로가기" class="button reset"> </a>
@@ -234,24 +240,31 @@
 </div>
 
 <script>
+  window.load=function(){
+    document.querySelector("#tape1")=checked;
+  }
   const sticker=document.querySelector("#tape-bar");
   const smile=document.querySelector("#smile-sticker");
   const x=document.querySelector("#x");
   const tape=document.querySelector("#tape");
-  const tape0=document.querySelector("#tape0");
-  const tape1=document.querySelector("#tape1");
-  const tape2=document.querySelector("#tape2");
-  const tape3=document.querySelector("#tape3");
-  const tape4=document.querySelector("#tape4");
-  const tape5=document.querySelector("#tape5");
-  const tape6=document.querySelector("#tape6");
-  const tape7=document.querySelector("#tape7");
-  const tape8=document.querySelector("#tape8");
-  const tape9=document.querySelector("#tape9");
-  const tape10=document.querySelector("#tape10");
-  const tape11=document.querySelector("#tape11");
-  const box=document.querySelector(".sticker-zone");
+  // tape{{ tape.tape_id }}
+  let tapetape=document.querySelector("#tape{{ tape.tape_id }}");
+  let  tape1=document.querySelector("#tape1");
+  let tape2=document.querySelector("#tape2");
+  let tape3=document.querySelector("#tape3");
+  let tape4=document.querySelector("#tape4");
+  let  tape5=document.querySelector("#tape5");
+  let tape6=document.querySelector("#tape6");
+  let  tape7=document.querySelector("#tape7");
+  let tape8=document.querySelector("#tape8");
+  let  tape9=document.querySelector("#tape9");
+  let tape10=document.querySelector("#tape10");
+  let  tape11=document.querySelector("#tape11");
+  let  tape12=document.querySelector("#tape12");
 
+  let  box=document.querySelector(".sticker-zone");
+  
+  
   const smileClick=()=>{
     sticker.style.visibility="visible";
     smile.style.display="none";
@@ -261,14 +274,14 @@
     sticker.style.visibility="hidden";
     smile.style.display="block";
   }
+ 
   const tape1Click=()=>{
     tape.src="{%static 'img/tape.png'%}"
     tape.style.marginTop="2vh";
     box.style.marginTop="10px"
   }
-//  d
   const tape2Click=()=>{
-    tape.src="{%static 'img/tape1.png'%}";
+    tape.src='/media/tape1.png';
     tape.style.marginTop="5vh";
     box.style.marginTop="35px"
 
