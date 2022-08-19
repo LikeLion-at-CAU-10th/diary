@@ -13,3 +13,4 @@ class User(AbstractUser):
     picture_list = models.CharField(max_length = 200, default = "1 2 3")
     def __str__(self):
         return self.email
+

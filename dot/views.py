@@ -148,12 +148,16 @@ def what_month_is_it(month):
 def choosen_picture(request, diary_id, member_picture_id):
     if request.method == "GET":
         diary_data = Diary.objects.filter(pk=diary_id)[0]
-
+        member_picture_data = MemberPicture.objects.filter(pk=member_picture_id)[
+            0]
+        picture_id = member_picture_data.picture_id.picture_id
+        print(picture_id)
         day_en = what_day_is_it(date(diary_data.create_date.year,
                                 diary_data.create_date.month, diary_data.create_date.day))
         choosen_picture_dic = {
             "diary_id": diary_data.diary_id,
             "member_picture_id": member_picture_id,
+            "picture_id" : picture_id, 
             "title": diary_data.title,
             "content": diary_data.content,
             "year": diary_data.create_date.year,

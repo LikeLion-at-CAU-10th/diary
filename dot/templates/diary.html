@@ -70,14 +70,14 @@
       
         <div class="save">
           <input type="submit" value="저장" class="button submit"/>
-          <input type="reset" value="취소" class="button reset"/>
+          <a href = "{% url 'init_picture' choosen_picture_dic.picture_id %}" ><input type="button" value="뒤로가기" class="button reset"> </a>
         </div>
       </div>  
       </form>
     </div>
   </div>
 
-  <div class="sticker-zone">
+  {% comment %} <div class="sticker-zone">
     <div id="tape-bar">
       <div style="display: flex; flex-direction: row; margin: 2px 2px 0px 2px;">
         <p id="sticker-font">스티커</p>
@@ -104,9 +104,9 @@
     </div>
     <img src="{%static 'img/smile.png'%}" id="smile-sticker" onclick="smileClick()">
 
-  </div>
+  </div> {% endcomment %}
   
-</div>
+{% comment %} </div>
 <script>
   const sticker=document.querySelector("#tape-bar");
   const smile=document.querySelector("#smile-sticker");
@@ -119,5 +119,5 @@
     sticker.style.visibility="hidden";
   }
 
-</script>
+</script> {% endcomment %}
 {% endblock %}
