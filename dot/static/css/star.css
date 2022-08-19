@@ -25,24 +25,65 @@ canvas{
     padding: 0px;
     display: flex;
     justify-content: center;
-
-    width: 80px;
-    margin-top: 68px;
-    margin-left: 22px;
+    /* width: 300px; */
+    margin-top: 201px;
+    /* margin-left: 250px; */
+    flex-direction: column;
 }
 
 .c12{
-    width: 105px;
-    height: 70px;
-    margin-left: 60px
-}
+    width: 80px;
+    height: 30px;
+    margin-left: 77px;    
+    transform: rotate(2deg);
 
+}
+.c89{
+    width: 80px;
+    height: 30px;
+    /* margin-left: 159px; */
+    transform: rotate(2deg);
+}
 .c23{
-    width: 37px;
-    height: 120px;
+    width: 56px;
+    height: 55px;
+    margin-left: 125px;
+    margin-top: 3px;
 }
 
-
+.c78{
+    width: 56px;
+    height: 50px;
+    /* margin-right: 12px; */
+    margin-top: 5px;
+    transform: rotate(5deg);
+}
+.c34{
+    width: 80px;
+    height: 30px;
+    margin-left: 73px;
+    transform: rotate(100deg);
+    margin-top: 24px;
+}
+.c67{
+    width: 80px;
+    height: 30px;
+    /* margin-left: 159px; */
+    transform: rotate(-87deg);
+}
+.c45{
+    width: 80px;
+    height: 30px;
+    margin-left: 38px;
+    transform: rotate(0deg);
+}
+.c56{
+    width: 80px;
+    height: 30px;
+    margin-left: 35px;
+    /* transform: rotate(-19deg); */
+    margin-right: -35px;
+}
 .dot{
     background-color: rgb(160, 160, 160);
     border-radius: 100%;
@@ -52,7 +93,7 @@ canvas{
     position: relative; 
     z-index: 2;
     cursor: pointer;
-    margin: 3px;
+    margin: 5px;    
 }
 .img{
     position: absolute; 
@@ -77,11 +118,10 @@ canvas{
     /* justify-content: right;
     text-align: right; */
     align-items: center;
-    margin-left: 150px;
-    margin-top: 40px;
-
+    margin-top: 190px;
+    margin-right: 5px;
     flex-direction: column;
-
+justify-content: center;
     position: relative;
     z-index: 3;
 }
@@ -91,6 +131,9 @@ canvas{
 }
 .column{
     display: flex;
+    margin-bottom: 25px;
+    justify-content: center;
+
 }
 #d1{
     margin-right: 210px;
@@ -103,8 +146,48 @@ canvas{
 }
 
 
+#dot9{
+    margin-right: 65px;
+}
+#dot8{
+    margin-right: 220px;
+    margin-top: -10px;
 
+}
+#dot2{
+    margin-top: -10px;
+}
+#dot7{
+    margin-right: 125px;
+    margin-top:10px;
+}
+#dot3{
+    margin-top:10px;
+}
+#dot6{
+    margin-right: 150px;
+    margin-top: -20px;
+}
+#dot4{
+    margin-top: -20px;
 
+}
+#num8{
+    text-align: center;
+}
+#num7{
+    margin-top: 15px;
+}
+#num3{
+    margin-top: 15px;
+}
+.num-blank{
+    margin-top:-10px;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+}
 /* 1590px 이상 */
 @media (min-width:1590px) {
     /* .dots{

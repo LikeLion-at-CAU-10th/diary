@@ -9,37 +9,86 @@
 </head>
 <body>
     <section class="card">
-        <img src="../static/img/star.png" class="img"></div>
+        <img src="../static/img/star.jpeg" class="img"></div>
         <div class="dots">
           <div class="column">
-              <p class="num" id="num2">2</p>
-          </div>
-          <div class="column">
-              <div class="dot" id="dot2" onclick="click2()"></div>
-          </div>
-  
-          <div class="column" id="d1">
-              <p class="num" id="num1">1</p>
+              <p class="num" id="num9">9</p>
+              <div class="dot" id="dot9" onclick="click9()"></div>
               <div class="dot" id="dot1" onclick="click1()"></div>
-          </div>
-          <div class="column" id="d3">
-              <div class="dot" id="dot3" onclick="click3()"></div>
-              <p class="num" id="num3">3</p>
-  
+              <p class="num" id="num1">1</p>
           </div>
           
-  
+          <div class="column">
+            <p class="num num-blank" id="num8">8</p>
+            <div class="dot" id="dot8" onclick="click8()"></div>
+            <div class="dot" id="dot2" onclick="click2()"></div>
+            <p class="num num-blank" id="num2">2</p>
+          </div>
+       
+            <div class="column">
+                <p class="num" id="num7">7</p>
+                <div class="dot" id="dot7" onclick="click7()"></div>
+                <div class="dot" id="dot3" onclick="click3()"></div>
+                <p class="num" id="num3">3</p>
+            </div>
+            <div class="column" style="flex-direction: column;">
+                <div class="dot" id="dot5" onclick="click5()"></div>
+                <p class="num" id="num8">5</p>
+            </div>
+           
+            <div class="column" style="margin-top: -10px;">
+                <p class="num num-blank" id="num6">6</p>
+                <div class="dot" id="dot6" onclick="click6()"></div>
+                <div class="dot" id="dot4" onclick="click4()"></div>
+                <p class="num num-blank" id="num4">4</p>
+            </div>
         </div>
         <div class="canvases">
-            <div class="c12">
-              <canvas id="onetwo" width="105" height="70"></canvas>
+            <div class="flex">
+                <div class="c89">
+                    <canvas id="eightnine" width="80" height="30"></canvas>
+                </div>
+                <div class="c12">
+                  <canvas id="onetwo" width="80" height="30"></canvas>
+                </div>
+            </div>
+            
+            <div class="flex">
+
+                <div class="c78">
+                <canvas id="seveneight"width="56" height="50"></canvas>
             </div>
             <div class="c23">
-              <canvas id="twothree" width="37" height="120"></canvas>
+              <canvas id="twothree" width="56" height="50"></canvas>
             </div>
-          
+            </div>
+            <div class="flex">
+
+                <div class="c67">
+                    <canvas id="sixseven" width="80" height="30"></canvas>
+                </div>
+                <div class="c34">
+                    <canvas id="threefour" width="80" height="30"></canvas>
+                </div>
+            </div>
+           <div class="flex">
+
+            <div class="c56">
+                <canvas id="fivesix" width="80" height="30"></canvas>
+            </div>
+            <div class="c45">
+            <canvas id="fourfive" width="80" height="30"></canvas>
+            </div>
+           </div>
+           
+            
+            
+            
+            
         </div>
       </section>
-  
+
+      <script src="../static/js/star.js"></script>
+
 </body>
 </html>
