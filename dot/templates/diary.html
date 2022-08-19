@@ -19,7 +19,7 @@
 
   <div class="whole">
 
-     <script src="../static/js/time.js"></script>
+     <!-- <script src="../static/js/time.js"></script> -->
 
     <div class="input">
       <form action="{%url 'choosen_picture_patch' choosen_picture_dic.diary_id choosen_picture_dic.member_picture_id %}" method="Post">
@@ -76,6 +76,7 @@
       </form>
     </div>
   </div>
+  <img src="{%static 'img/smile.png'%}" id="smile-sticker" onclick="smileClick()">
 
   <div class="sticker-zone">
     <div id="tape-bar">
@@ -87,37 +88,176 @@
         <hr style="margin: 0px 0px 10px 0px;width: 200px;">
       </div>
       <div id="tape-img" style="display: flex; justify-content:center">
-        <img src="{%static 'img/tape.png'%}" class="tape-style" style="transform: rotate(15deg);margin-top: -20px;">
-        <img src="{%static 'img/tape1.png'%}" class="tape-style thin-tape" style="margin-top: -20px;">
-        <img src="{%static 'img/tape2.png'%}" class="tape-style thin-tape">
-        <img src="{%static 'img/tape3.png'%}" class="tape-style thin-tape">
-        <img src="{%static 'img/tape4.png'%}" class="tape-style thin-tape">
-        <img src="{%static 'img/tape5.png'%}" class="tape-style thin-tape">
-        <img src="{%static 'img/tape6.png'%}" class="tape-style thin-tape">
-        <img src="{%static 'img/tape7.png'%}" class="tape-style thin-tape">
-        <img src="{%static 'img/tape8.png'%}" class="tape-style thin-tape">
-        <img src="{%static 'img/tape9.png'%}" class="tape-style" style="transform: rotate(8deg); margin-top: -10px;">
-        <img src="{%static 'img/tape10.png'%}" class="tape-style" style="transform: rotate(8deg); margin-top: -12px;">
-        <img src="{%static 'img/tape11.png'%}" class="tape-style" style="transform: rotate(8deg); margin-top: -12px;    margin-bottom: 10px;">
-  
+        <input type="radio" id="radio0" name="radio0" style="display: none;">
+        <label for="radio0" onclick="tape0Click()">
+          <img src="{%static 'img/tape.png'%}" id="tape0" class="tape-style" style="padding-bottom: 1vh;" onclick="tape0Click()">
+        </label>
+
+        <input type="radio" id="radio1" name="radio1" style="display: none;">
+        <label for="radio1">
+        <img src="{%static 'img/tape1.png'%}" id="tape1" class="tape-style thin-tape" style="margin-top: -20px;" onclick="tape1Click()">
+        </label>
+
+        <input type="radio" id="radio2" name="radio2" style="display: none;">
+        <label for="radio2">
+          <img src="{%static 'img/tape2.png'%}" id="tape2" class="tape-style thin-tape" onclick="tape2Click()">
+        </label>
+
+        <input type="radio" id="radio3" name="radio3" style="display: none;">
+        <label for="radio3">
+        <img src="{%static 'img/tape3.png'%}" id="tape3" class="tape-style thin-tape" onclick="tape3Click()">
+        </label>
+
+        <input type="radio" id="radio4" name="radio4" style="display: none;">
+        <label for="radio4">
+        <img src="{%static 'img/tape4.png'%}" id="tape4" class="tape-style thin-tape" onclick="tape4Click()">
+        </label>
+
+        <input type="radio" id="radio5" name="radio5" style="display: none;">
+        <label for="radio5">
+        <img src="{%static 'img/tape5.png'%}" id="tape5" class="tape-style thin-tape" onclick="tape5Click()">
+        </label>
+
+        <input type="radio" id="radio6" name="radio6" style="display: none;">
+        <label for="radio6">
+        <img src="{%static 'img/tape6.png'%}" id="tape6" class="tape-style thin-tape" onclick="tape6Click()">
+        </label>
+
+        <input type="radio" id="radio7" name="radio7" style="display: none;">
+        <label for="radio7">
+        <img src="{%static 'img/tape7.png'%}" id="tape7" class="tape-style thin-tape" onclick="tape7Click()">
+        </label>
+
+        <input type="radio" id="radio8" name="radio8" style="display: none;">
+        <label for="radio8">
+        <img src="{%static 'img/tape8.png'%}" id="tape8" class="tape-style thin-tape" onclick="tape8Click()">
+      </label>
+
+        <input type="radio" id="radio9" name="radio9" style="display: none;">
+        <label for="radio9">
+        <img src="{%static 'img/tape9.png'%}" id="tape9" class="tape-style"  onclick="tape9Click()">
+       </label>
+
+       <input type="radio" id="radio10" name="radio10" style="display: none;">
+       <label for="radio10">
+        <img src="{%static 'img/tape10.png'%}" id="tape10" class="tape-style"   onclick="tape10Click()">
+        </label>
+
+        <input type="radio" id="radio11" name="radio11" style="display: none;">
+        <label for="radio11">        
+        <img src="{%static 'img/tape11.png'%}" id="tape11" class="tape-style"    onclick="tape11Click()">
+       </label>
       </div>
     </div>
-    <img src="{%static 'img/smile.png'%}" id="smile-sticker" onclick="smileClick()">
 
   </div>
-  
 </div>
+
 <script>
   const sticker=document.querySelector("#tape-bar");
   const smile=document.querySelector("#smile-sticker");
   const x=document.querySelector("#x");
-  
+  const tape=document.querySelector("#tape");
+  const tape0=document.querySelector("#tape0");
+  const tape1=document.querySelector("#tape1");
+  const tape2=document.querySelector("#tape2");
+  const tape3=document.querySelector("#tape3");
+  const tape4=document.querySelector("#tape4");
+  const tape5=document.querySelector("#tape5");
+  const tape6=document.querySelector("#tape6");
+  const tape7=document.querySelector("#tape7");
+  const tape8=document.querySelector("#tape8");
+  const tape9=document.querySelector("#tape9");
+  const tape10=document.querySelector("#tape10");
+  const tape11=document.querySelector("#tape11");
+  const box=document.querySelector(".sticker-zone");
+
   const smileClick=()=>{
     sticker.style.visibility="visible";
+    smile.style.display="none";
+
   }
   const xClick=()=>{
     sticker.style.visibility="hidden";
+    smile.style.display="block";
   }
+  const tape0Click=()=>{
+    tape.src="{%static 'img/tape.png'%}"
+    tape.style.marginTop="2vh";
+    box.style.marginTop="10px"
+  }
+ 
+  const tape1Click=()=>{
+    tape.src="{%static 'img/tape1.png'%}";
+    tape.style.marginTop="5vh";
+    box.style.marginTop="35px"
+
+  }
+
+  const tape2Click=()=>{
+    tape.src="{%static 'img/tape2.png'%}";
+    tape.style.marginTop="5vh";
+    box.style.marginTop="35px"
+
+
+  }
+  const tape3Click=()=>{
+    tape.src="{%static 'img/tape3.png'%}"
+    tape.style.marginTop="5vh";
+    box.style.marginTop="35px"
+
+
+  }
+  const tape4Click=()=>{
+    tape.src="{%static 'img/tape4.png'%}"
+    tape.style.marginTop="5vh";
+    box.style.marginTop="35px"
+
+
+  }
+  const tape5Click=()=>{
+    tape.src="{%static 'img/tape5.png'%}"
+    tape.style.marginTop="5vh";
+    box.style.marginTop="35px"
+
+  }
+  const tape6Click=()=>{
+    tape.src="{%static 'img/tape6.png'%}"
+    tape.style.marginTop="5vh";
+    box.style.marginTop="35px"
+
+  }
+  const tape7Click=()=>{
+    tape.src="{%static 'img/tape7.png'%}"
+    tape.style.marginTop="5vh";
+    box.style.marginTop="35px"
+
+  }
+  const tape8Click=()=>{
+    tape.src="{%static 'img/tape8.png'%}"    
+    tape.style.marginTop="5vh";
+    box.style.marginTop="35px"
+
+  }
+  const tape9Click=()=>{
+    tape.src="{%static 'img/tape9.png'%}"
+    tape.style.marginTop="2vh";
+    box.style.marginTop="5px"
+
+  }
+  const tape10Click=()=>{
+    tape.src="{%static 'img/tape10.png'%}"
+    tape.style.marginTop="2vh";
+    box.style.marginTop="5px"
+
+  }
+  const tape11Click=()=>{
+    tape.src="{%static 'img/tape11.png'%}"
+    tape.style.marginTop="2vh";
+    box.style.marginTop="5px"
+
+  }
+
 
 </script>
 {% endblock %}
