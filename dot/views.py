@@ -157,6 +157,7 @@ def choosen_picture(request, diary_id, member_picture_id):
         day_en = what_day_is_it(date(diary_data.create_date.year,
                                 diary_data.create_date.month, diary_data.create_date.day))
         tapes = Tape.objects.all()
+        
         tape = []
         for i in tapes:
             tape.append(i)
@@ -198,10 +199,10 @@ def choosen_picture(request, diary_id, member_picture_id):
             new_colored_dot_info = int(colored)+1
         except:
             new_colored_dot_info = 1
-        print(request.POST['foreign_key_tape'])
+        
         
         diary_data = Diary.objects.filter(pk=diary_id)[0]
-        # diary_data.foreign_key_tape = request.POST['tape_id']
+        diary_data.foreign_key_tape = request.POST['foreign_key_tape']
         diary_data.title = request.POST['title']
         diary_data.content = request.POST['content']
         diary_data.save()

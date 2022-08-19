@@ -79,7 +79,7 @@
               <hr style="margin: 0px 0px 10px 0px;width: 200px;">
             </div>
             {% for tape in choosen_picture_dic.tape_all %}
-              <label><input type = "radio" name = "foreign_key_tape" id = "tape{{ tape.tape_id }}" class ="tape-style thin-tape"  value =  "{{ tape.tape_id }}" style = "display : none;"></label>
+              <label for=  "foreign_key_tape{{ forloop.counter }}"><input type = "radio" name = "foreign_key_tape" id = "tape{{ tape.tape_id }}" class ="tape-style thin-tape"  value =  "{{ tape.tape_id }}" ></label>
               <img src = "{{ tape.tape_info.url }}" class ="tape-style thin-tape" onclick = "tape{{ tape.tape_id }}Click()">       
              
             {% endfor %}
@@ -261,77 +261,77 @@
     sticker.style.visibility="hidden";
     smile.style.display="block";
   }
-  const tape0Click=()=>{
+  const tape1Click=()=>{
     tape.src="{%static 'img/tape.png'%}"
     tape.style.marginTop="2vh";
     box.style.marginTop="10px"
   }
 //  d
-  const tape1Click=()=>{
+  const tape2Click=()=>{
     tape.src="{%static 'img/tape1.png'%}";
     tape.style.marginTop="5vh";
     box.style.marginTop="35px"
 
   }
 
-  const tape2Click=()=>{
+  const tape3Click=()=>{
     tape.src="{%static 'img/tape2.png'%}";
     tape.style.marginTop="5vh";
     box.style.marginTop="35px"
 
 
   }
-  const tape3Click=()=>{
+  const tape4Click=()=>{
     tape.src="{%static 'img/tape3.png'%}"
     tape.style.marginTop="5vh";
     box.style.marginTop="35px"
 
 
   }
-  const tape4Click=()=>{
+  const tape5Click=()=>{
     tape.src="{%static 'img/tape4.png'%}"
     tape.style.marginTop="5vh";
     box.style.marginTop="35px"
 
 
   }
-  const tape5Click=()=>{
+  const tape6Click=()=>{
     tape.src="{%static 'img/tape5.png'%}"
     tape.style.marginTop="5vh";
     box.style.marginTop="35px"
 
   }
-  const tape6Click=()=>{
+  const tape7Click=()=>{
     tape.src="{%static 'img/tape6.png'%}"
     tape.style.marginTop="5vh";
     box.style.marginTop="35px"
 
   }
-  const tape7Click=()=>{
+  const tape8Click=()=>{
     tape.src="{%static 'img/tape7.png'%}"
     tape.style.marginTop="5vh";
     box.style.marginTop="35px"
 
   }
-  const tape8Click=()=>{
+  const tape9Click=()=>{
     tape.src="{%static 'img/tape8.png'%}"    
     tape.style.marginTop="5vh";
     box.style.marginTop="35px"
 
   }
-  const tape9Click=()=>{
+  const tape10Click=()=>{
     tape.src="{%static 'img/tape9.png'%}"
     tape.style.marginTop="2vh";
     box.style.marginTop="5px"
 
   }
-  const tape10Click=()=>{
+  const tape11Click=()=>{
     tape.src="{%static 'img/tape10.png'%}"
     tape.style.marginTop="2vh";
     box.style.marginTop="5px"
 
   }
-  const tape11Click=()=>{
+  const tape12Click=()=>{
     tape.src="{%static 'img/tape11.png'%}"
     tape.style.marginTop="2vh";
     box.style.marginTop="5px"
