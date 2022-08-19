@@ -1,0 +1,224 @@
+body{
+    background-color: #ECE7E1;
+    
+    font-family:'Malgun Gothic';
+    font-size:12pt;
+    margin: 0px;
+    padding: 0px;
+
+}
+p{
+    margin: 0px;
+    padding: 0px;
+
+}
+canvas{
+    position: relative; 
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
+.canvases{
+    position: absolute;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    /* width: 300px; */
+    margin-top: 153px;
+    flex-direction: column;
+    margin-left: -10px;
+}
+
+.c12{
+    width: 40px;
+    height: 30px;
+    margin-right: 90px;
+    /* margin-left: 77px;    
+    transform: rotate(2deg); */
+
+}
+.c1011{
+    width: 40px;
+    height: 30px;
+   
+    /* margin-left: 77px;    
+    transform: rotate(2deg); */
+
+}
+.c34{
+    width: 55px;
+    height: 30px;
+    margin-right: 99px;
+    margin-top: 28px;
+    /* margin-left: 77px;    
+    transform: rotate(2deg); */
+
+}
+.c89{
+    width: 55px;
+    height: 30px;
+    margin-top: 28px;
+    /* margin-left: 77px;    
+    transform: rotate(2deg); */
+
+}
+.c23{
+    width: 55px;
+    height: 90px;
+    margin-right: 97px;
+    transform: rotate(6deg);
+}
+.c910{
+    width: 55px;
+    height: 70px;
+    transform: rotate(-5deg)
+}
+.c45{
+  
+    width: 65px;
+    height: 100px;
+    margin-right: 110px;
+    transform: rotate(2deg);
+
+}
+.c78{
+    width: 65px;
+    height: 100px;
+    transform: rotate(-2deg);
+}
+.c56{
+    width: 110px;
+    height: 40px;
+    transform: rotate(15deg);
+    margin-right: 16px;
+}
+.c67{
+    width: 115px;
+    height: 40px;
+    transform: rotate(-14deg);
+    margin-left: -10px;
+}
+.dot{
+    background-color: rgb(160, 160, 160);
+    border-radius: 100%;
+    width:12px;
+    height: 12px;
+    border:none;
+    position: relative; 
+    z-index: 2;
+    cursor: pointer;
+    margin: 5px;    
+}
+.img{
+    position: absolute; 
+    z-index: 1;
+    width: 385px;
+    border-radius: 2vh;
+    border: solid 1px black;
+    align-items: center;
+
+}
+.input{
+    display: none;
+}
+.card{
+    display: flex;
+    justify-content: center;
+
+}
+.dots{
+    display: flex;
+
+    /* justify-content: right;
+    text-align: right; */
+    align-items: center;
+    margin-top: 143px;
+    margin-right: 11px;
+    flex-direction: column;
+justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+#dot1{
+    margin-right: 28px;
+}
+#num2{
+    margin-right: 42px;
+}
+#dot10{
+    margin-right: 25px;
+}
+#dot3{
+    margin-right: 40px;
+}
+#num4{
+    margin-right: 65px;
+}
+#dot8{
+    margin-right: 40px;
+}
+#dot5{
+    margin-right: 100px;
+    margin-top:15px;
+}
+#num5{
+    margin-top:15px;
+}
+#dot7{
+    margin-left: 100px;
+    margin-top:15px;
+}
+#num7{
+    margin-top:15px;
+}
+.num{ 
+    position: relative; 
+    z-index: 2;
+}
+.column{
+    display: flex;
+    margin-bottom: 65px;
+    justify-content: center;
+
+}
+#d1{
+    margin-right: 210px;
+    margin-top: 49px;
+}
+
+#d3{
+    margin-left: 77px;
+    margin-top: 29px;
+}
+
+
+
+.num-blank{
+    margin-top:-10px;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: -30px;
+}
+/* 1590px 이상 */
+@media (min-width:1590px) {
+    /* .dots{
+        margin-top: 40px;
+    }
+    #dot1{
+        margin-top: 3px;
+    }  */
+}
+
+/* 1400px 이하
+@media (max-width:1400px) {
+   #dot4{
+    margin-top: -1px;
+   }
+  
+} */
