@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(MemberPicture)
 admin.site.register(Diary)
 admin.site.register(Picture)
+admin.site.register(Tape)

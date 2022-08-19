@@ -15,7 +15,7 @@
 {% block contents %}
 <div class="body">
  
-  <img src="{%static 'img/tape.png'%}" id="tape">
+  {% comment %} <img src="{%static 'img/tape.png'%}" id="tape"> {% endcomment %}
 
   <div class="whole">
 
@@ -26,6 +26,7 @@
       
       {% csrf_token %}
       <!-- {{ choosen_picture_dic }} -->
+        <img src="{%static 'img/tape.png'%}" id="tape">
 
         <br>
         <div class="wrap">
@@ -78,7 +79,7 @@
   </div>
   <img src="{%static 'img/smile.png'%}" id="smile-sticker" onclick="smileClick()">
 
-  {% comment %} <div class="sticker-zone">
+  <div class="sticker-zone">
     <div id="tape-bar">
       <div style="display: flex; flex-direction: row; margin: 2px 2px 0px 2px;">
         <p id="sticker-font">스티커</p>
@@ -259,5 +260,5 @@
   }
 
 
-</script> {% endcomment %}
+</script>
 {% endblock %}
