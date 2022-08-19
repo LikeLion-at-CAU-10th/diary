@@ -47,7 +47,9 @@ def init_picture(request, id):
             elif pictureId == 3:
                 return render(request, 'bear.html', context=context)
             elif pictureId == 4:
-                   return render(request, 'star.html', context=context)        
+                   return render(request, 'star.html', context=context)
+            elif pictureId == 5:
+                   return render(request, 'tree.html', context=context)                 
 
             return render(request, 'dot/test.html', context=context)
         else:
@@ -104,7 +106,9 @@ def init_picture(request, id):
             elif pictureId == 3:
                 return render(request, 'bear.html', context=context)
             elif pictureId == 4:
-                return render(request, 'star.html', context=context)  
+                return render(request, 'star.html', context=context)
+            elif pictureId == 5:
+                   return render(request, 'tree.html', context=context)  
             return render(request, 'dot/test.html', context=context)
     if request.method == 'GET':
         member_data = User.objects.filter(pk=request.user.id)[0]
@@ -136,6 +140,8 @@ def init_picture(request, id):
             return render(request, 'bear.html', context=context)
         elif pictureId == 4:
                 return render(request, 'star.html', context=context)  
+        elif pictureId == 5:
+                return render(request, 'tree.html', context=context)
 
         return render(request, 'dot/test.html', context=context)
 
@@ -257,7 +263,7 @@ def pictures(request):
 
         picture_list = Picture.objects.all()
         context_list = []
-        for i in range(4):
+        for i in range(5):
             picture = Picture.objects.filter(pk=picture_list[i].picture_id)[0]
             context_list.append(picture)
         real_idx = 0
