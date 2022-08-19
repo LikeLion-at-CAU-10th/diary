@@ -1,47 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../static/css/star.css" />
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block header_css %}
+<link rel="stylesheet" href="../static/css/star.css" />
+{% endblock%}
+{% block contents %}
+    {% if colored_dot == 0 %}
     <section class="card">
         <img src="../static/img/star.jpeg" class="img"></div>
         <div class="dots">
           <div class="column">
               <p class="num" id="num9">9</p>
-              <div class="dot" id="dot9" onclick="click9()"></div>
-              <div class="dot" id="dot1" onclick="click1()"></div>
               <p class="num" id="num1">1</p>
           </div>
           
           <div class="column">
             <p class="num num-blank" id="num8">8</p>
-            <div class="dot" id="dot8" onclick="click8()"></div>
-            <div class="dot" id="dot2" onclick="click2()"></div>
             <p class="num num-blank" id="num2">2</p>
           </div>
        
             <div class="column">
                 <p class="num" id="num7">7</p>
-                <div class="dot" id="dot7" onclick="click7()"></div>
-                <div class="dot" id="dot3" onclick="click3()"></div>
                 <p class="num" id="num3">3</p>
             </div>
             <div class="column" style="flex-direction: column;">
-                <div class="dot" id="dot5" onclick="click5()"></div>
                 <p class="num" id="num8">5</p>
             </div>
            
             <div class="column" style="margin-top: -10px;">
                 <p class="num num-blank" id="num6">6</p>
-                <div class="dot" id="dot6" onclick="click6()"></div>
-                <div class="dot" id="dot4" onclick="click4()"></div>
                 <p class="num num-blank" id="num4">4</p>
             </div>
+        </div>
+        <div class="column grid">
+              <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}" method = "GET">
+                {% csrf_token %}
+                <button class="dot" id="dot1"></button>
+              </form>
         </div>
         <div class="canvases">
             <div class="flex">
@@ -80,15 +74,83 @@
             <canvas id="fourfive" width="80" height="30"></canvas>
             </div>
            </div>
-           
-            
-            
-            
-            
+        
+ <script src="{% static '../static/js/star.js' %}"></script>
+ {% elif colored_dot == 1 %}
+ <section class="card">
+    <img src="../static/img/star.jpeg" class="img"></div>
+    <div class="dots">
+      <div class="column">
+          <p class="num" id="num9">9</p>
+          <p class="num" id="num1">1</p>
+      </div>
+      
+      <div class="column">
+        <p class="num num-blank" id="num8">8</p>
+        <p class="num num-blank" id="num2">2</p>
+      </div>
+   
+        <div class="column">
+            <p class="num" id="num7">7</p>
+            <p class="num" id="num3">3</p>
         </div>
-      </section>
+        <div class="column" style="flex-direction: column;">
+            <p class="num" id="num8">5</p>
+        </div>
+       
+        <div class="column" style="margin-top: -10px;">
+            <p class="num num-blank" id="num6">6</p>
+            <p class="num num-blank" id="num4">4</p>
+        </div>
+    </div>
+    <div class="column grid">
+          <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}" method = "GET">
+            {% csrf_token %}
+            <button class="dot" id="dot1"></button>
+          </form>
+    </div>
+    <div class="column grid">
+        <form action = "{% url 'choosen_picture_get' diary_id.0 member_picture_id %}" method = "GET">
+          {% csrf_token %}
+          <button class="dot" id="dot2"></button>
+        </form>
+  </div>
+    <div class="canvases">
+        <div class="flex">
+            <div class="c89">
+                <canvas id="eightnine" width="80" height="30"></canvas>
+            </div>
+            <div class="c12">
+              <canvas id="onetwo" width="80" height="30"></canvas>
+            </div>
+        </div>
+        
+        <div class="flex">
 
-      <script src="../static/js/star.js"></script>
+            <div class="c78">
+            <canvas id="seveneight"width="56" height="50"></canvas>
+        </div>
+        <div class="c23">
+          <canvas id="twothree" width="56" height="50"></canvas>
+        </div>
+        </div>
+        <div class="flex">
 
+            <div class="c67">
+                <canvas id="sixseven" width="80" height="30"></canvas>
+            </div>
+            <div class="c34">
+                <canvas id="threefour" width="80" height="30"></canvas>
+            </div>
+        </div>
+       <div class="flex">
+
+        <div class="c56">
+            <canvas id="fivesix" width="80" height="30"></canvas>
+        </div>
+        <div class="c45">
+        <canvas id="fourfive" width="80" height="30"></canvas>
+        </div>
+       </div>
 </body>
 </html>
