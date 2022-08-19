@@ -237,7 +237,7 @@ def pictures(request):
 
         picture_list = Picture.objects.all()
         context_list = []
-        for i in range(3):
+        for i in range(4):
             picture = Picture.objects.filter(pk=picture_list[i].picture_id)[0]
             context_list.append(picture)
         real_idx = 0
@@ -252,6 +252,7 @@ def pictures(request):
                 except:
                     break
             idx += 1
+        print(three_context_list)
         context = {
             "picture_list": three_context_list,
         }
