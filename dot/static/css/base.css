@@ -4,7 +4,7 @@ body{
 body .nav{
     display: flex;
     justify-content: center;
-    margin: 3vh 0vh;
+    margin-top: 3vh;
 }
 a{
     text-decoration:none;
